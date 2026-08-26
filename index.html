@@ -284,6 +284,19 @@
 
   /* SCROLL PROGRESS BAR */
   .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg, var(--sage-deep), var(--brass));width:0%;z-index:100;transition:width .1s linear;}
+
+  /* --- treatment band ------------------------------------------------ */
+  .treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);}
+  @media (max-width:820px){.treat-grid{grid-template-columns:1fr;max-width:430px;margin:0 auto;}}
+  .treat{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--sage-deep);box-shadow:var(--shadow-md);}
+  .treat img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.70) contrast(1.05) brightness(.96);transition:transform .8s cubic-bezier(.2,.7,.3,1),filter .5s ease;}
+  .treat:hover img{transform:scale(1.04);filter:saturate(.86) contrast(1.06) brightness(1);}
+  .treat::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(168deg,rgba(75,99,88,.14) 0%,rgba(52,71,61,.06) 38%,rgba(22,33,28,.80) 100%);}
+  .treat figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:var(--s3);color:#F6F7F5;}
+  .treat .rule{width:26px;height:2px;background:var(--brass);margin-bottom:var(--s2);}
+  .t-name{display:block;font-family:'Fraunces',serif;font-size:var(--t-lg);font-weight:500;letter-spacing:-.015em;margin-bottom:7px;}
+  .t-note{display:block;font-size:var(--t-sm);line-height:1.5;color:rgba(246,247,245,.84);}
 </style>
 
 <!-- ==== AD TRACKING ================================================
@@ -408,6 +421,43 @@
 
 
 
+
+
+<section id="treatments" style="background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" data-en="The treatments">Οι θεραπείες</div>
+      <h2 data-en="I know what your clinic actually sells">Ξέρω τι πουλάει στ&#x27;αλήθεια η κλινική σου</h2>
+      <p data-en="Every treatment behaves differently in the funnel. Advertising them the same way is why most clinic budgets underperform.">Κάθε θεραπεία συμπεριφέρεται διαφορετικά μέσα στο funnel. Το να διαφημίζονται όλες με τον ίδιο τρόπο είναι ο λόγος που τα περισσότερα budget κλινικών αποδίδουν λιγότερα απ&#x27; όσα θα μπορούσαν.</p>
+    </div>
+    <div class="treat-grid reveal-stagger">
+      <figure class="treat">
+        <img src="img/laser.jpg" width="760" height="950" loading="lazy" decoding="async" alt="Συνεδρία laser σε κλινική ιατρικής αισθητικής">
+        <figcaption>
+          <div class="rule"></div>
+          <span class="t-name" data-en="Laser &amp; devices">Laser &amp; συσκευές</span>
+          <span class="t-note" data-en="Sold as courses: the highest lifetime value per client — and the easiest to lose without disciplined follow-up.">Πωλούνται σε πακέτα: η μεγαλύτερη αξία ανά πελάτη — και η πιο εύκολη να χαθεί χωρίς πειθαρχημένο follow-up.</span>
+        </figcaption>
+      </figure>
+      <figure class="treat">
+        <img src="img/skin.jpg" width="760" height="950" loading="lazy" decoding="async" alt="Θεραπεία προσώπου και περιποίηση δέρματος σε κλινική">
+        <figcaption>
+          <div class="rule"></div>
+          <span class="t-name" data-en="Face &amp; skin treatments">Θεραπείες προσώπου &amp; δέρματος</span>
+          <span class="t-note" data-en="Low cost per lead and a fast first visit — the ideal front door into the clinic.">Χαμηλό κόστος ανά lead και γρήγορη πρώτη επίσκεψη — η ιδανική πρώτη πόρτα για την κλινική.</span>
+        </figcaption>
+      </figure>
+      <figure class="treat">
+        <img src="img/lift.jpg" width="760" height="950" loading="lazy" decoding="async" alt="Θεραπεία ανανέωσης και σύσφιξης προσώπου">
+        <figcaption>
+          <div class="rule"></div>
+          <span class="t-name" data-en="Rejuvenation &amp; lifting">Ανανέωση &amp; σύσφιξη</span>
+          <span class="t-note" data-en="High ticket, longer decision cycle. These need nurturing, not pressure — most clinics call twice and give up.">Υψηλή αξία, μεγαλύτερος κύκλος απόφασης. Θέλουν nurturing, όχι πίεση — οι περισσότερες κλινικές παίρνουν δύο τηλέφωνα και τα παρατούν.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
 <section id="who">
   <div class="wrap">
