@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Η Δωρεάν Εκπαίδευση | Med Aesthetic Bookings</title>
+<meta name="description" content="Το σύστημα που μετατρέπει τις διαφημίσεις σε ραντεβού στην καρέκλα, για κλινικές ιατρικής αισθητικής.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="img/mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF7F2; --cream-alt:#F3EDE3; --card:#FFFFFF;
+    --teal:#0F4A5E; --teal-deep:#0A3746; --teal-soft:#3B6D7E;
+    --brass:#A8763E; --brass-lift:#C08F4F;
+    --ink:#12303B; --ink-soft:#5A6B72; --line:#E2DACE;
+    --shadow-sm:0 1px 2px rgba(15,74,94,.05), 0 1px 1px rgba(15,74,94,.04);
+    --shadow-md:0 10px 28px rgba(15,74,94,.09), 0 2px 6px rgba(15,74,94,.05);
+    --shadow-lg:0 22px 52px rgba(15,74,94,.14), 0 4px 12px rgba(15,74,94,.06);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;
+    -webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;
+    background-image:
+      radial-gradient(circle at 12% -4%, rgba(15,74,94,.07) 0%, rgba(15,74,94,0) 55%),
+      radial-gradient(circle at 90% 6%, rgba(168,118,62,.08) 0%, rgba(168,118,62,0) 58%);
+    background-repeat:no-repeat;
+  }
+  @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important;}}
+  h1,h2{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-0.026em;text-wrap:balance;color:var(--ink);}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px;}
+
+  .wrap{width:100%;max-width:860px;margin:0 auto;padding:0 24px;}
+  header{padding:36px 0 8px;text-align:center;}
+  .logo{height:40px;width:auto;margin:0 auto;}
+
+  main{flex:1;padding:26px 0 56px;}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--card);
+    border:1px solid var(--line);color:var(--teal);font-size:12.5px;font-weight:600;
+    padding:7px 15px;border-radius:999px;margin-bottom:20px;box-shadow:var(--shadow-sm);}
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--brass);}
+  h1{font-size:clamp(27px,4.4vw,42px);line-height:1.1;margin-bottom:16px;}
+  h1 em{font-style:italic;color:var(--teal);}
+  .lede{font-size:16.5px;color:var(--ink-soft);max-width:58ch;margin-bottom:34px;}
+
+  .video{position:relative;width:100%;aspect-ratio:16/9;background:var(--teal-deep);
+    border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-lg);}
+  .video iframe,.video video{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;
+    color:rgba(250,247,242,.62);}
+  .video .placeholder .play{width:64px;height:64px;border-radius:50%;background:rgba(250,247,242,.10);
+    border:1px solid rgba(250,247,242,.34);display:flex;align-items:center;justify-content:center;}
+  .video .placeholder .play::after{content:"";border-left:17px solid var(--brass-lift);
+    border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px;}
+  .video .placeholder code{font-size:12.5px;color:rgba(250,247,242,.40);}
+
+  h2{font-size:clamp(21px,3vw,28px);margin:56px 0 18px;}
+  .points{list-style:none;display:grid;gap:12px;margin-bottom:44px;}
+  .points li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--ink-soft);
+    background:var(--card);border:1px solid var(--line);border-left:3px solid var(--teal);
+    border-radius:12px;padding:15px 18px;box-shadow:var(--shadow-sm);}
+  .points li b{color:var(--brass);flex:0 0 auto;font-weight:700;}
+  .points li strong{color:var(--ink);font-weight:600;}
+
+  .cta-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--brass);
+    border-radius:18px;padding:32px 30px;text-align:center;box-shadow:var(--shadow-md);}
+  @media (max-width:520px){.cta-card{padding:26px 20px;}}
+  .cta-card h2{margin:0 0 12px;}
+  .cta-card p{color:var(--ink-soft);font-size:15.5px;max-width:50ch;margin:0 auto 24px;}
+  .cta-card p strong{color:var(--ink);font-weight:600;}
+  .btn{display:inline-block;background:var(--teal);color:#FAF7F2;font-weight:700;font-size:16px;
+    padding:18px 38px;border-radius:12px;box-shadow:var(--shadow-md);
+    transition:background .18s ease, transform .18s ease, box-shadow .18s ease;}
+  .btn:hover{background:var(--teal-deep);transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+  .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn-ghost{display:inline-block;border:1px solid var(--line);color:var(--ink);background:var(--cream);
+    font-weight:600;font-size:15px;padding:17px 28px;border-radius:12px;transition:background .18s ease;}
+  .btn-ghost:hover{background:var(--cream-alt);}
+
+  footer{padding:24px 0 34px;text-align:center;font-size:12.5px;color:#8A9299;}
+  footer a{color:#6E7A81;}
+  footer a:hover{color:var(--teal);text-decoration:underline;}
+</style>
+<script>window.PIXEL_ID = "316080584575543";</script>
+<script>
+(function(){
+  if(!window.PIXEL_ID) return;
+  window.loadPixel = function(){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', window.PIXEL_ID);
+  fbq('track', 'PageView');
+};
+try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catch(e){}
+})();
+</script>
+</head>
+<body>
+
+<header class="wrap">
+  <img class="logo" src="img/logo.png" width="213" height="64" alt="Med Aesthetic Bookings">
+</header>
+
+<main class="wrap">
+  <span class="badge"><span class="dot"></span> Η πρόσβασή σου είναι ενεργή</span>
+
+  <h1>Το σύστημα που γεμίζει <em>το ημερολόγιο</em> μιας κλινικής</h1>
+  <p class="lede">Δες το μέχρι το τέλος. Στα τελευταία λεπτά δείχνω ακριβώς τι κάνει η διαφορά ανάμεσα σε μια κλινική που πληρώνει διαφημίσεις και σε μια που γεμίζει καρέκλες.</p>
+
+  <!-- ================================================================
+       ΤΟ ΒΙΝΤΕΟ ΜΠΑΙΝΕΙ ΕΔΩ.
+       YouTube (unlisted):
+         <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0" allowfullscreen></iframe>
+       Ή αρχείο mp4 στον φάκελο:
+         <video src="training.mp4" controls playsinline poster="share-card.png"></video>
+       Σβήσε το <div class="placeholder"> όταν μπει το βίντεο.
+       ================================================================ -->
+  <div class="video">
+    <div class="placeholder">
+      <div class="play" aria-hidden="true"></div>
+      <div>Εδώ μπαίνει το βίντεο της εκπαίδευσης</div>
+      <code>training.html &rarr; &lt;div class="video"&gt;</code>
+    </div>
+  </div>
+
+  <h2>Τι θα δεις μέσα</h2>
+  <ul class="points">
+    <li><b>01</b> Γιατί τα leads που «δεν απαντούν» δεν είναι πρόβλημα της διαφήμισης, αλλά του τι γίνεται τα επόμενα 5 λεπτά.</li>
+    <li><b>02</b> Η δομή καμπάνιας που έβγαλε <strong>376 leads με €0,82 το ένα</strong> για κλινική στον Πειραιά.</li>
+    <li><b>03</b> Πώς μια κλινική πήγε από <strong>1 σε 5 υποκαταστήματα σε δύο χρόνια</strong> με το ίδιο σύστημα.</li>
+    <li><b>04</b> Τι να ζητήσεις από όποιον σου τρέχει διαφημίσεις σήμερα &mdash; και τι σημαίνει αν δεν μπορεί να στο δώσει.</li>
+  </ul>
+
+  <div class="cta-card">
+    <h2>Θέλεις να το στήσω εγώ στην κλινική σου;</h2>
+    <p>Δουλεύω με περιορισμένο αριθμό κλινικών και με <strong>αποκλειστικότητα περιοχής</strong> &mdash; μία κλινική ανά περιοχή. Δες αν είναι ελεύθερη η δική σου.</p>
+    <div class="btn-row">
+      <a class="btn" href="https://wa.me/35799251181?text=%CE%95%CE%AF%CE%B4%CE%B1%20%CF%84%CE%B7%CE%BD%20%CE%B5%CE%BA%CF%80%CE%B1%CE%AF%CE%B4%CE%B5%CF%85%CF%83%CE%B7%20%CE%BA%CE%B1%CE%B9%20%CE%B8%CE%AD%CE%BB%CF%89%20%CE%BD%CE%B1%20%CE%B4%CF%89%20%CE%B1%CE%BD%20%CE%B5%CE%AF%CE%BD%CE%B1%CE%B9%20%CE%B5%CE%BB%CE%B5%CF%8D%CE%B8%CE%B5%CF%81%CE%B7%20%CE%B7%20%CF%80%CE%B5%CF%81%CE%B9%CE%BF%CF%87%CE%AE%20%CE%BC%CE%BF%CF%85." target="_blank" rel="noopener">Δες αν είναι ελεύθερη η περιοχή σου</a>
+      <a class="btn-ghost" href="sales.html">Δες πώς δουλεύω</a>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <a href="mailto:marcochristodoulou@outlook.com">marcochristodoulou@outlook.com</a>
+  &nbsp;&middot;&nbsp; <a href="privacy.html">Πολιτική απορρήτου</a>
+  &nbsp;&middot;&nbsp; © 2026 Med Aesthetic Bookings
+</footer>
+
+<script>
+(function(){
+  if(!window.fbq) return;
+  Array.prototype.forEach.call(document.querySelectorAll('a[href^="https://wa.me"], a[href^="tel:"], a[href^="mailto:"]'), function(a){
+    a.addEventListener('click', function(){ fbq('track','Contact'); });
+  });
+})();
+</script>
+
+</body>
+</html>
