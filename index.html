@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marketing Director για Κλινικές Ιατρικής Αισθητικής | Med Aesthetic Bookings</title>
-<meta name="description" content="Αναλαμβάνω τη διαδρομή από τη διαφήμιση μέχρι τον πελάτη στην καρέκλα. Marketing director αποκλειστικά για κλινικές ιατρικής αισθητικής στην Ελλάδα. Δωρεάν έλεγχος pipeline.">
+<title>Marketing Director για Κλινικές Αισθητικής &amp; Οδοντιατρεία | Med Aesthetic Bookings</title>
+<meta name="description" content="Αναλαμβάνω τη διαδρομή από τη διαφήμιση μέχρι τον πελάτη στην καρέκλα. Marketing director για κλινικές ιατρικής αισθητικής και οδοντιατρεία που κάνουν λεύκανση και αισθητική οδοντιατρική, σε όλη την Ελλάδα. Δωρεάν έλεγχος pipeline.">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Marketing Director για Κλινικές Ιατρικής Αισθητικής">
-<meta property="og:description" content="Δεν σου πουλάω leads. Στήνω το σύστημα που τα μετατρέπει σε ραντεβού — από 1 σε 5 υποκαταστήματα σε δύο χρόνια.">
+<meta property="og:title" content="Marketing Director για Κλινικές Αισθητικής &amp; Οδοντιατρεία">
+<meta property="og:description" content="Κλινικές αισθητικής και οδοντιατρεία: δεν σου πουλάω leads. Στήνω το σύστημα που τα μετατρέπει σε ραντεβού — από 1 σε 5 υποκαταστήματα σε δύο χρόνια.">
 <meta property="og:locale" content="el_GR">
 <meta property="og:url" content="https://medaestheticbookings.com/">
 <meta property="og:image" content="https://medaestheticbookings.com/share-card.png">
@@ -259,6 +259,21 @@
   .cc .yes:hover{background:var(--brass-lift);}
   .cc .no{background:transparent;color:var(--cream);border-color:rgba(250,247,242,.42);}
   .cc .no:hover{background:rgba(250,247,242,.12);}
+
+  /* two-audience block */
+  .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:760px){.who-grid{grid-template-columns:1fr;}}
+  .who{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px 28px;position:relative;overflow:hidden;}
+  .who::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--brass);}
+  .who .tag{display:inline-block;font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+    font-weight:700;color:var(--brass);margin-bottom:12px;}
+  .who h3{font-size:21px;margin-bottom:10px;}
+  .who > p{color:var(--ink-soft);font-size:15px;margin-bottom:16px;}
+  .who ul{list-style:none;display:grid;gap:9px;}
+  .who li{font-size:14.5px;color:var(--ink-soft);padding-left:22px;position:relative;}
+  .who li::before{content:"\2713";position:absolute;left:0;color:var(--brass);font-weight:700;}
+  .mid-cta{text-align:center;margin-top:34px;}
 </style>
 
 <!-- Meta Pixel — consent-gated. Loads only after «Αποδοχή». PIXEL_ID="" turns it off. -->
@@ -290,11 +305,11 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 
 <header class="hero" id="top">
   <div class="wrap hero-inner">
-    <span class="capacity"><span class="dot"></span> Παίρνω λίγες κλινικές τη φορά — προσωπική συνεργασία</span>
+    <span class="capacity"><span class="dot"></span> Κλινικές αισθητικής &amp; οδοντιατρεία — μία επιχείρηση ανά περιοχή</span>
 
     <h1>Γεμάτο ημερολόγιο.<br>Χωρίς <em>δικό σου τμήμα marketing</em>.</h1>
 
-    <p class="hero-sub">Αναλαμβάνω τη διαδρομή από τη διαφήμιση μέχρι τον πελάτη στην καρέκλα. Το ίδιο σύστημα πήγε μια κλινική από 1 σε 5 υποκαταστήματα σε δύο χρόνια.</p>
+    <p class="hero-sub">Αναλαμβάνω τη διαδρομή από τη διαφήμιση μέχρι τον πελάτη στην καρέκλα — για <b>κλινικές ιατρικής αισθητικής</b> και <b>οδοντιατρεία που κάνουν λεύκανση και αισθητική οδοντιατρική</b>. Το ίδιο σύστημα πήγε μια κλινική από 1 σε 5 υποκαταστήματα σε δύο χρόνια.</p>
 
     <div class="btn-row">
       <a href="#form" class="btn">Ας μιλήσουμε</a>
@@ -308,9 +323,9 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
       <div class="intro-body">
         <p class="intro-eyebrow">Με ποιον θα δουλέψεις</p>
         <h2 class="intro-name">Marco Christodoulou</h2>
-        <p class="intro-role">Marketing Director &mdash; Κλινικές Αισθητικής</p>
+        <p class="intro-role">Marketing Director &mdash; Κλινικές Αισθητικής &amp; Οδοντιατρεία</p>
         <p>Στην DermLux Clinics Cyprus ανέλαβα τη δημιουργία περιεχομένου και τη διαχείριση διαφημίσεων, και η κλινική πήγε <b>από ένα σε πέντε υποκαταστήματα μέσα σε δύο χρόνια</b>.</p>
-        <p>Έκτοτε δουλεύω με κλινικές σε Ελλάδα &mdash; διαφημίσεις, προσφορά, script πωλήσεων και follow-up, ως ένας υπεύθυνος αντί για τέσσερις προμηθευτές.</p>
+        <p>Έκτοτε δουλεύω με κλινικές αισθητικής και οδοντιατρεία σε όλη την Ελλάδα &mdash; διαφημίσεις, προσφορά, script πωλήσεων και follow-up, ως ένας υπεύθυνος αντί για τέσσερις προμηθευτές.</p>
       </div>
     </div>
   </div>
@@ -345,9 +360,44 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 <section>
   <div class="wrap">
     <div class="sec-head">
+      <p class="eyebrow">Με ποιους δουλεύω</p>
+      <h2>Δύο κλάδοι. Το ίδιο ακριβώς πρόβλημα.</h2>
+      <p>Η αισθητική θεραπεία δεν αγοράζεται με ένα κλικ. Ο κόσμος ρωτάει, διστάζει, συγκρίνει &mdash; και χάνεται αν δεν του απαντήσει κανείς σωστά. Αυτό διορθώνω.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who">
+        <span class="tag">01 &mdash; Ιατρική αισθητική</span>
+        <h3>Κλινικές &amp; κέντρα αισθητικής</h3>
+        <p>Θεραπείες με υψηλή αξία ανά πελάτη, όπου ένα χαμένο lead κοστίζει πολλαπλάσια από το κλικ.</p>
+        <ul>
+          <li>Laser αποτρίχωση &amp; θεραπείες προσώπου</li>
+          <li>Botox, fillers, μεσοθεραπεία</li>
+          <li>HIFU, RF, αντιγήρανση</li>
+          <li>Πακέτα συνεδριών &amp; επαναλαμβανόμενοι πελάτες</li>
+        </ul>
+      </div>
+      <div class="who">
+        <span class="tag">02 &mdash; Αισθητική οδοντιατρική</span>
+        <h3>Οδοντιατρεία με λεύκανση</h3>
+        <p>Ο ασθενής ψάχνει χαμόγελο, όχι οδοντίατρο. Η διαφήμιση πρέπει να πουλάει το αποτέλεσμα και η γραμματεία να το κλείνει.</p>
+        <ul>
+          <li>Λεύκανση δοντιών (in-office &amp; home kits)</li>
+          <li>Όψεις ρητίνης &amp; κεραμικές όψεις</li>
+          <li>Αόρατοι νάρθηκες / ορθοδοντική ενηλίκων</li>
+          <li>Καθαρισμός &amp; πλήρης αισθητική αποκατάσταση</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mid-cta"><a href="#form" class="btn">Δες πού χάνεις ραντεβού &mdash; δωρεάν</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
       <p class="eyebrow">Τι κάνω</p>
       <h2>Τρία πράγματα αλλάζουν — και ο τζίρος ακολουθεί</h2>
-      <p>Δεν σου πουλάω leads. Στήνω και κατευθύνω το σύστημα που τα μετατρέπει σε ραντεβού.</p>
+      <p>Δεν σου πουλάω leads. Στήνω και κατευθύνω το σύστημα που τα μετατρέπει σε ραντεβού &mdash; είτε πρόκειται για laser είτε για λεύκανση.</p>
     </div>
     <div class="cards">
       <div class="card">
@@ -371,9 +421,9 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>ΠΑΙΡΝΩ ΛΙΓΕΣ ΚΛΙΝΙΚΕΣ ΤΗ ΦΟΡΑ.</span><span>ΜΙΑ ΚΛΙΝΙΚΗ ΑΝΑ ΠΕΡΙΟΧΗ.</span>
-    <span>ΠΑΙΡΝΩ ΛΙΓΕΣ ΚΛΙΝΙΚΕΣ ΤΗ ΦΟΡΑ.</span><span>ΜΙΑ ΚΛΙΝΙΚΗ ΑΝΑ ΠΕΡΙΟΧΗ.</span>
-    <span>ΠΑΙΡΝΩ ΛΙΓΕΣ ΚΛΙΝΙΚΕΣ ΤΗ ΦΟΡΑ.</span><span>ΜΙΑ ΚΛΙΝΙΚΗ ΑΝΑ ΠΕΡΙΟΧΗ.</span>
+    <span>ΜΙΑ ΚΛΙΝΙΚΗ ΑΝΑ ΠΕΡΙΟΧΗ.</span><span>ΕΝΑ ΟΔΟΝΤΙΑΤΡΕΙΟ ΑΝΑ ΠΕΡΙΟΧΗ.</span><span>ΟΥΤΕ ΕΝΑ ΠΑΡΑΠΑΝΩ.</span>
+    <span>ΜΙΑ ΚΛΙΝΙΚΗ ΑΝΑ ΠΕΡΙΟΧΗ.</span><span>ΕΝΑ ΟΔΟΝΤΙΑΤΡΕΙΟ ΑΝΑ ΠΕΡΙΟΧΗ.</span><span>ΟΥΤΕ ΕΝΑ ΠΑΡΑΠΑΝΩ.</span>
+    <span>ΜΙΑ ΚΛΙΝΙΚΗ ΑΝΑ ΠΕΡΙΟΧΗ.</span><span>ΕΝΑ ΟΔΟΝΤΙΑΤΡΕΙΟ ΑΝΑ ΠΕΡΙΟΧΗ.</span><span>ΟΥΤΕ ΕΝΑ ΠΑΡΑΠΑΝΩ.</span>
   </div>
 </div>
 
@@ -381,8 +431,8 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
   <div class="wrap inner">
     <p class="eyebrow" style="color:var(--brass-lift);">Αποκλειστικότητα περιοχής</p>
     <h2>Δεν δουλεύω με όλους</h2>
-    <p>Δουλεύω με λίγες κλινικές τη φορά, γιατί κατευθύνω ο ίδιος τη στρατηγική της καθεμιάς — δεν παραδίδω τη δουλειά σε ομάδα.</p>
-    <p>Σε κάθε περιοχή συνεργάζομαι με <strong>μία μόνο κλινική</strong>. Δεν παίρνω τον ανταγωνιστή σου, δεν μοιράζομαι τις στρατηγικές σου.</p>
+    <p>Δουλεύω με λίγες επιχειρήσεις τη φορά, γιατί κατευθύνω ο ίδιος τη στρατηγική της καθεμιάς — δεν παραδίδω τη δουλειά σε ομάδα.</p>
+    <p>Σε κάθε περιοχή συνεργάζομαι με <strong>μία μόνο κλινική αισθητικής και ένα μόνο οδοντιατρείο</strong>. Δεν παίρνω τον ανταγωνιστή σου, δεν μοιράζομαι τις στρατηγικές σου.</p>
     <p class="kicker">Αν είσαι μαζί μου, ο ανταγωνιστής σου δεν μπορεί να είναι.</p>
   </div>
 </section>
@@ -405,6 +455,8 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
     </div>
 
     <p class="cmp-note">«Δεν σου πουλάω leads. Στήνω και κατευθύνω το σύστημα που τα μετατρέπει.»</p>
+
+    <div class="mid-cta"><a href="#form" class="btn">Ας δούμε τα δικά σου νούμερα</a></div>
   </div>
 </section>
 
@@ -416,9 +468,9 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
       <p>Ένας υπεύθυνος για όλο το marketing σου. Όχι λίστα από freelancers.</p>
     </div>
     <div class="steps">
-      <div class="step"><div class="n">01</div><div><h3>Στρατηγική &amp; προσφορά</h3><p>Ξαναχτίζω την προσφορά και το creative γύρω από ό,τι μετατρέπει για κλινικές αισθητικής — όχι γενικά templates.</p></div></div>
+      <div class="step"><div class="n">01</div><div><h3>Στρατηγική &amp; προσφορά</h3><p>Ξαναχτίζω την προσφορά και το creative γύρω από ό,τι μετατρέπει στον δικό σου κλάδο — laser, botox και θεραπείες προσώπου για κλινικές, λεύκανση και όψεις για οδοντιατρεία. Όχι γενικά templates.</p></div></div>
       <div class="step"><div class="n">02</div><div><h3>Διαφημίσεις Meta</h3><p>Στήσιμο, δοκιμές και καθημερινή διαχείριση καμπανιών, με σαφείς κανόνες για το τι σταματά και τι κλιμακώνεται.</p></div></div>
-      <div class="step"><div class="n">03</div><div><h3>Script κλήσης &amp; follow-up</h3><p>Δοκιμασμένο script για το προσωπικό υποδοχής, μηνύματα follow-up και υπενθυμίσεις ραντεβού — εκεί ακριβώς που χάνονται οι κρατήσεις.</p></div></div>
+      <div class="step"><div class="n">03</div><div><h3>Script κλήσης &amp; follow-up</h3><p>Δοκιμασμένο script για τη γραμματεία ή το προσωπικό υποδοχής, μηνύματα follow-up και υπενθυμίσεις ραντεβού — εκεί ακριβώς που χάνονται οι κρατήσεις.</p></div></div>
       <div class="step"><div class="n">04</div><div><h3>Εβδομαδιαία διαχείριση</h3><p>Συνεχής κατεύθυνση διαφημίσεων, περιεχομένου και follow-up, με board ώστε τίποτα να μη μένει χωρίς παρακολούθηση.</p></div></div>
       <div class="step"><div class="n">05</div><div><h3>Αναφορά &amp; ευθύνη</h3><p>Τακτικά νούμερα σε leads, κρατήσεις και budget — και ένας άνθρωπος υπεύθυνος για αυτά. Εγώ.</p></div></div>
     </div>
@@ -436,6 +488,7 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
       <div class="fit yes">
         <h3>Σου ταιριάζει αν</h3>
         <ul>
+          <li><b>✓</b> Έχεις κλινική αισθητικής ή οδοντιατρείο με αισθητικές θεραπείες</li>
           <li><b>✓</b> Τρέχεις διαφημίσεις αλλά δεν βλέπεις κρατήσεις</li>
           <li><b>✓</b> Έχεις προσωπικό που εκτελεί, αλλά κανείς δεν κατευθύνει τη στρατηγική</li>
           <li><b>✓</b> Θέλεις έναν υπεύθυνο για τα αποτελέσματα, όχι λίστα από freelancers</li>
@@ -448,6 +501,7 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
           <li><b>✕</b> Θες εγγύηση συγκεκριμένου αριθμού ραντεβού — δεν τη δίνω</li>
           <li><b>✕</b> Δεν θέλεις να αλλάξει τίποτα στη διαδικασία κλήσης</li>
           <li><b>✕</b> Ψάχνεις τη φθηνότερη λύση — ένας freelancer κοστίζει λιγότερο</li>
+          <li><b>✕</b> Κάνεις μόνο γενική οδοντιατρική χωρίς αισθητικές θεραπείες</li>
           <li><b>✕</b> Θες κάποιον να πατάει κουμπιά, όχι να παίρνει αποφάσεις</li>
         </ul>
       </div>
@@ -460,7 +514,7 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
     <div class="sec-head">
       <p class="eyebrow">Δωρεάν · χωρίς δέσμευση</p>
       <h2>Ο Έλεγχος Pipeline</h2>
-      <p>Πριν συζητήσουμε καν συνεργασία, κοιτάω πού χάνεις ραντεβού τώρα — και σου το δίνω γραπτώς.</p>
+      <p>Πριν συζητήσουμε καν συνεργασία, κοιτάω πού χάνει ραντεβού η κλινική ή το οδοντιατρείο σου τώρα — και σου το δίνω γραπτώς.</p>
     </div>
     <div class="audit-list">
       <div class="audit-item"><div class="n">01</div><p>Πού ακριβώς διαρρέει το pipeline σου — από τη διαφήμιση μέχρι την καρέκλα.</p></div>
@@ -476,8 +530,8 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Ξεκίνα εδώ</p>
-      <h2>Πες μου για την κλινική σου</h2>
-      <p>Συμπλήρωσε τα στοιχεία σου ώστε να δούμε αν ταιριάζουμε, πριν την κλήση.</p>
+      <h2>Πες μου για την επιχείρησή σου</h2>
+      <p>Κλινική αισθητικής ή οδοντιατρείο &mdash; συμπλήρωσε τα στοιχεία σου ώστε να δούμε αν ταιριάζουμε, πριν την κλήση.</p>
     </div>
 
     <div class="form-card">
@@ -493,14 +547,22 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
           <input type="email" id="f-email" placeholder="Email" autocomplete="email" required></div>
         <div class="fld"><label for="f-phone">Τηλέφωνο <span class="req">*</span></label>
           <input type="tel" id="f-phone" placeholder="π.χ. 69XXXXXXXX" autocomplete="tel" required></div>
-        <div class="fld"><label for="f-clinic">Όνομα κλινικής <span class="req">*</span></label>
-          <input type="text" id="f-clinic" placeholder="Όνομα κλινικής" autocomplete="organization" required></div>
+        <div class="fld"><label for="f-type">Τύπος επιχείρησης <span class="req">*</span></label>
+          <select id="f-type">
+            <option>Κλινική / κέντρο ιατρικής αισθητικής</option>
+            <option>Οδοντιατρείο — λεύκανση &amp; αισθητική οδοντιατρική</option>
+            <option>Και τα δύο</option>
+            <option>Άλλο</option>
+          </select></div>
+        <div class="fld"><label for="f-clinic">Όνομα κλινικής / οδοντιατρείου <span class="req">*</span></label>
+          <input type="text" id="f-clinic" placeholder="Όνομα κλινικής ή οδοντιατρείου" autocomplete="organization" required></div>
         <div class="fld"><label for="f-city">Πόλη &amp; αριθμός υποκαταστημάτων <span class="req">*</span></label>
           <input type="text" id="f-city" placeholder="π.χ. Γλυφάδα, 2 υποκαταστήματα" required></div>
         <div class="fld"><label for="f-role">Ο ρόλος σου</label>
           <select id="f-role">
-            <option>Ιδιοκτήτης/τρια Κλινικής</option><option>Ιατρικός Διευθυντής</option>
-            <option>Υπεύθυνος Marketing</option><option>Υπεύθυνος Κλινικής</option><option>Άλλο</option>
+            <option>Ιδιοκτήτης/τρια Κλινικής</option><option>Οδοντίατρος / Ιδιοκτήτης Οδοντιατρείου</option>
+            <option>Ιατρικός Διευθυντής</option><option>Υπεύθυνος Marketing</option>
+            <option>Υπεύθυνος Κλινικής / Γραμματεία</option><option>Άλλο</option>
           </select></div>
         <div class="fld"><label for="f-budget">Τρέχον μηνιαίο budget διαφήμισης</label>
           <select id="f-budget">
@@ -529,10 +591,11 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
     <div class="sec-head"><p class="eyebrow">Πριν κλείσεις ραντεβού</p><h2>Συχνές ερωτήσεις</h2></div>
     <div class="faq">
       <details><summary>Χρειάζεται να τρέχω ήδη διαφημίσεις;</summary><p>Όχι. Αν δεν τρέχεις, στήνουμε από την αρχή. Αν τρέχεις, ξεκινάω από το τι ήδη υπάρχει και τι από αυτό αξίζει να κρατηθεί.</p></details>
-      <details><summary>Είναι ειδικά για ιατρική αισθητική;</summary><p>Ναι. Δουλεύω αποκλειστικά με κλινικές ιατρικής αισθητικής — γι' αυτό ξέρω ποια θεραπεία συμπεριφέρεται πώς μέσα στο funnel.</p></details>
+      <details><summary>Δουλεύεις και με οδοντιατρεία;</summary><p>Ναι &mdash; με οδοντιατρεία που κάνουν λεύκανση, όψεις και αισθητική αποκατάσταση. Είναι ο ίδιος τύπος αγοράς με την ιατρική αισθητική: ο ασθενής αγοράζει αποτέλεσμα, όχι θεραπεία, και η απόφαση παίρνεται στα πρώτα λεπτά μετά το lead.</p></details>
+      <details><summary>Είναι ειδικά για αισθητική;</summary><p>Ναι. Δουλεύω μόνο με κλινικές ιατρικής αισθητικής και οδοντιατρεία με αισθητικές θεραπείες &mdash; γι' αυτό ξέρω ποια θεραπεία συμπεριφέρεται πώς μέσα στο funnel. Γενική οδοντιατρική ή γενικό ιατρείο δεν αναλαμβάνω.</p></details>
       <details><summary>Τι γίνεται αν δεν έχω προσωπικό marketing;</summary><p>Δεν χρειάζεται. Αυτό ακριβώς αναλαμβάνω — είμαι ο υπεύθυνος marketing σου χωρίς να χρειαστεί να στήσεις τμήμα.</p></details>
       <details><summary>Πόσο κοστίζει;</summary><p>Εξαρτάται από το μέγεθος της κλινικής και το εύρος της δουλειάς. Το συζητάμε στην κλήση, αφού δω πρώτα πού χάνεις ραντεβού — δεν δίνω τιμή πριν ξέρω τι χρειάζεται.</p></details>
-      <details><summary>Δουλεύεις με κλινικές σε όλη την Ελλάδα;</summary><p>Ναι — η συνεργασία γίνεται εξ αποστάσεως, οπότε ισχύει το ίδιο για κλινικές σε Αθήνα, Θεσσαλονίκη ή οποιαδήποτε άλλη πόλη.</p></details>
+      <details><summary>Δουλεύεις σε όλη την Ελλάδα;</summary><p>Ναι &mdash; η συνεργασία γίνεται εξ αποστάσεως, οπότε ισχύει το ίδιο για Αθήνα, Θεσσαλονίκη ή οποιαδήποτε άλλη πόλη. Σε κάθε περιοχή όμως παίρνω μία μόνο κλινική και ένα μόνο οδοντιατρείο.</p></details>
     </div>
   </div>
 </section>
@@ -540,7 +603,7 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 <section class="final">
   <div class="wrap">
     <h2>Σταμάτα να χάνεις leads ανάμεσα στη διαφήμιση και το ραντεβού.</h2>
-    <p>Πες μου για την κλινική σου — χωρίς δέσμευση, χωρίς κόστος.</p>
+    <p>Πες μου για την κλινική ή το οδοντιατρείο σου — χωρίς δέσμευση, χωρίς κόστος.</p>
     <div class="btn-row">
       <a href="#form" class="btn">Κλείσε δωρεάν κλήση γνωριμίας</a>
       <a href="https://wa.me/35799251181" target="_blank" rel="noopener" class="btn-ghost">WhatsApp</a>
@@ -634,6 +697,7 @@ var WA_NUMBER     = "35799251181";
       last:document.getElementById('f-last').value.trim(),
       email:document.getElementById('f-email').value.trim(),
       phone:document.getElementById('f-phone').value.trim(),
+      type:document.getElementById('f-type').value,
       clinic:document.getElementById('f-clinic').value.trim(),
       city:document.getElementById('f-city').value.trim(),
       role:document.getElementById('f-role').value,
@@ -659,7 +723,7 @@ var WA_NUMBER     = "35799251181";
 
     var lines=['Ενδιαφέρομαι για τον Έλεγχο Pipeline.','',
       'Όνομα: '+d.first+' '+d.last,'Email: '+d.email,'Τηλέφωνο: '+d.phone,
-      'Κλινική: '+d.clinic,'Πόλη: '+d.city,'Ρόλος: '+d.role,'Budget: '+d.budget];
+      'Τύπος: '+d.type,'Επιχείρηση: '+d.clinic,'Πόλη: '+d.city,'Ρόλος: '+d.role,'Budget: '+d.budget];
     if(d.problem) lines.push('Πρόβλημα: '+d.problem);
     if(d.source)  lines.push('Πηγή: '+d.source);
     window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
