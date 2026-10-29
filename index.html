@@ -123,13 +123,14 @@
   .sec-head h2{font-size:clamp(27px,3.9vw,43px);line-height:1.1;margin-bottom:14px;}
   .sec-head p{color:var(--ink-soft);font-size:16.5px;}
 
-  .num-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  @media (max-width:760px){.num-grid{grid-template-columns:1fr;}}
+  .num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch;}
+  @media (max-width:980px){.num-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.num-grid{grid-template-columns:1fr;}}
   .num-card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--teal);
     border-radius:var(--radius);padding:30px 24px;text-align:center;box-shadow:var(--shadow-sm);}
   .num-fig{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:52px;line-height:1;color:var(--teal);
     letter-spacing:-.03em;margin-bottom:10px;font-variant-numeric:tabular-nums;}
-  .num-lab{font-size:14px;color:var(--ink-soft);}
+  .num-lab{font-size:14px;color:var(--ink-soft);line-height:1.4;text-wrap:balance;max-width:22ch;margin:0 auto;}
 
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   @media (max-width:860px){.cards{grid-template-columns:1fr;}}
@@ -364,15 +365,19 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
     <div class="num-grid">
       <div class="num-card">
         <div class="num-fig"><span class="count" data-target="11">0</span></div>
-        <div class="num-lab">γιατροί σε όλη την Ελλάδα, σήμερα</div>
+        <div class="num-lab">γιατροί σε όλη την Ελλάδα</div>
       </div>
       <div class="num-card">
         <div class="num-fig"><span class="count" data-target="120000" data-suffix="+">0</span></div>
-        <div class="num-lab">leads περασμένα από αυτό το σύστημα</div>
+        <div class="num-lab">leads μέσα από το σύστημα</div>
       </div>
       <div class="num-card">
         <div class="num-fig"><span class="count" data-target="5" data-prefix="1 → ">1 → 0</span></div>
-        <div class="num-lab">υποκαταστήματα για έναν πελάτη, σε 2 χρόνια</div>
+        <div class="num-lab">υποκαταστήματα, ένας πελάτης</div>
+      </div>
+      <div class="num-card">
+        <div class="num-fig"><span class="count" data-target="10">0</span></div>
+        <div class="num-lab">χρόνια στο marketing</div>
       </div>
     </div>
   </div>

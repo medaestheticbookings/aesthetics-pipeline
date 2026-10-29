@@ -239,9 +239,10 @@
   @media (max-width:760px){.audit-grid{grid-template-columns:1fr;}}
 
   /* INLINE PROOF INSIDE BIO */
-  .proof-inline{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s4);padding-top:var(--s4);border-top:1px solid var(--line);}
+  .proof-inline{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3);margin-top:var(--s4);padding-top:var(--s4);border-top:1px solid var(--line);}
+  @media (max-width:900px){.proof-inline{grid-template-columns:repeat(2,1fr);}}
   .proof-inline .pf{font-family:'Fraunces',serif;font-size:30px;line-height:1;color:var(--sage-deep);letter-spacing:-0.02em;display:block;margin-bottom:6px;}
-  .proof-inline small{font-size:12.5px;color:var(--ink-soft);line-height:1.4;display:block;max-width:20ch;}
+  .proof-inline small{font-size:12.5px;color:var(--ink-soft);line-height:1.4;display:block;max-width:18ch;text-wrap:balance;}
   @media (max-width:600px){.proof-inline{grid-template-columns:1fr;gap:var(--s2);}}
 
   /* NOT-FOR-YOU CARD */
@@ -386,9 +387,10 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
         <p data-en="At DermLux Clinics Cyprus I ran content creation and advertising, and the clinic grew &lt;b&gt;from one to five locations in two years&lt;/b&gt;.">Στην DermLux Clinics Cyprus ανέλαβα τη δημιουργία περιεχομένου και τη διαχείριση διαφημίσεων, και η κλινική πήγε <b>από ένα σε πέντε υποκαταστήματα μέσα σε δύο χρόνια</b>.</p>
         <p data-en="Since then I&#x27;ve worked with clinics across Greece — ads, offer, sales scripts and follow-up, as one accountable person instead of four suppliers.">Έκτοτε δουλεύω με κλινικές σε Ελλάδα — διαφημίσεις, προσφορά, script πωλήσεων και follow-up, ως ένας υπεύθυνος αντί για τέσσερις προμηθευτές.</p>
         <div class="proof-inline">
-          <div><span class="pf tnum"><span class="count" data-target="11">0</span></span><small data-en="doctors across Greece today">γιατροί σε όλη την Ελλάδα, σήμερα</small></div>
-          <div><span class="pf tnum"><span class="count" data-target="120000" data-suffix="+" data-sep="1">0</span></span><small data-en="leads run through this system">leads περασμένα από αυτό το σύστημα</small></div>
-          <div><span class="pf tnum"><span class="count" data-target="1">0</span> → <span class="count" data-target="5" data-delay="500">0</span></span><small data-en="locations for one client, in 2 years">υποκαταστήματα για έναν πελάτη, σε 2 χρόνια</small></div>
+          <div><span class="pf tnum"><span class="count" data-target="11">0</span></span><small data-en="doctors across Greece">γιατροί σε όλη την Ελλάδα</small></div>
+          <div><span class="pf tnum"><span class="count" data-target="120000" data-suffix="+" data-sep="1">0</span></span><small data-en="leads through the system">leads μέσα από το σύστημα</small></div>
+          <div><span class="pf tnum"><span class="count" data-target="1">0</span> → <span class="count" data-target="5" data-delay="500">0</span></span><small data-en="locations, one client">υποκαταστήματα, ένας πελάτης</small></div>
+          <div><span class="pf tnum"><span class="count" data-target="10">0</span></span><small data-en="years in marketing">χρόνια στο marketing</small></div>
         </div>
       </div>
     </div>
