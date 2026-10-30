@@ -222,7 +222,7 @@
     transition:background .18s ease, transform .18s ease;}
   .submit:hover{background:var(--teal-deep);transform:translateY(-1px);}
   .submit[disabled]{opacity:.6;cursor:wait;transform:none;}
-  .form-note{font-size:12px;color:#8A9299;text-align:center;margin-top:14px;line-height:1.55;}
+  .form-note{font-size:12px;color:#5A6B72;text-align:center;margin-top:14px;line-height:1.55;}
   .form-note a{text-decoration:underline;}
   .err{display:none;background:#FBEDE8;border:1px solid #E0B4A5;color:#9A4630;
     font-size:13px;padding:11px 13px;border-radius:9px;margin-bottom:16px;}
@@ -245,8 +245,8 @@
   .final .btn:hover{background:var(--brass-lift);}
   .final .btn-ghost{background:transparent;color:var(--cream);border-color:rgba(250,247,242,.4);}
   .final .btn-ghost:hover{background:rgba(250,247,242,.12);}
-  footer{padding:30px 0 40px;text-align:center;font-size:12.5px;color:#8A9299;background:var(--cream);}
-  footer a{color:#6E7A81;} footer a:hover{color:var(--teal);text-decoration:underline;}
+  footer{padding:30px 0 40px;text-align:center;font-size:12.5px;color:#55606A;background:var(--cream);}
+  footer a{color:#55606A;text-decoration:underline;text-underline-offset:2px;} footer a:hover{color:var(--teal);}
   footer .row{margin-bottom:7px;}
 
   .cc{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:640px;margin:0 auto;
@@ -284,13 +284,13 @@
   .res{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
     padding:30px 26px;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);}
   .res .rtag{display:inline-block;align-self:flex-start;font-size:11.5px;letter-spacing:.08em;
-    text-transform:uppercase;font-weight:700;color:var(--brass);border:1px solid var(--line);
+    text-transform:uppercase;font-weight:700;color:#8A5E2C;border:1px solid var(--line);
     border-radius:999px;padding:5px 11px;margin-bottom:18px;}
   .res .rfig{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:52px;line-height:1;color:var(--teal);
     margin-bottom:8px;letter-spacing:-.01em;}
   .res .rlab{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:12px;}
   .res .rctx{font-size:14.5px;color:var(--ink-soft);margin-top:auto;}
-  .res .rwho{display:block;margin-top:12px;font-size:13px;font-weight:600;color:var(--brass);}
+  .res .rwho{display:block;margin-top:12px;font-size:13px;font-weight:600;color:#8A5E2C;}
 
   .btn-ghost .ico{flex:0 0 auto;display:block;}
   .f-ico{display:inline-flex;align-items:center;gap:5px;vertical-align:middle;}
@@ -455,7 +455,7 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 
 <section class="excl">
   <div class="wrap inner">
-    <p class="eyebrow" style="color:var(--brass-lift);">Αποκλειστικότητα περιοχής</p>
+    <p class="eyebrow" style="color:#E0B57A;">Αποκλειστικότητα περιοχής</p>
     <h2>Δεν δουλεύω με όλους</h2>
     <p>Δουλεύω με λίγες επιχειρήσεις τη φορά, γιατί κατευθύνω ο ίδιος τη στρατηγική της καθεμιάς — δεν παραδίδω τη δουλειά σε ομάδα.</p>
     <p>Σε κάθε περιοχή συνεργάζομαι με <strong>μία μόνο κλινική αισθητικής και ένα μόνο οδοντιατρείο</strong>. Δεν παίρνω τον ανταγωνιστή σου, δεν μοιράζομαι τις στρατηγικές σου.</p>
@@ -673,7 +673,7 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
   </div>
 </footer>
 
-<div class="cc" id="cc" role="dialog" aria-live="polite">
+<div class="cc" id="cc" role="dialog" aria-live="polite" aria-label="Ειδοποίηση cookies και Meta Pixel">
   <p>Αυτή η σελίδα χρησιμοποιεί το Meta Pixel για τη μέτρηση των διαφημίσεων. Φορτώνει μόνο εφόσον το αποδεχτείς. Δες την <a href="privacy.html">πολιτική απορρήτου</a>.</p>
   <div class="cc-actions">
     <button type="button" class="no" id="cc-no">Απόρριψη</button>
