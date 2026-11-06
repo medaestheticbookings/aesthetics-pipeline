@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://medaestheticbookings.com/sitemap.xml
 Sitemap: https://medaestheticbookings.com/greece/sitemap.xml
