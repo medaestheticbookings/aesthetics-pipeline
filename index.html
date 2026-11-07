@@ -296,6 +296,9 @@
   .terr-price span{font-size:15px;font-weight:600;opacity:.85;}
   .terr-free .terr-cta{display:inline-block;margin-top:16px;background:var(--brass-lift);
     color:#1A1108;font-weight:800;padding:13px 26px;border-radius:999px;text-decoration:none;}
+  .terr-hold{font-size:13px;margin-top:12px;opacity:.85;}
+  .terr-gone .terr-cta{display:inline-block;margin-top:4px;background:var(--teal);
+    color:#fff;font-weight:800;padding:13px 26px;border-radius:999px;text-decoration:none;}
   .terr-note{font-size:13px;color:var(--ink-soft);margin-top:14px;text-align:center;}
   .mid-cta{text-align:center;margin-top:24px;}
 
@@ -494,6 +497,7 @@ var TERR = {"Άβδηρα":"CLUSTER","Άγιοι Ανάργυροι-Καματε
 var TAKEN = {};
 var PRICE = {T1:1500, T2:1200, T3:900};
 (function(){
+  function wa(msg){ return 'https://wa.me/35799251181?text=' + encodeURIComponent(msg); }
   var box = document.getElementById('terr-in');
   var out = document.getElementById('terr-out');
   if(!box || !out) return;
@@ -512,14 +516,14 @@ var PRICE = {T1:1500, T2:1200, T3:900};
       out.innerHTML = '<div class="terr-card terr-gone"><div class="terr-head">'
         + name + ' — κλεισμένη</div><div class="terr-sub">Η θέση έχει δοθεί. '
         + 'Μπορώ να σε βάλω σε λίστα αναμονής, ή να δούμε γειτονικό δήμο.</div>'
-        + '<a href="#form" class="btn">Λίστα αναμονής</a></div>';
+        + '<a class="terr-cta" target="_blank" rel="noopener" href="' + wa('Η ' + name + ' είναι κλεισμένη. Βάλε με στη λίστα αναμονής.') + '">Μπες στη λίστα</a></div>';
       return;
     }
     if(tier === 'CLUSTER'){
       out.innerHTML = '<div class="terr-card terr-free"><div class="terr-head">'
         + name + ' — ελεύθερη</div><div class="terr-sub">Μικρός δήμος, οπότε '
         + 'συνδυάζεται με τον διπλανό. Η τιμή βγαίνει μαζί.</div>'
-        + '<a href="#form" class="terr-cta">Ζήτα τιμή</a></div>';
+        + '<a class="terr-cta" target="_blank" rel="noopener" href="' + wa('Θέλω τη θέση για ' + name + '. Τι τιμή βγαίνει;') + '">Ζήτα τιμή τώρα</a></div>';
       return;
     }
     out.innerHTML = '<div class="terr-card terr-free"><div class="terr-head">'
@@ -527,7 +531,7 @@ var PRICE = {T1:1500, T2:1200, T3:900};
       + '<div class="terr-sub">Ασθενείς που ψάχνουν ήδη λεύκανση, στο κινητό σου. '
       + 'Εσύ τηλεφωνείς και κλείνεις το ραντεβού.</div>'
       + '<div class="terr-price">€' + PRICE[tier] + '<span> /μήνα, όλα μέσα</span></div>'
-      + '<a href="#form" class="terr-cta">Κράτα τη θέση</a></div>';
+      + '<a class="terr-cta" target="_blank" rel="noopener" href="' + wa('Θέλω να κρατήσω τη θέση για ' + name + '. €' + PRICE[tier] + '/μήνα. Είμαι έτοιμος να ξεκινήσω.') + '">Κράτα τη θέση τώρα</a>'+ '<div class="terr-hold">Κρατάω τη θέση 48 ώρες από τη στιγμή που θα μου γράψεις.</div></div>';
   }
   box.addEventListener('input', render);
   box.addEventListener('change', render);
