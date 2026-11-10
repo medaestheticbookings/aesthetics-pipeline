@@ -717,7 +717,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
       consent:'Χρειαζόμαστε τη συγκατάθεσή σου για να επικοινωνήσουμε μαζί σου.',
       sending:'Αποστολή…',
       ok:'Το λάβαμε. Θα σου στείλουμε τις καλύτερες επιλογές στην περιοχή σου μέσα σε 24 ώρες.',
-      bad:'Κάτι πήγε στραβά με την αποστολή. Στείλε μας email στο medaestheticbooking@outlook.com και θα το αναλάβουμε.',
+      bad:'Η σύνδεσή σου κόπηκε στην αποστολή. Δοκίμασε ξανά — τα στοιχεία σου είναι ακόμα εδώ.',
       btn:'Βρες μου κλινική'
     },
     en:{
@@ -726,7 +726,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
       consent:'We need your consent before we can contact you.',
       sending:'Sending…',
       ok:'Got it. We will send you the best options in your area within 24 hours.',
-      bad:'Something went wrong sending that. Email us at medaestheticbooking@outlook.com and we will pick it up.',
+      bad:'Your connection dropped while sending. Please try again — your details are still here.',
       btn:'Find me a clinic'
     }
   };
@@ -772,19 +772,21 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
     btn.disabled = true; btn.textContent = t('sending');
 
-    /* fire-and-forget: text/plain avoids a CORS preflight Apps Script cannot
-       answer, and a failure here must never stop the lead reaching the inbox */
-    if (SHEET_ENDPOINT) {
-      try {
-        fetch(SHEET_ENDPOINT, {
+    /* The lead has two independent destinations: the sheet and the inbox.
+       It only has to arrive in ONE of them to be safe, so the apology is
+       shown only when BOTH fail. Telling someone their message was lost
+       while the row sits in the sheet costs a customer for nothing. */
+
+    /* text/plain avoids a CORS preflight that Apps Script cannot answer */
+    var toSheet = SHEET_ENDPOINT
+      ? fetch(SHEET_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(d)
-        }).catch(function(){});
-      } catch (e) {}
-    }
+        }).then(function(r){ if(!r.ok) throw new Error('sheet ' + r.status); })
+      : Promise.reject(new Error('no sheet'));
 
-    fetch(FORM_ENDPOINT, {
+    var toEmail = fetch(FORM_ENDPOINT, {
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(d)
@@ -793,14 +795,18 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     .then(function(j){
       // FormSubmit answers 200 even when it has thrown the lead away - an
       // unactivated form, a quota, a block - and says so only in the body.
-      // Without this check the visitor is thanked for a message nobody got.
       if (j && String(j.success) === 'false') throw new Error(j.message || 'not delivered');
-      form.style.display = 'none'; show('ok', t('ok'));
-    })
-    .catch(function(){
-      btn.disabled = false; btn.textContent = t('btn');
-      show('bad', t('bad'));
     });
+
+    var left = 2, landed = false;
+    function settle(good){
+      if (good) landed = true;
+      if (--left > 0) return;
+      if (landed) { form.style.display = 'none'; show('ok', t('ok')); }
+      else { btn.disabled = false; btn.textContent = t('btn'); show('bad', t('bad')); }
+    }
+    toSheet.then(function(){ settle(true); }, function(){ settle(false); });
+    toEmail.then(function(){ settle(true); }, function(){ settle(false); });
   });
 })();
 </script>
