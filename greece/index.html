@@ -674,6 +674,11 @@ function routeLead(town){
 ---------------------------------------------------------------- */
 var FORM_ENDPOINT = "https://formsubmit.co/ajax/medaestheticbooking@outlook.com";
 
+/* The same lead also lands in the "Leads patients Greece" sheet, so there is a
+   searchable record even when an email is missed. The two are independent on
+   purpose: the sheet write never blocks or fails the visitor's submission. */
+var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxbRUz26aBJG21yk_9mjn0d-s9eYp1PmqphBwNvRYSYs17dATGa_IhhN6BlDOhs6Ds2iw/exec";
+
 /* ---------------- language ---------------- */
 function setLang(l){
   document.documentElement.lang = l;
@@ -766,6 +771,18 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     };
 
     btn.disabled = true; btn.textContent = t('sending');
+
+    /* fire-and-forget: text/plain avoids a CORS preflight Apps Script cannot
+       answer, and a failure here must never stop the lead reaching the inbox */
+    if (SHEET_ENDPOINT) {
+      try {
+        fetch(SHEET_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(d)
+        }).catch(function(){});
+      } catch (e) {}
+    }
 
     fetch(FORM_ENDPOINT, {
       method:'POST',
