@@ -763,8 +763,10 @@ var PRICE = {T1:1500, T2:1200, T3:900};
 </div>
 
 <script>
-/* Paste a Formspree / GHL / Make URL here to POST leads instead of WhatsApp. */
-var FORM_ENDPOINT = "";
+/* Google Apps Script web app behind the "Leads website form" sheet.
+   Every submission becomes a row there. If the POST fails the form
+   falls back to WhatsApp, so a lead is never silently lost. */
+var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbzLZYowsmCuqHBmIusOhF2uawdZ3V21hGosSPmmv8QccoIZeaRwYe6q2CYAD96TSrn6/exec";
 var WA_NUMBER     = "35799251181";
 </script>
 
@@ -849,20 +851,28 @@ var WA_NUMBER     = "35799251181";
     btn.disabled=true; btn.textContent='Στέλνω…';
     if(window.fbq) fbq('track','Lead');
 
+    /* The lead goes to the sheet. WhatsApp is the parachute, not the plan:
+       it opens only if the POST could not be made. */
+    function waFallback(){
+      var lines=['Ενδιαφέρομαι για τον Έλεγχο Pipeline.','',
+        'Όνομα: '+d.first+' '+d.last,'Email: '+d.email,'Τηλέφωνο: '+d.phone,
+        'Τύπος: '+d.type,'Επιχείρηση: '+d.clinic,'Πόλη: '+d.city,'Ρόλος: '+d.role,'Budget: '+d.budget];
+      if(d.problem) lines.push('Πρόβλημα: '+d.problem);
+      if(d.source)  lines.push('Πηγή: '+d.source);
+      window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
+      btn.textContent='Στάλθηκε ✓';
+    }
+
     if(FORM_ENDPOINT){
-      fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+      /* text/plain keeps this a simple request: a JSON content-type would make
+         the browser send a CORS preflight, which Apps Script cannot answer. */
+      fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
         .then(function(r){ if(!r.ok) throw 0; btn.textContent='Στάλθηκε ✓'; })
-        .catch(function(){ fail('Κάτι πήγε στραβά. Δοκίμασε ξανά ή στείλε μου WhatsApp.'); });
+        .catch(waFallback);
       return;
     }
 
-    var lines=['Ενδιαφέρομαι για τον Έλεγχο Pipeline.','',
-      'Όνομα: '+d.first+' '+d.last,'Email: '+d.email,'Τηλέφωνο: '+d.phone,
-      'Τύπος: '+d.type,'Επιχείρηση: '+d.clinic,'Πόλη: '+d.city,'Ρόλος: '+d.role,'Budget: '+d.budget];
-    if(d.problem) lines.push('Πρόβλημα: '+d.problem);
-    if(d.source)  lines.push('Πηγή: '+d.source);
-    window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(lines.join('\n')),'_blank');
-    btn.textContent='Στάλθηκε ✓';
+    waFallback();
   });
 })();
 </script>
