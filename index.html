@@ -300,6 +300,12 @@
   .terr-gone .terr-cta{display:inline-block;margin-top:4px;background:var(--teal);
     color:#fff;font-weight:800;padding:13px 26px;border-radius:999px;text-decoration:none;}
   .terr-note{font-size:13px;color:var(--ink-soft);margin-top:14px;text-align:center;}
+  .lang{display:inline-flex;gap:2px;margin-left:14px;border:1px solid var(--line);
+    border-radius:999px;overflow:hidden;background:var(--card);}
+  .lang button{border:0;background:none;font:inherit;font-size:12px;font-weight:800;
+    letter-spacing:.06em;padding:7px 11px;cursor:pointer;color:var(--ink-soft);}
+  .lang button.on{background:var(--teal);color:#fff;}
+  @media(max-width:560px){ .lang{margin-left:8px;} .lang button{padding:6px 9px;} }
   .mid-cta{text-align:center;margin-top:24px;}
 
   /* results row */
@@ -345,7 +351,8 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 <nav>
   <div class="wrap">
     <a href="#top" aria-label="Med Aesthetic Bookings"><img class="logo" src="img/logo.png" width="213" height="64" alt="Med Aesthetic Bookings"></a>
-    <a href="#form" class="nav-cta">Ας μιλήσουμε</a>
+    <a href="#form" class="nav-cta" data-en="Let's talk">Ας μιλήσουμε</a>
+    <span class="lang"><button type="button" data-lang="el">ΕΛ</button><button type="button" data-lang="en">EN</button></span>
   </div>
 </nav>
 
@@ -353,28 +360,28 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
   <div class="wrap hero-inner">
     <span class="capacity"><span class="dot"></span> Κλινικές αισθητικής &amp; οδοντιατρεία, μία επιχείρηση ανά περιοχή</span>
 
-    <h1>Γεμάτο ημερολόγιο.<br>Χωρίς <em>δικό σου τμήμα marketing</em>.</h1>
+    <h1 data-en="A full calendar.<br>Without <em>your own marketing department</em>.">Γεμάτο ημερολόγιο.<br>Χωρίς <em>δικό σου τμήμα marketing</em>.</h1>
 
-    <p class="hero-line">Αυξάνω τον τζίρο σου.</p>
+    <p class="hero-line" data-en="I grow your revenue.">Αυξάνω τον τζίρο σου.</p>
 
 
     <div class="intro">
       <img class="intro-photo" src="img/marco.jpg" width="440" height="440" fetchpriority="high" alt="Μάρκος Χριστοδούλου, marketing director για κλινικές αισθητικής και οδοντιατρεία στην Ελλάδα">
       <div class="intro-body">
-        <p class="intro-eyebrow">Με ποιον θα δουλέψεις</p>
-        <h2 class="intro-name">Μάρκος Χριστοδούλου</h2>
-        <p class="intro-role">Marketing Director, Κλινικές Αισθητικής &amp; Οδοντιατρεία</p>
-        <p>Στην DermLux Clinics Cyprus ανέλαβα τη δημιουργία περιεχομένου και τη διαχείριση διαφημίσεων, και η κλινική πήγε <b>από ένα σε πέντε υποκαταστήματα μέσα σε δύο χρόνια</b>.</p>
-        <p>Σήμερα συνεργάζομαι με <b>11 γιατρούς</b> σε όλη την Ελλάδα. Αναλαμβάνω όλη τη διαδρομή: διαφημίσεις, προσφορά, script για το τηλέφωνο, follow-up. <b>Ένας άνθρωπος υπεύθυνος για τα αποτελέσματα, όχι τέσσερις προμηθευτές.</b></p>
+        <p class="intro-eyebrow" data-en="Who you will work with">Με ποιον θα δουλέψεις</p>
+        <h2 class="intro-name" data-en="Marco Christodoulou">Μάρκος Χριστοδούλου</h2>
+        <p class="intro-role" data-en="Marketing Director, Aesthetic Clinics &amp; Dental Practices">Marketing Director, Κλινικές Αισθητικής &amp; Οδοντιατρεία</p>
+        <p data-en="At DermLux Clinics Cyprus I ran the content and the ad management, and the clinic went <b>from one branch to five in two years</b>.">Στην DermLux Clinics Cyprus ανέλαβα τη δημιουργία περιεχομένου και τη διαχείριση διαφημίσεων, και η κλινική πήγε <b>από ένα σε πέντε υποκαταστήματα μέσα σε δύο χρόνια</b>.</p>
+        <p data-en="Today I work with <b>11 doctors</b> across Greece. I handle the whole route: ads, the offer, the phone script, follow-up. <b>One person accountable for the results, not four suppliers.</b>">Σήμερα συνεργάζομαι με <b>11 γιατρούς</b> σε όλη την Ελλάδα. Αναλαμβάνω όλη τη διαδρομή: διαφημίσεις, προσφορά, script για το τηλέφωνο, follow-up. <b>Ένας άνθρωπος υπεύθυνος για τα αποτελέσματα, όχι τέσσερις προμηθευτές.</b></p>
       </div>
     </div>
 
     <div class="btn-row">
-      <a href="#form" class="btn">Ας μιλήσουμε</a>
+      <a href="#form" class="btn" data-en="Let's talk">Ας μιλήσουμε</a>
       <a href="https://wa.me/35799251181" target="_blank" rel="noopener" class="btn-ghost"><svg class="ico" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a>
       <a href="viber://chat?number=35799251181" class="btn-ghost"><svg class="ico" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path fill="#7360F2" d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.696 6.7.633 9.817.57 12.933.488 18.776 6.12 20.36h.003l-.004 2.416s-.037.977.61 1.177c.777.242 1.234-.5 1.98-1.302.407-.44.972-1.084 1.397-1.58 3.85.326 6.812-.416 7.15-.525.776-.252 5.176-.816 5.892-6.657.74-6.02-.36-9.83-2.34-11.546-.596-.55-3.006-2.3-8.375-2.323 0 0-.395-.025-1.037-.017zm.058 1.693c.545-.004.88.017.88.017 4.542.02 6.717 1.388 7.222 1.846 1.675 1.435 2.53 4.868 1.906 9.897v.002c-.604 4.878-4.174 5.184-4.832 5.395-.28.09-2.882.737-6.153.524 0 0-2.436 2.94-3.197 3.704-.12.12-.26.167-.352.144-.13-.033-.166-.188-.165-.414l.02-4.018c-4.762-1.32-4.485-6.292-4.43-8.895.054-2.604.543-4.738 1.996-6.173 1.96-1.773 5.474-2.018 7.11-2.03zm.38 2.602c-.167 0-.303.135-.304.302 0 .167.133.303.3.305 1.624.01 2.946.537 4.028 1.592 1.073 1.046 1.62 2.468 1.633 4.334.002.167.14.3.307.3.166-.002.3-.138.3-.304-.014-1.984-.618-3.596-1.816-4.764-1.19-1.16-2.692-1.753-4.447-1.765zm-3.96.695c-.19-.032-.4.005-.616.117l-.01.002c-.43.247-.816.562-1.146.932-.002.004-.006.004-.008.008-.267.323-.42.638-.46.948-.008.046-.01.093-.007.14 0 .136.022.27.065.4l.013.01c.135.48.473 1.276 1.205 2.604.42.768.903 1.5 1.446 2.186.27.344.56.673.87.984l.132.132c.31.308.64.6.984.87.686.543 1.418 1.027 2.186 1.447 1.328.733 2.126 1.07 2.604 1.206l.01.014c.13.042.265.064.402.063.046.002.092 0 .138-.008.31-.036.627-.19.948-.46.004 0 .003-.002.008-.005.37-.33.683-.72.93-1.148l.003-.01c.225-.432.15-.842-.18-1.12-.004 0-.698-.58-1.037-.83-.36-.255-.73-.492-1.113-.71-.51-.285-1.032-.106-1.248.174l-.447.564c-.23.283-.657.246-.657.246-3.12-.796-3.955-3.955-3.955-3.955s-.037-.426.248-.656l.563-.448c.277-.215.456-.737.17-1.248-.217-.383-.454-.756-.71-1.115-.25-.34-.826-1.033-.83-1.035-.137-.165-.31-.265-.502-.297zm4.49.88c-.158.002-.29.124-.3.282-.01.167.115.312.282.324 1.16.085 2.017.466 2.645 1.15.63.688.93 1.524.906 2.57-.002.168.13.306.3.31.166.003.305-.13.31-.297.025-1.175-.334-2.193-1.067-2.994-.74-.81-1.777-1.253-3.05-1.346h-.024zm.463 1.63c-.16.002-.29.127-.3.287-.008.167.12.31.288.32.523.028.875.175 1.113.422.24.245.388.62.416 1.164.01.167.15.295.318.287.167-.008.295-.15.287-.317-.03-.644-.215-1.178-.58-1.557-.367-.378-.893-.574-1.52-.607h-.018z"/></svg>Viber</a>
     </div>
-    <p class="note">20–30 λεπτά, χωρίς δέσμευση · ή γράψε μου κατευθείαν.</p>
+    <p class="note" data-en="20–30 minutes, no commitment · or message me directly.">20–30 λεπτά, χωρίς δέσμευση · ή γράψε μου κατευθείαν.</p>
   </div>
 
 </header>
@@ -384,19 +391,19 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
     <div class="num-grid">
       <div class="num-card">
         <div class="num-fig"><span class="count" data-target="11">0</span></div>
-        <div class="num-lab">γιατροί συνεργάζονται μαζί μου σε όλη την Ελλάδα</div>
+        <div class="num-lab" data-en="doctors work with me across Greece">γιατροί συνεργάζονται μαζί μου σε όλη την Ελλάδα</div>
       </div>
       <div class="num-card">
         <div class="num-fig"><span class="count" data-target="120000" data-suffix="+">0</span></div>
-        <div class="num-lab">leads μέσα από το σύστημα</div>
+        <div class="num-lab" data-en="leads through the system">leads μέσα από το σύστημα</div>
       </div>
       <div class="num-card">
         <div class="num-fig"><span class="count" data-target="5" data-prefix="1 → ">1 → 0</span></div>
-        <div class="num-lab">υποκαταστήματα, ένας πελάτης</div>
+        <div class="num-lab" data-en="branches, one client">υποκαταστήματα, ένας πελάτης</div>
       </div>
       <div class="num-card">
         <div class="num-fig"><span class="count" data-target="10">0</span></div>
-        <div class="num-lab">χρόνια στο marketing</div>
+        <div class="num-lab" data-en="years in marketing">χρόνια στο marketing</div>
       </div>
     </div>
   </div>
@@ -405,31 +412,31 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Με ποιους δουλεύω</p>
-      <h2>Δύο κλάδοι. Το ίδιο ακριβώς πρόβλημα.</h2>
-      <p>Η αισθητική θεραπεία δεν αγοράζεται με ένα κλικ. Ο κόσμος ρωτάει, διστάζει, συγκρίνει. Και χάνεται αν δεν του απαντήσει κανείς σωστά. Αυτό διορθώνω.</p>
+      <p class="eyebrow" data-en="Who I work with">Με ποιους δουλεύω</p>
+      <h2 data-en="Two fields. Exactly the same problem.">Δύο κλάδοι. Το ίδιο ακριβώς πρόβλημα.</h2>
+      <p data-en="An aesthetic treatment is not bought in one click. People ask, hesitate, compare. And they are lost if nobody answers them properly. That is what I fix.">Η αισθητική θεραπεία δεν αγοράζεται με ένα κλικ. Ο κόσμος ρωτάει, διστάζει, συγκρίνει. Και χάνεται αν δεν του απαντήσει κανείς σωστά. Αυτό διορθώνω.</p>
     </div>
     <div class="who-grid">
       <div class="who">
-        <span class="tag">01 · Ιατρική αισθητική</span>
-        <h3>Κλινικές &amp; κέντρα αισθητικής</h3>
-        <p>Θεραπείες με υψηλή αξία ανά πελάτη, όπου ένα χαμένο lead κοστίζει πολλαπλάσια από το κλικ.</p>
+        <span class="tag" data-en="01 · Medical aesthetics">01 · Ιατρική αισθητική</span>
+        <h3 data-en="Clinics &amp; aesthetic centres">Κλινικές &amp; κέντρα αισθητικής</h3>
+        <p data-en="High-value treatments, where one lost lead costs many times the click.">Θεραπείες με υψηλή αξία ανά πελάτη, όπου ένα χαμένο lead κοστίζει πολλαπλάσια από το κλικ.</p>
         <ul>
-          <li>Laser αποτρίχωση &amp; θεραπείες προσώπου</li>
-          <li>Botox, fillers, μεσοθεραπεία</li>
-          <li>HIFU, RF, αντιγήρανση</li>
-          <li>Πακέτα συνεδριών &amp; επαναλαμβανόμενοι πελάτες</li>
+          <li data-en="Laser hair removal &amp; facial treatments">Laser αποτρίχωση &amp; θεραπείες προσώπου</li>
+          <li data-en="Botox, fillers, mesotherapy">Botox, fillers, μεσοθεραπεία</li>
+          <li data-en="HIFU, RF, anti-ageing">HIFU, RF, αντιγήρανση</li>
+          <li data-en="Session packages &amp; returning clients">Πακέτα συνεδριών &amp; επαναλαμβανόμενοι πελάτες</li>
         </ul>
       </div>
       <div class="who">
-        <span class="tag">02 · Αισθητική οδοντιατρική</span>
-        <h3>Οδοντιατρεία με λεύκανση</h3>
-        <p>Ο ασθενής ψάχνει χαμόγελο, όχι οδοντίατρο. Η διαφήμιση πρέπει να πουλάει το αποτέλεσμα και η γραμματεία να το κλείνει.</p>
+        <span class="tag" data-en="02 · Cosmetic dentistry">02 · Αισθητική οδοντιατρική</span>
+        <h3 data-en="Dental practices that do whitening">Οδοντιατρεία με λεύκανση</h3>
+        <p data-en="The patient is looking for a smile, not a dentist. The ad has to sell the result and reception has to close it.">Ο ασθενής ψάχνει χαμόγελο, όχι οδοντίατρο. Η διαφήμιση πρέπει να πουλάει το αποτέλεσμα και η γραμματεία να το κλείνει.</p>
         <ul>
-          <li>Λεύκανση δοντιών (in-office &amp; home kits)</li>
-          <li>Όψεις ρητίνης &amp; κεραμικές όψεις</li>
-          <li>Αόρατοι νάρθηκες / ορθοδοντική ενηλίκων</li>
-          <li>Καθαρισμός &amp; πλήρης αισθητική αποκατάσταση</li>
+          <li data-en="Teeth whitening (in-office &amp; home kits)">Λεύκανση δοντιών (in-office &amp; home kits)</li>
+          <li data-en="Composite &amp; ceramic veneers">Όψεις ρητίνης &amp; κεραμικές όψεις</li>
+          <li data-en="Clear aligners / adult orthodontics">Αόρατοι νάρθηκες / ορθοδοντική ενηλίκων</li>
+          <li data-en="Cleaning &amp; full aesthetic restoration">Καθαρισμός &amp; πλήρης αισθητική αποκατάσταση</li>
         </ul>
       </div>
     </div>
@@ -439,25 +446,25 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Τι κάνω</p>
-      <h2>Τρία πράγματα αλλάζουν στην επιχείρησή σου</h2>
-      <p>Δεν σου πουλάω leads. Στήνω και κατευθύνω το σύστημα που τα μετατρέπει σε ραντεβού, είτε πρόκειται για laser είτε για λεύκανση.</p>
+      <p class="eyebrow" data-en="What I do">Τι κάνω</p>
+      <h2 data-en="Three things change in your business">Τρία πράγματα αλλάζουν στην επιχείρησή σου</h2>
+      <p data-en="I do not sell you leads. I build and run the system that turns them into appointments, whether it is laser or whitening.">Δεν σου πουλάω leads. Στήνω και κατευθύνω το σύστημα που τα μετατρέπει σε ραντεβού, είτε πρόκειται για laser είτε για λεύκανση.</p>
     </div>
     <div class="cards">
       <div class="card">
         <div class="ic" aria-hidden="true">⚡</div>
-        <h3>Χρόνος απόκρισης</h3>
-        <p>Το lead απαντιέται σε λεπτά, όχι ώρες. Εκεί κρίνεται αν θα γίνει ραντεβού ή θα πάει στην κλινική δίπλα.</p>
+        <h3 data-en="Response time">Χρόνος απόκρισης</h3>
+        <p data-en="The lead is answered in minutes, not hours. That is where it is decided whether it becomes an appointment or goes to the clinic next door.">Το lead απαντιέται σε λεπτά, όχι ώρες. Εκεί κρίνεται αν θα γίνει ραντεβού ή θα πάει στην κλινική δίπλα.</p>
       </div>
       <div class="card">
         <div class="ic" aria-hidden="true">🎯</div>
-        <h3>Δοκιμασμένο script</h3>
-        <p>Η πρώτη κλήση παύει να είναι «ό,τι θυμηθεί ο καθένας». Το προσωπικό υποδοχής ξέρει ακριβώς τι λέει.</p>
+        <h3 data-en="A tested script">Δοκιμασμένο script</h3>
+        <p data-en="The first call stops being whatever each person happens to remember. Reception knows exactly what to say.">Η πρώτη κλήση παύει να είναι «ό,τι θυμηθεί ο καθένας». Το προσωπικό υποδοχής ξέρει ακριβώς τι λέει.</p>
       </div>
       <div class="card">
         <div class="ic" aria-hidden="true">📈</div>
-        <h3>Follow-up &amp; ορατότητα</h3>
-        <p>Follow-up σε 3 βήματα, υπενθυμίσεις πριν το ραντεβού, και κάθε στάδιο ορατό στο board. Τίποτα δεν χάνεται.</p>
+        <h3 data-en="Follow-up &amp; visibility">Follow-up &amp; ορατότητα</h3>
+        <p data-en="Three-step follow-up, reminders before the appointment, and every stage visible on the board. Nothing gets lost.">Follow-up σε 3 βήματα, υπενθυμίσεις πριν το ραντεβού, και κάθε στάδιο ορατό στο board. Τίποτα δεν χάνεται.</p>
       </div>
     </div>
   </div>
@@ -466,27 +473,27 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 
 <section class="excl">
   <div class="wrap inner">
-    <p class="eyebrow" style="color:#E0B57A;">Αποκλειστικότητα περιοχής</p>
-    <h2>Δεν δουλεύω με όλους</h2>
-    <p>Δουλεύω με λίγες επιχειρήσεις τη φορά, γιατί κατευθύνω ο ίδιος τη στρατηγική της καθεμιάς. Δεν παραδίδω τη δουλειά σε ομάδα.</p>
-    <p>Σε κάθε περιοχή συνεργάζομαι με <strong>μία μόνο κλινική αισθητικής και ένα μόνο οδοντιατρείο</strong>. Δεν παίρνω τον ανταγωνιστή σου, δεν μοιράζομαι τις στρατηγικές σου.</p>
-    <p class="kicker">Αν είσαι μαζί μου, ο ανταγωνιστής σου δεν μπορεί να είναι.</p>
+    <p class="eyebrow" style="color:#E0B57A;" data-en="Territory exclusivity">Αποκλειστικότητα περιοχής</p>
+    <h2 data-en="I do not work with everyone">Δεν δουλεύω με όλους</h2>
+    <p data-en="I work with few businesses at a time, because I direct each one's strategy myself. I do not hand the work to a team.">Δουλεύω με λίγες επιχειρήσεις τη φορά, γιατί κατευθύνω ο ίδιος τη στρατηγική της καθεμιάς. Δεν παραδίδω τη δουλειά σε ομάδα.</p>
+    <p data-en="In each area I work with <strong>one aesthetic clinic only and one dental practice only</strong>. I do not take your competitor, and I do not share your strategies.">Σε κάθε περιοχή συνεργάζομαι με <strong>μία μόνο κλινική αισθητικής και ένα μόνο οδοντιατρείο</strong>. Δεν παίρνω τον ανταγωνιστή σου, δεν μοιράζομαι τις στρατηγικές σου.</p>
+    <p class="kicker" data-en="If you are with me, your competitor cannot be.">Αν είσαι μαζί μου, ο ανταγωνιστής σου δεν μπορεί να είναι.</p>
   </div>
 </section>
 
 <section id="perioxi">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Διαθεσιμότητα</p>
-      <h2>Είναι ελεύθερη η περιοχή σου;</h2>
-      <p>Συνεργάζομαι με <b>ένα οδοντιατρείο ανά δήμο</b>. Γράψε τον δικό σου και δες το αμέσως.</p>
+      <p class="eyebrow" data-en="Availability">Διαθεσιμότητα</p>
+      <h2 data-en="Is your area still free?">Είναι ελεύθερη η περιοχή σου;</h2>
+      <p data-en="I work with <b>one dental practice per municipality</b>. Type yours and see it right away.">Συνεργάζομαι με <b>ένα οδοντιατρείο ανά δήμο</b>. Γράψε τον δικό σου και δες το αμέσως.</p>
     </div>
     <div class="terr-box">
       <input class="terr-in" id="terr-in" list="terr-dimoi" autocomplete="off"
-             placeholder="Γράψε τον δήμο σου…">
+             placeholder="Γράψε τον δήμο σου…" data-en-ph="Type your municipality…">
       <datalist id="terr-dimoi"><option value="Άβδηρα"><option value="Άγιοι Ανάργυροι-Καματερό"><option value="Άγιος Βασίλειος"><option value="Άγιος Δημήτριος"><option value="Άγιος Ευστράτιος"><option value="Άγιος Νικόλαος"><option value="Άγραφα"><option value="Άκτιο-Βόνιτσα"><option value="Άλιμος"><option value="Άνδρος"><option value="Άργος Ορεστικό"><option value="Άργος-Μυκήνες"><option value="Άρτα"><option value="Έδεσσα"><option value="Ήλιδα"><option value="Ίασμος"><option value="Ίλιον"><option value="Ίος"><option value="Ύδρα"><option value="Αίγινα"><option value="Αγία Βαρβάρα"><option value="Αγία Παρασκευή"><option value="Αγαθονήσι"><option value="Αγιά"><option value="Αγκίστρι"><option value="Αγρίνιο"><option value="Αθήνα"><option value="Αιγάλεω"><option value="Αιγιάλεια"><option value="Αλίαρτος"><option value="Αλεξάνδρεια"><option value="Αλεξανδρούπολη"><option value="Αλμυρός"><option value="Αλμωπία"><option value="Αλόννησος"><option value="Αμάρι"><option value="Αμαρούσιο"><option value="Αμοργός"><option value="Αμπελόκηποι-Μενεμένη"><option value="Αμφίκλεια-Ελάτεια"><option value="Αμφίπολη"><option value="Αμφιλοχία"><option value="Αμύνταιο"><option value="Ανάφη"><option value="Ανατολική Μάνη"><option value="Ανατολική Σάμος"><option value="Ανδρίτσαινα-Κρέστενα"><option value="Ανδραβίδα-Κυλλήνη"><option value="Αντίπαρος"><option value="Ανώγεια"><option value="Αποκόρωνας"><option value="Αργιθέα"><option value="Αργοστόλι"><option value="Αριστοτέλης"><option value="Αρριανά"><option value="Αρχάνες-Αστερούσια"><option value="Αρχαία Ολυμπία"><option value="Ασπρόπυργος"><option value="Αστυπάλαια"><option value="Αχαρνές"><option value="Βάρη-Βούλα-Βουλιαγμένη"><option value="Βέλο-Βόχα"><option value="Βέροια"><option value="Βελβεντός"><option value="Βιάννος"><option value="Βισαλτία"><option value="Βοΐο"><option value="Βριλήσσια"><option value="Βόλβη"><option value="Βόλος"><option value="Βόρεια Κέρκυρα"><option value="Βόρεια Κυνουρία"><option value="Βόρεια Τζουμέρκα"><option value="Βύρωνας"><option value="Γαλάτσι"><option value="Γαύδος"><option value="Γεώργιος Καραϊσκάκης"><option value="Γλυφάδα"><option value="Γορτυνία"><option value="Γρεβενά"><option value="Γόρτυνα"><option value="Δάφνη-Υμηττός"><option value="Δέλτα"><option value="Δίο-Όλυμπος"><option value="Δίρφυς-Μεσσαπία"><option value="Δίστομο-Αράχοβα-Αντίκυρα"><option value="Δελφοί"><option value="Δεσκάτη"><option value="Διδυμότειχο"><option value="Διόνυσος"><option value="Δομοκός"><option value="Δοξάτο"><option value="Δράμα"><option value="Δυτική Αχαΐα"><option value="Δυτική Λέσβος"><option value="Δυτική Μάνη"><option value="Δυτική Σάμος"><option value="Δωδώνη"><option value="Δωρίδα"><option value="Ελασσόνα"><option value="Ελαφόνησος"><option value="Ελευσίνα"><option value="Ελληνικό-Αργυρούπολη"><option value="Εμμανουήλ Παππάς"><option value="Εορδαία"><option value="Επίδαυρος"><option value="Ερέτρια"><option value="Ερμιονίδα"><option value="Ερύμανθος"><option value="Ευρώτας"><option value="Ζάκυνθος"><option value="Ζίτσα"><option value="Ζαγορά-Μουρέσι"><option value="Ζαγόρι"><option value="Ζαχάρω"><option value="Ζηρός"><option value="Ζωγράφου"><option value="Ηγουμενίτσα"><option value="Ηλιούπολη"><option value="Ηράκλεια"><option value="Ηράκλειο Αττικής"><option value="Ηράκλειο Κρήτης"><option value="Θάσος"><option value="Θέρμη"><option value="Θέρμο"><option value="Θήβα"><option value="Θήρα"><option value="Θερμαϊκός"><option value="Θεσσαλονίκη"><option value="Ιεράπετρα"><option value="Ιθάκη"><option value="Ικαρία"><option value="Ιστιαία-Αιδηψός"><option value="Ιωάννινα"><option value="Κάλυμνος"><option value="Κάνδανος-Σέλινο"><option value="Κάρπαθος"><option value="Κάρυστος"><option value="Κάσος"><option value="Κάτω Νευροκόπι"><option value="Κέα"><option value="Κέρκυρα (Κεντρική)"><option value="Κίμωλος"><option value="Κίσσαμος"><option value="Καβάλα"><option value="Καισαριανή"><option value="Καλάβρυτα"><option value="Καλαμάτα"><option value="Καλαμαριά"><option value="Καλλιθέα"><option value="Καμένα Βούρλα"><option value="Καρδίτσα"><option value="Καρπενήσι"><option value="Κασσάνδρα"><option value="Καστοριά"><option value="Κατερίνη"><option value="Κεντρικά Τζουμέρκα"><option value="Κερατσίνι-Δραπετσώνα"><option value="Κηφισιά"><option value="Κιλελέρ"><option value="Κιλκίς"><option value="Κοζάνη"><option value="Κομοτηνή"><option value="Κορδελιό-Εύοσμος"><option value="Κορυδαλλός"><option value="Κρωπία"><option value="Κως"><option value="Κόνιτσα"><option value="Κόρινθος"><option value="Κύθηρα"><option value="Κύθνος"><option value="Κύμη-Αλιβέρι"><option value="Λάρισα"><option value="Λέρος"><option value="Λήμνος"><option value="Λίμνη Πλαστήρα"><option value="Λαγκαδάς"><option value="Λαμία"><option value="Λαυρεωτική"><option value="Λειψοί"><option value="Λευκάδα"><option value="Ληξούρι"><option value="Λιβαδειά"><option value="Λοκροί"><option value="Λουτράκι-Περαχώρα-Άγιοι Θεόδωροι"><option value="Λυκόβρυση-Πεύκη"><option value="Μάνδρα-Ειδυλλία"><option value="Μέγαρα"><option value="Μέτσοβο"><option value="Μήλος"><option value="Μακρακώμη"><option value="Μαλεβίζι"><option value="Μαντούδι-Λίμνη-Αγία Άννα"><option value="Μαραθώνας"><option value="Μαρκόπουλο Μεσογαίας"><option value="Μαρώνεια-Σάπες"><option value="Μεγίστη"><option value="Μεγαλόπολη"><option value="Μεγανήσι"><option value="Μεσολόγγι"><option value="Μεσσήνη"><option value="Μετέωρα"><option value="Μεταμόρφωση"><option value="Μινώα Πεδιάδα"><option value="Μονεμβασιά"><option value="Μοσχάτο-Ταύρος"><option value="Μουζάκι"><option value="Μυλοπόταμος"><option value="Μυτιλήνη"><option value="Μύκη"><option value="Μύκονος"><option value="Νάξος και Μικρές Κυκλάδες"><option value="Νάουσα"><option value="Νέα Ζίχνη"><option value="Νέα Ιωνία"><option value="Νέα Προποντίδα"><option value="Νέα Σμύρνη"><option value="Νέα Φιλαδέλφεια-Νέα Χαλκηδόνα"><option value="Νέστος"><option value="Νίκαια-Άγιος Ιωάννης Ρέντης"><option value="Νίσυρος"><option value="Ναυπακτία"><option value="Ναύπλιο"><option value="Νεάπολη-Συκιές"><option value="Νεμέα"><option value="Νεστόριο"><option value="Νικόλαος Σκουφάς"><option value="Νότια Κέρκυρα"><option value="Νότια Κυνουρία"><option value="Νότιο Πήλιο"><option value="Ξάνθη"><option value="Ξηρόμερο"><option value="Ξυλόκαστρο-Ευρωστίνα"><option value="Οινούσσες"><option value="Οιχαλία"><option value="Ορεστιάδα"><option value="Οροπέδιο Λασιθίου"><option value="Ορχομενός"><option value="Πάργα"><option value="Πάρος"><option value="Πάτμος"><option value="Πάτρα"><option value="Πέλλα"><option value="Πέραμα"><option value="Παγγαίο"><option value="Παιανία"><option value="Παιονία"><option value="Παλαιό Φάληρο"><option value="Παλαμάς"><option value="Παλλήνη"><option value="Παξοί"><option value="Παπάγου-Χολαργός"><option value="Παρανέστι"><option value="Παύλος Μελάς"><option value="Πειραιάς"><option value="Πεντέλη"><option value="Περιστέρι"><option value="Πετρούπολη"><option value="Πηνειός"><option value="Πλατανιάς"><option value="Πολύγυρος"><option value="Πρέβεζα"><option value="Πρέσπες"><option value="Προσοτσάνη"><option value="Πυλαία-Χορτιάτης"><option value="Πωγώνι"><option value="Πόρος"><option value="Πύδνα-Κολινδρός"><option value="Πύλη"><option value="Πύλος-Νέστορας"><option value="Πύργος"><option value="Ρέθυμνο"><option value="Ρήγας Φεραίος"><option value="Ραφήνα-Πικέρμι"><option value="Ρόδος"><option value="Σάμης"><option value="Σέρβια"><option value="Σέριφος"><option value="Σέρρες"><option value="Σίκινος"><option value="Σίφνος"><option value="Σαλαμίνα"><option value="Σαμοθράκη"><option value="Σαρωνικός"><option value="Σητεία"><option value="Σιθωνία"><option value="Σικυώνα"><option value="Σιντική"><option value="Σκιάθος"><option value="Σκόπελος"><option value="Σκύδρα"><option value="Σκύρος"><option value="Σουφλί"><option value="Σοφάδες"><option value="Σούλι"><option value="Σπάρτη"><option value="Σπάτα-Άρτεμη"><option value="Σπέτσες"><option value="Στυλίδα"><option value="Σφακιά"><option value="Σύμη"><option value="Σύρος-Ερμούπολη"><option value="Τέμπη"><option value="Τήλος"><option value="Τήνος"><option value="Τανάγρα"><option value="Τρίκαλα"><option value="Τρίπολη"><option value="Τριφυλία"><option value="Τροιζηνία-Μέθανα"><option value="Τόπειρος"><option value="Τύρναβος"><option value="Φάρσαλα"><option value="Φαιστός"><option value="Φαρκαδόνα"><option value="Φιλιάτες"><option value="Φιλοθέη-Ψυχικό"><option value="Φλώρινα"><option value="Φολέγανδρος"><option value="Φούρνοι Κορσεών"><option value="Φυλή"><option value="Χάλκη"><option value="Χίος"><option value="Χαλάνδρι"><option value="Χαλκίδα"><option value="Χαλκηδόνα"><option value="Χανιά"><option value="Χαϊδάρι"><option value="Χερσόνησος"><option value="Ψαρά"><option value="Ωραιόκαστρο"><option value="Ωρωπός"></datalist>
       <div class="terr-out" id="terr-out"></div>
-      <p class="terr-note">332 δήμοι. Μία θέση στον καθένα.</p>
+      <p class="terr-note" data-en="332 municipalities. One slot in each.">332 δήμοι. Μία θέση στον καθένα.</p>
     </div>
   </div>
 </section>
@@ -541,39 +548,39 @@ var PRICE = {T1:1500, T2:1200, T3:900};
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Το πραγματικό πρόβλημα</p>
-      <h2>Τα ίδια 100 leads. Δύο εντελώς διαφορετικά αποτελέσματα.</h2>
-      <p>Η διαφορά δεν είναι ποτέ το lead. Είναι τι συμβαίνει τα πρώτα λεπτά μετά.</p>
+      <p class="eyebrow" data-en="The real problem">Το πραγματικό πρόβλημα</p>
+      <h2 data-en="The same 100 leads. Two completely different outcomes.">Τα ίδια 100 leads. Δύο εντελώς διαφορετικά αποτελέσματα.</h2>
+      <p data-en="The difference is never the lead. It is what happens in the first minutes after.">Η διαφορά δεν είναι ποτέ το lead. Είναι τι συμβαίνει τα πρώτα λεπτά μετά.</p>
     </div>
 
     <div class="cmp">
-      <div class="cmp-row head"><div class="c-stage">Στάδιο</div><div class="c-loss">Χωρίς σύστημα</div><div class="c-win">Με σύστημα</div></div>
-      <div class="cmp-row"><div class="c-stage">Χρόνος απόκρισης</div><div class="c-loss">Ώρες μετά, ή ποτέ</div><div class="c-win">Λεπτά</div></div>
-      <div class="cmp-row"><div class="c-stage">Πρώτη κλήση</div><div class="c-loss">Ό,τι θυμηθεί ο καθένας</div><div class="c-win">Δοκιμασμένο script</div></div>
-      <div class="cmp-row"><div class="c-stage">Αν δεν απαντήσει</div><div class="c-loss">Χάνεται</div><div class="c-win">Follow-up σε 3 βήματα</div></div>
-      <div class="cmp-row"><div class="c-stage">Πριν το ραντεβού</div><div class="c-loss">Καμία υπενθύμιση</div><div class="c-win">Υπενθύμιση, λιγότερα no-show</div></div>
-      <div class="cmp-row"><div class="c-stage">Ορατότητα</div><div class="c-loss">Κανείς δεν ξέρει πού κόλλησε</div><div class="c-win">Κάθε στάδιο στο board</div></div>
+      <div class="cmp-row head"><div class="c-stage" data-en="Stage">Στάδιο</div><div class="c-loss" data-en="Without a system">Χωρίς σύστημα</div><div class="c-win" data-en="With a system">Με σύστημα</div></div>
+      <div class="cmp-row"><div class="c-stage" data-en="Response time">Χρόνος απόκρισης</div><div class="c-loss" data-en="Hours later, or never">Ώρες μετά, ή ποτέ</div><div class="c-win" data-en="Minutes">Λεπτά</div></div>
+      <div class="cmp-row"><div class="c-stage" data-en="First call">Πρώτη κλήση</div><div class="c-loss" data-en="Whatever each person remembers">Ό,τι θυμηθεί ο καθένας</div><div class="c-win" data-en="A tested script">Δοκιμασμένο script</div></div>
+      <div class="cmp-row"><div class="c-stage" data-en="If they do not answer">Αν δεν απαντήσει</div><div class="c-loss" data-en="Lost">Χάνεται</div><div class="c-win" data-en="Three-step follow-up">Follow-up σε 3 βήματα</div></div>
+      <div class="cmp-row"><div class="c-stage" data-en="Before the appointment">Πριν το ραντεβού</div><div class="c-loss" data-en="No reminder">Καμία υπενθύμιση</div><div class="c-win" data-en="Reminder, fewer no-shows">Υπενθύμιση, λιγότερα no-show</div></div>
+      <div class="cmp-row"><div class="c-stage" data-en="Visibility">Ορατότητα</div><div class="c-loss" data-en="Nobody knows where it stalled">Κανείς δεν ξέρει πού κόλλησε</div><div class="c-win" data-en="Every stage on the board">Κάθε στάδιο στο board</div></div>
     </div>
 
-    <p class="cmp-note">«Δεν σου πουλάω leads. Στήνω και κατευθύνω το σύστημα που τα μετατρέπει.»</p>
+    <p class="cmp-note" data-en="“I do not sell you leads. I build and run the system that converts them.”">«Δεν σου πουλάω leads. Στήνω και κατευθύνω το σύστημα που τα μετατρέπει.»</p>
 
-    <div class="mid-cta"><a href="#form" class="btn">Ας δούμε τα δικά σου νούμερα</a></div>
+    <div class="mid-cta" data-en="<a href=&quot;#form&quot; class=&quot;btn&quot;>Let's look at your numbers</a>"><a href="#form" class="btn">Ας δούμε τα δικά σου νούμερα</a></div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Η προσφορά</p>
-      <h2>Τι ακριβώς αναλαμβάνω</h2>
-      <p>Ένας υπεύθυνος για όλο το marketing σου. Όχι λίστα από freelancers.</p>
+      <p class="eyebrow" data-en="The offer">Η προσφορά</p>
+      <h2 data-en="Exactly what I take on">Τι ακριβώς αναλαμβάνω</h2>
+      <p data-en="One person responsible for all your marketing. Not a list of freelancers.">Ένας υπεύθυνος για όλο το marketing σου. Όχι λίστα από freelancers.</p>
     </div>
     <div class="steps">
-      <div class="step"><div class="n">01</div><div><h3>Στρατηγική &amp; προσφορά</h3><p>Ξαναχτίζω την προσφορά και το creative γύρω από ό,τι μετατρέπει στον δικό σου κλάδο: laser, botox και θεραπείες προσώπου για κλινικές, λεύκανση και όψεις για οδοντιατρεία. Όχι γενικά templates.</p></div></div>
-      <div class="step"><div class="n">02</div><div><h3>Διαφημίσεις Meta</h3><p>Στήσιμο, δοκιμές και καθημερινή διαχείριση καμπανιών, με σαφείς κανόνες για το τι σταματά και τι κλιμακώνεται.</p></div></div>
-      <div class="step"><div class="n">03</div><div><h3>Script κλήσης &amp; follow-up</h3><p>Δοκιμασμένο script για τη γραμματεία ή το προσωπικό υποδοχής, μηνύματα follow-up και υπενθυμίσεις ραντεβού, εκεί ακριβώς που χάνονται οι κρατήσεις.</p></div></div>
-      <div class="step"><div class="n">04</div><div><h3>Εβδομαδιαία διαχείριση</h3><p>Συνεχής κατεύθυνση διαφημίσεων, περιεχομένου και follow-up, με board ώστε τίποτα να μη μένει χωρίς παρακολούθηση.</p></div></div>
-      <div class="step"><div class="n">05</div><div><h3>Αναφορά &amp; ευθύνη</h3><p>Τακτικά νούμερα σε leads, κρατήσεις και budget, και ένας άνθρωπος υπεύθυνος για αυτά. Εγώ.</p></div></div>
+      <div class="step"><div class="n">01</div><div><h3 data-en="Strategy &amp; offer">Στρατηγική &amp; προσφορά</h3><p data-en="I rebuild the offer and the creative around what converts in your field: laser, botox and facial treatments for clinics, whitening and veneers for dental practices. No generic templates.">Ξαναχτίζω την προσφορά και το creative γύρω από ό,τι μετατρέπει στον δικό σου κλάδο: laser, botox και θεραπείες προσώπου για κλινικές, λεύκανση και όψεις για οδοντιατρεία. Όχι γενικά templates.</p></div></div>
+      <div class="step"><div class="n">02</div><div><h3 data-en="Meta ads">Διαφημίσεις Meta</h3><p data-en="Setup, testing and daily campaign management, with clear rules on what gets stopped and what gets scaled.">Στήσιμο, δοκιμές και καθημερινή διαχείριση καμπανιών, με σαφείς κανόνες για το τι σταματά και τι κλιμακώνεται.</p></div></div>
+      <div class="step"><div class="n">03</div><div><h3 data-en="Call script &amp; follow-up">Script κλήσης &amp; follow-up</h3><p data-en="A tested script for reception or front desk, follow-up messages and appointment reminders, exactly where bookings are lost.">Δοκιμασμένο script για τη γραμματεία ή το προσωπικό υποδοχής, μηνύματα follow-up και υπενθυμίσεις ραντεβού, εκεί ακριβώς που χάνονται οι κρατήσεις.</p></div></div>
+      <div class="step"><div class="n">04</div><div><h3 data-en="Weekly management">Εβδομαδιαία διαχείριση</h3><p data-en="Continuous direction of ads, content and follow-up, with a board so nothing is left untracked.">Συνεχής κατεύθυνση διαφημίσεων, περιεχομένου και follow-up, με board ώστε τίποτα να μη μένει χωρίς παρακολούθηση.</p></div></div>
+      <div class="step"><div class="n">05</div><div><h3 data-en="Reporting &amp; accountability">Αναφορά &amp; ευθύνη</h3><p data-en="Regular numbers on leads, bookings and budget, and one person accountable for them. Me.">Τακτικά νούμερα σε leads, κρατήσεις και budget, και ένας άνθρωπος υπεύθυνος για αυτά. Εγώ.</p></div></div>
     </div>
   </div>
 </section>
@@ -581,24 +588,24 @@ var PRICE = {T1:1500, T2:1200, T3:900};
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Αποτελέσματα</p>
-      <h2>Πραγματικές κλινικές. Πραγματικά νούμερα.</h2>
-      <p>Όχι μέσοι όροι του κλάδου. Νούμερα από δουλειά που έτρεξα ο ίδιος.</p>
+      <p class="eyebrow" data-en="Results">Αποτελέσματα</p>
+      <h2 data-en="Real clinics. Real numbers.">Πραγματικές κλινικές. Πραγματικά νούμερα.</h2>
+      <p data-en="Not industry averages. Numbers from work I ran myself.">Όχι μέσοι όροι του κλάδου. Νούμερα από δουλειά που έτρεξα ο ίδιος.</p>
     </div>
     <!-- ΝΟΥΜΕΡΑ: άλλαξε ελεύθερα τα .rfig / .rlab / .rctx / .rwho -->
     <div class="res-grid">
       <div class="res">
-        <span class="rtag">Ιατρική αισθητική</span>
+        <span class="rtag" data-en="Medical aesthetics">Ιατρική αισθητική</span>
         <div class="rfig">1 &rarr; 5</div>
-        <div class="rlab">υποκαταστήματα σε 2 χρόνια</div>
-        <p class="rctx">Ανέλαβα περιεχόμενο και διαφημίσεις από την αρχή. Η κλινική άνοιξε τέσσερα νέα υποκαταστήματα μέσα σε δύο χρόνια.
+        <div class="rlab" data-en="branches in 2 years">υποκαταστήματα σε 2 χρόνια</div>
+        <p class="rctx" data-en="I took on content and ads from the start. The clinic opened four new branches within two years.<br><span class=&quot;rwho&quot;>DermLux Clinics</span>">Ανέλαβα περιεχόμενο και διαφημίσεις από την αρχή. Η κλινική άνοιξε τέσσερα νέα υποκαταστήματα μέσα σε δύο χρόνια.
           <span class="rwho">DermLux Clinics</span></p>
       </div>
       <div class="res">
-        <span class="rtag">Συνολικά</span>
+        <span class="rtag" data-en="In total">Συνολικά</span>
         <div class="rfig">120.000+</div>
-        <div class="rlab">leads μέσα από αυτό το σύστημα</div>
-        <p class="rctx">Δέκα χρόνια στο marketing, με τα τελευταία αφιερωμένα αποκλειστικά σε κλινικές αισθητικής και οδοντιατρεία.
+        <div class="rlab" data-en="leads through this system">leads μέσα από αυτό το σύστημα</div>
+        <p class="rctx" data-en="Ten years in marketing, the most recent ones devoted entirely to aesthetic clinics and dental practices.<br><span class=&quot;rwho&quot;>Marco Christodoulou</span>">Δέκα χρόνια στο marketing, με τα τελευταία αφιερωμένα αποκλειστικά σε κλινικές αισθητικής και οδοντιατρεία.
           <span class="rwho">Μάρκος Χριστοδούλου</span></p>
       </div>
     </div>
@@ -609,28 +616,28 @@ var PRICE = {T1:1500, T2:1200, T3:900};
 <section class="band">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Ειλικρινά</p>
-      <h2>Για ποιον είναι και για ποιον δεν είναι</h2>
+      <p class="eyebrow" data-en="Honestly">Ειλικρινά</p>
+      <h2 data-en="Who it is for and who it is not for">Για ποιον είναι και για ποιον δεν είναι</h2>
     </div>
     <div class="fit-grid">
       <div class="fit yes">
-        <h3>Σου ταιριάζει αν</h3>
+        <h3 data-en="It fits you if">Σου ταιριάζει αν</h3>
         <ul>
-          <li><b>✓</b> Έχεις κλινική αισθητικής ή οδοντιατρείο με αισθητικές θεραπείες</li>
-          <li><b>✓</b> Τρέχεις διαφημίσεις αλλά δεν βλέπεις κρατήσεις</li>
-          <li><b>✓</b> Έχεις προσωπικό που εκτελεί, αλλά κανείς δεν κατευθύνει τη στρατηγική</li>
-          <li><b>✓</b> Θέλεις έναν υπεύθυνο για τα αποτελέσματα, όχι λίστα από freelancers</li>
-          <li><b>✓</b> Είσαι διατεθειμένος/η να αλλάξεις τον τρόπο που απαντάτε στα leads</li>
+          <li data-en="<b>✓</b> You have an aesthetic clinic or a dental practice with aesthetic treatments"><b>✓</b> Έχεις κλινική αισθητικής ή οδοντιατρείο με αισθητικές θεραπείες</li>
+          <li data-en="<b>✓</b> You run ads but do not see bookings"><b>✓</b> Τρέχεις διαφημίσεις αλλά δεν βλέπεις κρατήσεις</li>
+          <li data-en="<b>✓</b> You have staff who execute, but nobody directing the strategy"><b>✓</b> Έχεις προσωπικό που εκτελεί, αλλά κανείς δεν κατευθύνει τη στρατηγική</li>
+          <li data-en="<b>✓</b> You want one person accountable for results, not a list of freelancers"><b>✓</b> Θέλεις έναν υπεύθυνο για τα αποτελέσματα, όχι λίστα από freelancers</li>
+          <li data-en="<b>✓</b> You are willing to change how you respond to leads"><b>✓</b> Είσαι διατεθειμένος/η να αλλάξεις τον τρόπο που απαντάτε στα leads</li>
         </ul>
       </div>
       <div class="fit no">
-        <h3>Δεν σου ταιριάζει αν</h3>
+        <h3 data-en="It does not fit you if">Δεν σου ταιριάζει αν</h3>
         <ul>
-          <li><b>✕</b> Θες εγγύηση συγκεκριμένου αριθμού ραντεβού, δεν τη δίνω</li>
-          <li><b>✕</b> Δεν θέλεις να αλλάξει τίποτα στη διαδικασία κλήσης</li>
-          <li><b>✕</b> Ψάχνεις τη φθηνότερη λύση, ένας freelancer κοστίζει λιγότερο</li>
-          <li><b>✕</b> Κάνεις μόνο γενική οδοντιατρική χωρίς αισθητικές θεραπείες</li>
-          <li><b>✕</b> Θες κάποιον να πατάει κουμπιά, όχι να παίρνει αποφάσεις</li>
+          <li data-en="<b>✕</b> You want a guaranteed number of appointments, I do not give one"><b>✕</b> Θες εγγύηση συγκεκριμένου αριθμού ραντεβού, δεν τη δίνω</li>
+          <li data-en="<b>✕</b> You do not want anything to change in how calls are handled"><b>✕</b> Δεν θέλεις να αλλάξει τίποτα στη διαδικασία κλήσης</li>
+          <li data-en="<b>✕</b> You are looking for the cheapest option, a freelancer costs less"><b>✕</b> Ψάχνεις τη φθηνότερη λύση, ένας freelancer κοστίζει λιγότερο</li>
+          <li data-en="<b>✕</b> You only do general dentistry with no aesthetic treatments"><b>✕</b> Κάνεις μόνο γενική οδοντιατρική χωρίς αισθητικές θεραπείες</li>
+          <li data-en="<b>✕</b> You want someone to press buttons, not to make decisions"><b>✕</b> Θες κάποιον να πατάει κουμπιά, όχι να παίρνει αποφάσεις</li>
         </ul>
       </div>
     </div>
@@ -640,75 +647,75 @@ var PRICE = {T1:1500, T2:1200, T3:900};
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Δωρεάν · χωρίς δέσμευση</p>
-      <h2>Ο Έλεγχος Pipeline</h2>
-      <p>Πριν συζητήσουμε καν συνεργασία, κοιτάω πού χάνει ραντεβού η κλινική ή το οδοντιατρείο σου τώρα, και σου το δίνω γραπτώς.</p>
+      <p class="eyebrow" data-en="Free · no commitment">Δωρεάν · χωρίς δέσμευση</p>
+      <h2 data-en="The Pipeline Audit">Ο Έλεγχος Pipeline</h2>
+      <p data-en="Before we even discuss working together, I look at where your clinic or practice is losing appointments right now, and I give it to you in writing.">Πριν συζητήσουμε καν συνεργασία, κοιτάω πού χάνει ραντεβού η κλινική ή το οδοντιατρείο σου τώρα, και σου το δίνω γραπτώς.</p>
     </div>
     <div class="audit-list">
-      <div class="audit-item"><div class="n">01</div><p>Πού ακριβώς διαρρέει το pipeline σου, από τη διαφήμιση μέχρι την καρέκλα.</p></div>
-      <div class="audit-item"><div class="n">02</div><p>Τι σου κοστίζει σε χαμένα ραντεβού ο σημερινός χρόνος απόκρισης.</p></div>
-      <div class="audit-item"><div class="n">03</div><p>Τι θα διόρθωνα πρώτο, και γιατί αυτό πριν από τα υπόλοιπα.</p></div>
+      <div class="audit-item"><div class="n">01</div><p data-en="Exactly where your pipeline leaks, from the ad to the chair.">Πού ακριβώς διαρρέει το pipeline σου, από τη διαφήμιση μέχρι την καρέκλα.</p></div>
+      <div class="audit-item"><div class="n">02</div><p data-en="What your current response time costs you in lost appointments.">Τι σου κοστίζει σε χαμένα ραντεβού ο σημερινός χρόνος απόκρισης.</p></div>
+      <div class="audit-item"><div class="n">03</div><p data-en="What I would fix first, and why that one before the rest.">Τι θα διόρθωνα πρώτο, και γιατί αυτό πριν από τα υπόλοιπα.</p></div>
     </div>
-    <p class="audit-note">Κρατάς τα ευρήματα είτε συνεργαστούμε είτε όχι. Αν τα δώσεις στην ομάδα σου και το φτιάξετε μόνοι σας, καλώς.</p>
-    <div class="btn-row"><a href="#form" class="btn">Θέλω τον έλεγχο</a></div>
+    <p class="audit-note" data-en="You keep the findings whether we work together or not. If you hand them to your team and fix it yourselves, good.">Κρατάς τα ευρήματα είτε συνεργαστούμε είτε όχι. Αν τα δώσεις στην ομάδα σου και το φτιάξετε μόνοι σας, καλώς.</p>
+    <div class="btn-row" data-en="<a href=&quot;#form&quot; class=&quot;btn&quot;>I want the audit</a>"><a href="#form" class="btn">Θέλω τον έλεγχο</a></div>
   </div>
 </section>
 
 <section id="form" class="band">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Ξεκίνα εδώ</p>
-      <h2>Πες μου για την επιχείρησή σου</h2>
-      <p>Κλινική αισθητικής ή οδοντιατρείο: συμπλήρωσε τα στοιχεία σου ώστε να δούμε αν ταιριάζουμε, πριν την κλήση.</p>
+      <p class="eyebrow" data-en="Start here">Ξεκίνα εδώ</p>
+      <h2 data-en="Tell me about your business">Πες μου για την επιχείρησή σου</h2>
+      <p data-en="Aesthetic clinic or dental practice: fill in your details so we can see whether we fit, before the call.">Κλινική αισθητικής ή οδοντιατρείο: συμπλήρωσε τα στοιχεία σου ώστε να δούμε αν ταιριάζουμε, πριν την κλήση.</p>
     </div>
 
     <div class="form-card">
       <div class="err" id="form-err"></div>
       <form id="lead-form" novalidate>
         <div class="fld two">
-          <div><label for="f-first">Όνομα <span class="req">*</span></label>
-            <input type="text" id="f-first" placeholder="Όνομα" autocomplete="given-name" required></div>
-          <div><label for="f-last">Επώνυμο <span class="req">*</span></label>
-            <input type="text" id="f-last" placeholder="Επώνυμο" autocomplete="family-name" required></div>
+          <div><label for="f-first" data-en="First name <span class=&quot;req&quot;>*</span>">Όνομα <span class="req">*</span></label>
+            <input type="text" id="f-first" placeholder="Όνομα" data-en-ph="First name" autocomplete="given-name" required></div>
+          <div><label for="f-last" data-en="Last name <span class=&quot;req&quot;>*</span>">Επώνυμο <span class="req">*</span></label>
+            <input type="text" id="f-last" placeholder="Επώνυμο" data-en-ph="Last name" autocomplete="family-name" required></div>
         </div>
-        <div class="fld"><label for="f-email">Email εργασίας <span class="req">*</span></label>
+        <div class="fld"><label for="f-email" data-en="Work email <span class=&quot;req&quot;>*</span>">Email εργασίας <span class="req">*</span></label>
           <input type="email" id="f-email" placeholder="Email" autocomplete="email" required></div>
-        <div class="fld"><label for="f-phone">Τηλέφωνο <span class="req">*</span></label>
-          <input type="tel" id="f-phone" placeholder="π.χ. 69XXXXXXXX" autocomplete="tel" required></div>
-        <div class="fld"><label for="f-type">Τύπος επιχείρησης <span class="req">*</span></label>
+        <div class="fld"><label for="f-phone" data-en="Phone <span class=&quot;req&quot;>*</span>">Τηλέφωνο <span class="req">*</span></label>
+          <input type="tel" id="f-phone" placeholder="π.χ. 69XXXXXXXX" data-en-ph="e.g. +30 69XXXXXXXX" autocomplete="tel" required></div>
+        <div class="fld"><label for="f-type" data-en="Type of business <span class=&quot;req&quot;>*</span>">Τύπος επιχείρησης <span class="req">*</span></label>
           <select id="f-type">
-            <option>Κλινική / κέντρο ιατρικής αισθητικής</option>
-            <option>Οδοντιατρείο: λεύκανση &amp; αισθητική οδοντιατρική</option>
-            <option>Και τα δύο</option>
-            <option>Άλλο</option>
+            <option data-en="Clinic / medical aesthetics centre">Κλινική / κέντρο ιατρικής αισθητικής</option>
+            <option data-en="Dental practice: whitening &amp; cosmetic dentistry">Οδοντιατρείο: λεύκανση &amp; αισθητική οδοντιατρική</option>
+            <option data-en="Both">Και τα δύο</option>
+            <option data-en="Other">Άλλο</option>
           </select></div>
-        <div class="fld"><label for="f-clinic">Όνομα κλινικής / οδοντιατρείου <span class="req">*</span></label>
-          <input type="text" id="f-clinic" placeholder="Όνομα κλινικής ή οδοντιατρείου" autocomplete="organization" required></div>
-        <div class="fld"><label for="f-city">Πόλη &amp; αριθμός υποκαταστημάτων <span class="req">*</span></label>
-          <input type="text" id="f-city" placeholder="π.χ. Γλυφάδα, 2 υποκαταστήματα" required></div>
-        <div class="fld"><label for="f-role">Ο ρόλος σου</label>
+        <div class="fld"><label for="f-clinic" data-en="Name of clinic / practice <span class=&quot;req&quot;>*</span>">Όνομα κλινικής / οδοντιατρείου <span class="req">*</span></label>
+          <input type="text" id="f-clinic" placeholder="Όνομα κλινικής ή οδοντιατρείου" data-en-ph="Name of clinic or dental practice" autocomplete="organization" required></div>
+        <div class="fld"><label for="f-city" data-en="City &amp; number of branches <span class=&quot;req&quot;>*</span>">Πόλη &amp; αριθμός υποκαταστημάτων <span class="req">*</span></label>
+          <input type="text" id="f-city" placeholder="π.χ. Γλυφάδα, 2 υποκαταστήματα" data-en-ph="e.g. Glyfada, 2 branches" required></div>
+        <div class="fld"><label for="f-role" data-en="Your role">Ο ρόλος σου</label>
           <select id="f-role">
-            <option>Ιδιοκτήτης/τρια Κλινικής</option><option>Οδοντίατρος / Ιδιοκτήτης Οδοντιατρείου</option>
-            <option>Ιατρικός Διευθυντής</option><option>Υπεύθυνος Marketing</option>
-            <option>Υπεύθυνος Κλινικής / Γραμματεία</option><option>Άλλο</option>
+            <option data-en="Clinic owner">Ιδιοκτήτης/τρια Κλινικής</option><option data-en="Dentist / practice owner">Οδοντίατρος / Ιδιοκτήτης Οδοντιατρείου</option>
+            <option data-en="Medical director">Ιατρικός Διευθυντής</option><option data-en="Marketing manager">Υπεύθυνος Marketing</option>
+            <option data-en="Clinic manager / reception">Υπεύθυνος Κλινικής / Γραμματεία</option><option data-en="Other">Άλλο</option>
           </select></div>
-        <div class="fld"><label for="f-budget">Τρέχον μηνιαίο budget διαφήμισης</label>
+        <div class="fld"><label for="f-budget" data-en="Current monthly ad budget">Τρέχον μηνιαίο budget διαφήμισης</label>
           <select id="f-budget">
-            <option>Δεν τρέχω ακόμα διαφημίσεις</option><option>Κάτω από 500€/μήνα</option>
-            <option>500€ – 1.500€/μήνα</option><option>1.500€ – 3.000€/μήνα</option><option>Πάνω από 3.000€/μήνα</option>
+            <option data-en="Not running ads yet">Δεν τρέχω ακόμα διαφημίσεις</option><option data-en="Under €500/month">Κάτω από 500€/μήνα</option>
+            <option data-en="€500 – €1,500/month">500€ – 1.500€/μήνα</option><option data-en="€1,500 – €3,000/month">1.500€ – 3.000€/μήνα</option><option data-en="Over €3,000/month">Πάνω από 3.000€/μήνα</option>
           </select></div>
-        <div class="fld"><label for="f-problem">Ποιο είναι το νούμερο 1 πρόβλημα τώρα;</label>
-          <input type="text" id="f-problem" placeholder="Με δυο λόγια"></div>
+        <div class="fld"><label for="f-problem" data-en="What is your number 1 problem right now?">Ποιο είναι το νούμερο 1 πρόβλημα τώρα;</label>
+          <input type="text" id="f-problem" placeholder="Με δυο λόγια" data-en-ph="In a couple of words"></div>
 
-        <input type="text" id="f-hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="Μην συμπληρώσετε">
+        <input type="text" id="f-hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="Μην συμπληρώσετε" data-en-ph="Do not fill in">
 
         <div class="consent">
           <input type="checkbox" id="f-consent" required>
-          <label for="f-consent">Συμφωνώ να επικοινωνήσει μαζί μου ο Marco για το αίτημά μου. Μπορώ να σταματήσω την επικοινωνία ανά πάσα στιγμή.</label>
+          <label for="f-consent" data-en="I agree that Marco may contact me about my enquiry. I can stop the communication at any time.">Συμφωνώ να επικοινωνήσει μαζί μου ο Marco για το αίτημά μου. Μπορώ να σταματήσω την επικοινωνία ανά πάσα στιγμή.</label>
         </div>
 
-        <button type="submit" class="submit" id="submit-btn">Στείλε τα στοιχεία μου</button>
-        <p class="form-note">Θα σου απαντήσω προσωπικά εντός 24 ωρών. Τα στοιχεία σου αποστέλλονται μέσω της εφαρμογής που θα επιλέξεις. Δες την <a href="privacy.html">πολιτική απορρήτου</a>.</p>
+        <button type="submit" class="submit" id="submit-btn" data-en="Send my details">Στείλε τα στοιχεία μου</button>
+        <p class="form-note" data-en="I will reply personally within 24 hours. Your details are sent through the app you choose. See the <a href=&quot;privacy.html&quot;>privacy policy</a>.">Θα σου απαντήσω προσωπικά εντός 24 ωρών. Τα στοιχεία σου αποστέλλονται μέσω της εφαρμογής που θα επιλέξεις. Δες την <a href="privacy.html">πολιτική απορρήτου</a>.</p>
       </form>
     </div>
   </div>
@@ -716,24 +723,24 @@ var PRICE = {T1:1500, T2:1200, T3:900};
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Πριν κλείσεις ραντεβού</p><h2>Συχνές ερωτήσεις</h2></div>
+    <div class="sec-head"><p class="eyebrow" data-en="Before you book a call">Πριν κλείσεις ραντεβού</p><h2 data-en="Frequently asked questions">Συχνές ερωτήσεις</h2></div>
     <div class="faq">
-      <details><summary>Χρειάζεται να τρέχω ήδη διαφημίσεις;</summary><p>Όχι. Αν δεν τρέχεις, στήνουμε από την αρχή. Αν τρέχεις, ξεκινάω από το τι ήδη υπάρχει και τι από αυτό αξίζει να κρατηθεί.</p></details>
-      <details><summary>Δουλεύεις και με οδοντιατρεία;</summary><p>Ναι, με οδοντιατρεία που κάνουν λεύκανση, όψεις και αισθητική αποκατάσταση. Είναι ο ίδιος τύπος αγοράς με την ιατρική αισθητική: ο ασθενής αγοράζει αποτέλεσμα, όχι θεραπεία, και η απόφαση παίρνεται στα πρώτα λεπτά μετά το lead.</p></details>
-      <details><summary>Είναι ειδικά για αισθητική;</summary><p>Ναι. Δουλεύω μόνο με κλινικές ιατρικής αισθητικής και οδοντιατρεία με αισθητικές θεραπείες, γι' αυτό ξέρω ποια θεραπεία συμπεριφέρεται πώς μέσα στο funnel. Γενική οδοντιατρική ή γενικό ιατρείο δεν αναλαμβάνω.</p></details>
-      <details><summary>Τι γίνεται αν δεν έχω προσωπικό marketing;</summary><p>Δεν χρειάζεται. Αυτό ακριβώς αναλαμβάνω. Είμαι ο υπεύθυνος marketing σου χωρίς να χρειαστεί να στήσεις τμήμα.</p></details>
-      <details><summary>Πόσο κοστίζει;</summary><p>Εξαρτάται από το μέγεθος της κλινικής και το εύρος της δουλειάς. Το συζητάμε στην κλήση, αφού δω πρώτα πού χάνεις ραντεβού, δεν δίνω τιμή πριν ξέρω τι χρειάζεται.</p></details>
-      <details><summary>Δουλεύεις σε όλη την Ελλάδα;</summary><p>Ναι, η συνεργασία γίνεται εξ αποστάσεως, οπότε ισχύει το ίδιο για Αθήνα, Θεσσαλονίκη ή οποιαδήποτε άλλη πόλη. Σε κάθε περιοχή όμως παίρνω μία μόνο κλινική και ένα μόνο οδοντιατρείο.</p></details>
+      <details><summary data-en="Do I need to be running ads already?">Χρειάζεται να τρέχω ήδη διαφημίσεις;</summary><p data-en="No. If you are not running any, we set them up from scratch. If you are, I start from what already exists and what is worth keeping.">Όχι. Αν δεν τρέχεις, στήνουμε από την αρχή. Αν τρέχεις, ξεκινάω από το τι ήδη υπάρχει και τι από αυτό αξίζει να κρατηθεί.</p></details>
+      <details><summary data-en="Do you work with dental practices too?">Δουλεύεις και με οδοντιατρεία;</summary><p data-en="Yes, with practices that do whitening, veneers and aesthetic restoration. It is the same type of market as medical aesthetics: the patient buys a result, not a treatment, and the decision is made in the first minutes after the lead.">Ναι, με οδοντιατρεία που κάνουν λεύκανση, όψεις και αισθητική αποκατάσταση. Είναι ο ίδιος τύπος αγοράς με την ιατρική αισθητική: ο ασθενής αγοράζει αποτέλεσμα, όχι θεραπεία, και η απόφαση παίρνεται στα πρώτα λεπτά μετά το lead.</p></details>
+      <details><summary data-en="Is this specifically for aesthetics?">Είναι ειδικά για αισθητική;</summary><p data-en="Yes. I work only with medical aesthetic clinics and dental practices with aesthetic treatments, which is why I know how each treatment behaves inside the funnel. General dentistry or a general practice is not something I take on.">Ναι. Δουλεύω μόνο με κλινικές ιατρικής αισθητικής και οδοντιατρεία με αισθητικές θεραπείες, γι' αυτό ξέρω ποια θεραπεία συμπεριφέρεται πώς μέσα στο funnel. Γενική οδοντιατρική ή γενικό ιατρείο δεν αναλαμβάνω.</p></details>
+      <details><summary data-en="What if I do not have marketing staff?">Τι γίνεται αν δεν έχω προσωπικό marketing;</summary><p data-en="You do not need any. That is exactly what I take on. I am your marketing lead without you having to build a department.">Δεν χρειάζεται. Αυτό ακριβώς αναλαμβάνω. Είμαι ο υπεύθυνος marketing σου χωρίς να χρειαστεί να στήσεις τμήμα.</p></details>
+      <details><summary data-en="How much does it cost?">Πόσο κοστίζει;</summary><p data-en="It depends on the size of the clinic and the scope of the work. We discuss it on the call, after I see where you are losing appointments. I do not quote a price before I know what is needed.">Εξαρτάται από το μέγεθος της κλινικής και το εύρος της δουλειάς. Το συζητάμε στην κλήση, αφού δω πρώτα πού χάνεις ραντεβού, δεν δίνω τιμή πριν ξέρω τι χρειάζεται.</p></details>
+      <details><summary data-en="Do you work across Greece?">Δουλεύεις σε όλη την Ελλάδα;</summary><p data-en="Yes, the work is remote, so it is the same for Athens, Thessaloniki or any other city. In each area, though, I take only one clinic and only one dental practice.">Ναι, η συνεργασία γίνεται εξ αποστάσεως, οπότε ισχύει το ίδιο για Αθήνα, Θεσσαλονίκη ή οποιαδήποτε άλλη πόλη. Σε κάθε περιοχή όμως παίρνω μία μόνο κλινική και ένα μόνο οδοντιατρείο.</p></details>
     </div>
   </div>
 </section>
 
 <section class="final">
   <div class="wrap">
-    <h2>Σταμάτα να χάνεις leads ανάμεσα στη διαφήμιση και το ραντεβού.</h2>
-    <p>Πες μου για την κλινική ή το οδοντιατρείο σου, χωρίς δέσμευση, χωρίς κόστος.</p>
+    <h2 data-en="Stop losing leads between the ad and the appointment.">Σταμάτα να χάνεις leads ανάμεσα στη διαφήμιση και το ραντεβού.</h2>
+    <p data-en="Tell me about your clinic or practice. No commitment, no cost.">Πες μου για την κλινική ή το οδοντιατρείο σου, χωρίς δέσμευση, χωρίς κόστος.</p>
     <div class="btn-row">
-      <a href="#form" class="btn">Κλείσε δωρεάν κλήση γνωριμίας</a>
+      <a href="#form" class="btn" data-en="Book a free intro call">Κλείσε δωρεάν κλήση γνωριμίας</a>
       <a href="https://wa.me/35799251181" target="_blank" rel="noopener" class="btn-ghost"><svg class="ico" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a>
       <a href="viber://chat?number=35799251181" class="btn-ghost"><svg class="ico" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path fill="#7360F2" d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.696 6.7.633 9.817.57 12.933.488 18.776 6.12 20.36h.003l-.004 2.416s-.037.977.61 1.177c.777.242 1.234-.5 1.98-1.302.407-.44.972-1.084 1.397-1.58 3.85.326 6.812-.416 7.15-.525.776-.252 5.176-.816 5.892-6.657.74-6.02-.36-9.83-2.34-11.546-.596-.55-3.006-2.3-8.375-2.323 0 0-.395-.025-1.037-.017zm.058 1.693c.545-.004.88.017.88.017 4.542.02 6.717 1.388 7.222 1.846 1.675 1.435 2.53 4.868 1.906 9.897v.002c-.604 4.878-4.174 5.184-4.832 5.395-.28.09-2.882.737-6.153.524 0 0-2.436 2.94-3.197 3.704-.12.12-.26.167-.352.144-.13-.033-.166-.188-.165-.414l.02-4.018c-4.762-1.32-4.485-6.292-4.43-8.895.054-2.604.543-4.738 1.996-6.173 1.96-1.773 5.474-2.018 7.11-2.03zm.38 2.602c-.167 0-.303.135-.304.302 0 .167.133.303.3.305 1.624.01 2.946.537 4.028 1.592 1.073 1.046 1.62 2.468 1.633 4.334.002.167.14.3.307.3.166-.002.3-.138.3-.304-.014-1.984-.618-3.596-1.816-4.764-1.19-1.16-2.692-1.753-4.447-1.765zm-3.96.695c-.19-.032-.4.005-.616.117l-.01.002c-.43.247-.816.562-1.146.932-.002.004-.006.004-.008.008-.267.323-.42.638-.46.948-.008.046-.01.093-.007.14 0 .136.022.27.065.4l.013.01c.135.48.473 1.276 1.205 2.604.42.768.903 1.5 1.446 2.186.27.344.56.673.87.984l.132.132c.31.308.64.6.984.87.686.543 1.418 1.027 2.186 1.447 1.328.733 2.126 1.07 2.604 1.206l.01.014c.13.042.265.064.402.063.046.002.092 0 .138-.008.31-.036.627-.19.948-.46.004 0 .003-.002.008-.005.37-.33.683-.72.93-1.148l.003-.01c.225-.432.15-.842-.18-1.12-.004 0-.698-.58-1.037-.83-.36-.255-.73-.492-1.113-.71-.51-.285-1.032-.106-1.248.174l-.447.564c-.23.283-.657.246-.657.246-3.12-.796-3.955-3.955-3.955-3.955s-.037-.426.248-.656l.563-.448c.277-.215.456-.737.17-1.248-.217-.383-.454-.756-.71-1.115-.25-.34-.826-1.033-.83-1.035-.137-.165-.31-.265-.502-.297zm4.49.88c-.158.002-.29.124-.3.282-.01.167.115.312.282.324 1.16.085 2.017.466 2.645 1.15.63.688.93 1.524.906 2.57-.002.168.13.306.3.31.166.003.305-.13.31-.297.025-1.175-.334-2.193-1.067-2.994-.74-.81-1.777-1.253-3.05-1.346h-.024zm.463 1.63c-.16.002-.29.127-.3.287-.008.167.12.31.288.32.523.028.875.175 1.113.422.24.245.388.62.416 1.164.01.167.15.295.318.287.167-.008.295-.15.287-.317-.03-.644-.215-1.178-.58-1.557-.367-.378-.893-.574-1.52-.607h-.018z"/></svg>Viber</a>
     </div>
@@ -748,10 +755,10 @@ var PRICE = {T1:1500, T2:1200, T3:900};
 </footer>
 
 <div class="cc" id="cc" role="dialog" aria-live="polite" aria-label="Ειδοποίηση cookies και Meta Pixel">
-  <p>Αυτή η σελίδα χρησιμοποιεί το Meta Pixel για τη μέτρηση των διαφημίσεων. Φορτώνει μόνο εφόσον το αποδεχτείς. Δες την <a href="privacy.html">πολιτική απορρήτου</a>.</p>
+  <p data-en="This page uses the Meta Pixel to measure ads. It loads only if you accept. See the <a href=&quot;privacy.html&quot;>privacy policy</a>.">Αυτή η σελίδα χρησιμοποιεί το Meta Pixel για τη μέτρηση των διαφημίσεων. Φορτώνει μόνο εφόσον το αποδεχτείς. Δες την <a href="privacy.html">πολιτική απορρήτου</a>.</p>
   <div class="cc-actions">
-    <button type="button" class="no" id="cc-no">Απόρριψη</button>
-    <button type="button" class="yes" id="cc-yes">Αποδοχή</button>
+    <button type="button" class="no" id="cc-no" data-en="Decline">Απόρριψη</button>
+    <button type="button" class="yes" id="cc-yes" data-en="Accept">Αποδοχή</button>
   </div>
 </div>
 
@@ -887,5 +894,39 @@ var WA_NUMBER     = "35799251181";
 })();
 </script>
 
+<script>
+/* EL/EN. Greek is the default and nothing reads navigator.language:
+   the page switches only because someone pressed EN. */
+(function(){
+  var KEY = 'map_lang';
+  function setLang(lang){
+    document.documentElement.lang = (lang === 'en') ? 'en' : 'el';
+    var nodes = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (!n.hasAttribute('data-el')) n.setAttribute('data-el', n.innerHTML);
+      n.innerHTML = (lang === 'en') ? n.getAttribute('data-en') : n.getAttribute('data-el');
+    }
+    var ph = document.querySelectorAll('[data-en-ph]');
+    for (var j = 0; j < ph.length; j++) {
+      var p = ph[j];
+      if (!p.hasAttribute('data-el-ph')) p.setAttribute('data-el-ph', p.placeholder || '');
+      p.placeholder = (lang === 'en') ? p.getAttribute('data-en-ph') : p.getAttribute('data-el-ph');
+    }
+    var btns = document.querySelectorAll('.lang button');
+    for (var k = 0; k < btns.length; k++) {
+      btns[k].classList.toggle('on', btns[k].getAttribute('data-lang') === lang);
+    }
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.lang button') : null;
+    if (b) { e.preventDefault(); setLang(b.getAttribute('data-lang')); }
+  });
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  setLang(saved === 'en' ? 'en' : 'el');
+})();
+</script>
 </body>
 </html>
