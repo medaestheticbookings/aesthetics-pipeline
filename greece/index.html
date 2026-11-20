@@ -296,6 +296,22 @@
     transition:border-color .18s ease, background .18s ease;}
   .fld input:focus,.fld select:focus{border-color:var(--teal);background:var(--card);outline:none;}
   .fld input.err,.fld select.err{border-color:#C0392B;background:#FDF3F2;}
+
+  /* City search. The <datalist> stays in the markup as the data source, but
+     the browser's own dropdown is switched off: it matches only the start of
+     a name and only with the right accents, which is the wrong behaviour for
+     someone thumbing "γλυφαδα" into a phone. */
+  .fld-ac{position:relative;}
+  .ac-list{position:absolute;z-index:40;left:0;right:0;top:100%;margin:4px 0 0;
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    box-shadow:0 14px 30px rgba(18,48,59,.16);max-height:248px;overflow-y:auto;
+    list-style:none;padding:4px;display:none;}
+  .ac-list.open{display:block;}
+  .ac-list li{padding:10px 12px;border-radius:7px;font-size:15px;line-height:1.3;
+    cursor:pointer;color:var(--ink);}
+  .ac-list li.on,.ac-list li:hover{background:var(--teal);color:#fff;}
+  .ac-list li.none{color:var(--ink-soft);cursor:default;font-size:14px;}
+  .ac-list li.none:hover{background:transparent;color:var(--ink-soft);}
   .consent{display:flex;gap:11px;align-items:flex-start;margin:20px 0 22px;font-size:13.5px;
     color:var(--ink-soft);line-height:1.5;}
   .consent input{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--teal);}
@@ -535,10 +551,12 @@
           </div>
         </div>
 
-        <div class="fld">
+        <div class="fld fld-ac">
             <label for="f-town" data-en="Town / area <span class='req'>*</span>">Πόλη / περιοχή <span class="req">*</span></label>
-            <input type="text" id="f-town" name="town" autocomplete="address-level2" required
-                   list="dimoi-gr" placeholder="π.χ. Γλυφάδα" data-en-ph="e.g. Glyfada">
+            <input type="text" id="f-town" name="town" autocomplete="off" required
+                   role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="town-ac"
+                   placeholder="Γράψε την πόλη σου…" data-en-ph="Type your city…">
+            <ul class="ac-list" id="town-ac" role="listbox"></ul>
           <datalist id="dimoi-gr"><option value="Άβδηρα"><option value="Άγιοι Ανάργυροι-Καματερό"><option value="Άγιος Βασίλειος"><option value="Άγιος Δημήτριος"><option value="Άγιος Ευστράτιος"><option value="Άγιος Νικόλαος"><option value="Άγραφα"><option value="Άκτιο-Βόνιτσα"><option value="Άλιμος"><option value="Άνδρος"><option value="Άργος Ορεστικό"><option value="Άργος-Μυκήνες"><option value="Άρτα"><option value="Έδεσσα"><option value="Ήλιδα"><option value="Ίασμος"><option value="Ίλιον"><option value="Ίος"><option value="Ύδρα"><option value="Αίγινα"><option value="Αγία Βαρβάρα"><option value="Αγία Παρασκευή"><option value="Αγαθονήσι"><option value="Αγιά"><option value="Αγκίστρι"><option value="Αγρίνιο"><option value="Αθήνα"><option value="Αιγάλεω"><option value="Αιγιάλεια"><option value="Αλίαρτος"><option value="Αλεξάνδρεια"><option value="Αλεξανδρούπολη"><option value="Αλμυρός"><option value="Αλμωπία"><option value="Αλόννησος"><option value="Αμάρι"><option value="Αμαρούσιο"><option value="Αμοργός"><option value="Αμπελόκηποι-Μενεμένη"><option value="Αμφίκλεια-Ελάτεια"><option value="Αμφίπολη"><option value="Αμφιλοχία"><option value="Αμύνταιο"><option value="Ανάφη"><option value="Ανατολική Μάνη"><option value="Ανατολική Σάμος"><option value="Ανδρίτσαινα-Κρέστενα"><option value="Ανδραβίδα-Κυλλήνη"><option value="Αντίπαρος"><option value="Ανώγεια"><option value="Αποκόρωνας"><option value="Αργιθέα"><option value="Αργοστόλι"><option value="Αριστοτέλης"><option value="Αρριανά"><option value="Αρχάνες-Αστερούσια"><option value="Αρχαία Ολυμπία"><option value="Ασπρόπυργος"><option value="Αστυπάλαια"><option value="Αχαρνές"><option value="Βάρη-Βούλα-Βουλιαγμένη"><option value="Βέλο-Βόχα"><option value="Βέροια"><option value="Βελβεντός"><option value="Βιάννος"><option value="Βισαλτία"><option value="Βοΐο"><option value="Βριλήσσια"><option value="Βόλβη"><option value="Βόλος"><option value="Βόρεια Κέρκυρα"><option value="Βόρεια Κυνουρία"><option value="Βόρεια Τζουμέρκα"><option value="Βύρωνας"><option value="Γαλάτσι"><option value="Γαύδος"><option value="Γεώργιος Καραϊσκάκης"><option value="Γλυφάδα"><option value="Γορτυνία"><option value="Γρεβενά"><option value="Γόρτυνα"><option value="Δάφνη-Υμηττός"><option value="Δέλτα"><option value="Δίο-Όλυμπος"><option value="Δίρφυς-Μεσσαπία"><option value="Δίστομο-Αράχοβα-Αντίκυρα"><option value="Δελφοί"><option value="Δεσκάτη"><option value="Διδυμότειχο"><option value="Διόνυσος"><option value="Δομοκός"><option value="Δοξάτο"><option value="Δράμα"><option value="Δυτική Αχαΐα"><option value="Δυτική Λέσβος"><option value="Δυτική Μάνη"><option value="Δυτική Σάμος"><option value="Δωδώνη"><option value="Δωρίδα"><option value="Ελασσόνα"><option value="Ελαφόνησος"><option value="Ελευσίνα"><option value="Ελληνικό-Αργυρούπολη"><option value="Εμμανουήλ Παππάς"><option value="Εορδαία"><option value="Επίδαυρος"><option value="Ερέτρια"><option value="Ερμιονίδα"><option value="Ερύμανθος"><option value="Ευρώτας"><option value="Ζάκυνθος"><option value="Ζίτσα"><option value="Ζαγορά-Μουρέσι"><option value="Ζαγόρι"><option value="Ζαχάρω"><option value="Ζηρός"><option value="Ζωγράφου"><option value="Ηγουμενίτσα"><option value="Ηλιούπολη"><option value="Ηράκλεια"><option value="Ηράκλειο Αττικής"><option value="Ηράκλειο Κρήτης"><option value="Θάσος"><option value="Θέρμη"><option value="Θέρμο"><option value="Θήβα"><option value="Θήρα"><option value="Θερμαϊκός"><option value="Θεσσαλονίκη"><option value="Ιεράπετρα"><option value="Ιθάκη"><option value="Ικαρία"><option value="Ιστιαία-Αιδηψός"><option value="Ιωάννινα"><option value="Κάλυμνος"><option value="Κάνδανος-Σέλινο"><option value="Κάρπαθος"><option value="Κάρυστος"><option value="Κάσος"><option value="Κάτω Νευροκόπι"><option value="Κέα"><option value="Κέρκυρα (Κεντρική)"><option value="Κίμωλος"><option value="Κίσσαμος"><option value="Καβάλα"><option value="Καισαριανή"><option value="Καλάβρυτα"><option value="Καλαμάτα"><option value="Καλαμαριά"><option value="Καλλιθέα"><option value="Καμένα Βούρλα"><option value="Καρδίτσα"><option value="Καρπενήσι"><option value="Κασσάνδρα"><option value="Καστοριά"><option value="Κατερίνη"><option value="Κεντρικά Τζουμέρκα"><option value="Κερατσίνι-Δραπετσώνα"><option value="Κηφισιά"><option value="Κιλελέρ"><option value="Κιλκίς"><option value="Κοζάνη"><option value="Κομοτηνή"><option value="Κορδελιό-Εύοσμος"><option value="Κορυδαλλός"><option value="Κρωπία"><option value="Κως"><option value="Κόνιτσα"><option value="Κόρινθος"><option value="Κύθηρα"><option value="Κύθνος"><option value="Κύμη-Αλιβέρι"><option value="Λάρισα"><option value="Λέρος"><option value="Λήμνος"><option value="Λίμνη Πλαστήρα"><option value="Λαγκαδάς"><option value="Λαμία"><option value="Λαυρεωτική"><option value="Λειψοί"><option value="Λευκάδα"><option value="Ληξούρι"><option value="Λιβαδειά"><option value="Λοκροί"><option value="Λουτράκι-Περαχώρα-Άγιοι Θεόδωροι"><option value="Λυκόβρυση-Πεύκη"><option value="Μάνδρα-Ειδυλλία"><option value="Μέγαρα"><option value="Μέτσοβο"><option value="Μήλος"><option value="Μακρακώμη"><option value="Μαλεβίζι"><option value="Μαντούδι-Λίμνη-Αγία Άννα"><option value="Μαραθώνας"><option value="Μαρκόπουλο Μεσογαίας"><option value="Μαρώνεια-Σάπες"><option value="Μεγίστη"><option value="Μεγαλόπολη"><option value="Μεγανήσι"><option value="Μεσολόγγι"><option value="Μεσσήνη"><option value="Μετέωρα"><option value="Μεταμόρφωση"><option value="Μινώα Πεδιάδα"><option value="Μονεμβασιά"><option value="Μοσχάτο-Ταύρος"><option value="Μουζάκι"><option value="Μυλοπόταμος"><option value="Μυτιλήνη"><option value="Μύκη"><option value="Μύκονος"><option value="Νάξος και Μικρές Κυκλάδες"><option value="Νάουσα"><option value="Νέα Ζίχνη"><option value="Νέα Ιωνία"><option value="Νέα Προποντίδα"><option value="Νέα Σμύρνη"><option value="Νέα Φιλαδέλφεια-Νέα Χαλκηδόνα"><option value="Νέστος"><option value="Νίκαια-Άγιος Ιωάννης Ρέντης"><option value="Νίσυρος"><option value="Ναυπακτία"><option value="Ναύπλιο"><option value="Νεάπολη-Συκιές"><option value="Νεμέα"><option value="Νεστόριο"><option value="Νικόλαος Σκουφάς"><option value="Νότια Κέρκυρα"><option value="Νότια Κυνουρία"><option value="Νότιο Πήλιο"><option value="Ξάνθη"><option value="Ξηρόμερο"><option value="Ξυλόκαστρο-Ευρωστίνα"><option value="Οινούσσες"><option value="Οιχαλία"><option value="Ορεστιάδα"><option value="Οροπέδιο Λασιθίου"><option value="Ορχομενός"><option value="Πάργα"><option value="Πάρος"><option value="Πάτμος"><option value="Πάτρα"><option value="Πέλλα"><option value="Πέραμα"><option value="Παγγαίο"><option value="Παιανία"><option value="Παιονία"><option value="Παλαιό Φάληρο"><option value="Παλαμάς"><option value="Παλλήνη"><option value="Παξοί"><option value="Παπάγου-Χολαργός"><option value="Παρανέστι"><option value="Παύλος Μελάς"><option value="Πειραιάς"><option value="Πεντέλη"><option value="Περιστέρι"><option value="Πετρούπολη"><option value="Πηνειός"><option value="Πλατανιάς"><option value="Πολύγυρος"><option value="Πρέβεζα"><option value="Πρέσπες"><option value="Προσοτσάνη"><option value="Πυλαία-Χορτιάτης"><option value="Πωγώνι"><option value="Πόρος"><option value="Πύδνα-Κολινδρός"><option value="Πύλη"><option value="Πύλος-Νέστορας"><option value="Πύργος"><option value="Ρέθυμνο"><option value="Ρήγας Φεραίος"><option value="Ραφήνα-Πικέρμι"><option value="Ρόδος"><option value="Σάμης"><option value="Σέρβια"><option value="Σέριφος"><option value="Σέρρες"><option value="Σίκινος"><option value="Σίφνος"><option value="Σαλαμίνα"><option value="Σαμοθράκη"><option value="Σαρωνικός"><option value="Σητεία"><option value="Σιθωνία"><option value="Σικυώνα"><option value="Σιντική"><option value="Σκιάθος"><option value="Σκόπελος"><option value="Σκύδρα"><option value="Σκύρος"><option value="Σουφλί"><option value="Σοφάδες"><option value="Σούλι"><option value="Σπάρτη"><option value="Σπάτα-Άρτεμη"><option value="Σπέτσες"><option value="Στυλίδα"><option value="Σφακιά"><option value="Σύμη"><option value="Σύρος-Ερμούπολη"><option value="Τέμπη"><option value="Τήλος"><option value="Τήνος"><option value="Τανάγρα"><option value="Τρίκαλα"><option value="Τρίπολη"><option value="Τριφυλία"><option value="Τροιζηνία-Μέθανα"><option value="Τόπειρος"><option value="Τύρναβος"><option value="Φάρσαλα"><option value="Φαιστός"><option value="Φαρκαδόνα"><option value="Φιλιάτες"><option value="Φιλοθέη-Ψυχικό"><option value="Φλώρινα"><option value="Φολέγανδρος"><option value="Φούρνοι Κορσεών"><option value="Φυλή"><option value="Χάλκη"><option value="Χίος"><option value="Χαλάνδρι"><option value="Χαλκίδα"><option value="Χαλκηδόνα"><option value="Χανιά"><option value="Χαϊδάρι"><option value="Χερσόνησος"><option value="Ψαρά"><option value="Ωραιόκαστρο"><option value="Ωρωπός"></datalist>
         </div>
 
@@ -941,6 +959,132 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   });
   document.querySelectorAll('.lang button').forEach(function(b){
     b.addEventListener('click', function(){ started=false; if(panel.classList.contains('open')) start(); });
+  });
+})();
+</script>
+
+<script>
+/* ---- City search ----
+   Reads the 332 δήμοι out of the <datalist> that is already in the page, so
+   there is one list to maintain, not two. Matching ignores accents and
+   matches anywhere in the name, because people type "γλυφαδα" or "ν. σμυρνη"
+   and expect to be found. Latin spellings are not transliterated: someone
+   writing "Glyfada" gets no suggestion and types it in free-hand, which the
+   form accepts. */
+(function(){
+  var input = document.getElementById('f-town');
+  var list  = document.getElementById('town-ac');
+  if(!input || !list) return;
+
+  var TOWNS = Array.prototype.map.call(
+    document.querySelectorAll('#dimoi-gr option'),
+    function(o){ return o.value; }
+  );
+
+  var GR = 'άέήίόύώϊϋΐΰ', PLAIN = 'αεηιουωιυιυ';
+  function fold(str){
+    str = (str||'').toLowerCase();
+    var out = '';
+    for(var i=0;i<str.length;i++){
+      var j = GR.indexOf(str[i]);
+      out += (j > -1) ? PLAIN[j] : str[i];
+    }
+    return out.replace(/[^a-zα-ω0-9]+/g,' ').trim();
+  }
+
+  var folded = TOWNS.map(fold);
+  var open = false, cursor = -1, shown = [];
+
+  function close(){
+    open = false; cursor = -1;
+    list.className = 'ac-list';
+    input.setAttribute('aria-expanded','false');
+  }
+
+  function pick(name){
+    input.value = name;
+    input.classList.remove('err');
+    close();
+  }
+
+  function render(q){
+    var f = fold(q);
+
+    if(!f){
+      /* Tapping the empty field opens the whole list. Someone who does not
+         know how their δήμος is spelled can scroll to it; someone who does
+         starts typing and it narrows. */
+      shown = TOWNS.slice();
+    } else {
+      /* names that START with what was typed come first - that is what
+         someone who knows their town's name is looking for */
+      var starts = [], contains = [], words = [];
+      var typed = f.split(' ');
+      for(var i=0;i<folded.length;i++){
+        var at = folded[i].indexOf(f);
+        if(at === 0){ starts.push(TOWNS[i]); continue; }
+        if(at > 0){ contains.push(TOWNS[i]); continue; }
+        /* nothing matched end to end, so try word by word: this is what
+           rescues "ν. σμυρνη" and "αγ. παρασκευη", which is how half of
+           Attica writes its own address */
+        var parts = folded[i].split(' ');
+        var all = typed.every(function(w){
+          return parts.some(function(pw){ return pw.indexOf(w) === 0; });
+        });
+        if(all) words.push(TOWNS[i]);
+      }
+      shown = starts.concat(contains, words).slice(0,10);
+    }
+
+    list.innerHTML = '';
+
+    if(!shown.length){
+      var li = document.createElement('li');
+      li.className = 'none';
+      li.textContent = (document.documentElement.lang === 'en')
+        ? 'No match — type it yourself, that is fine'
+        : "Δεν βρέθηκε — γράψε την πόλη σου όπως τη λες";
+      list.appendChild(li);
+    } else {
+      shown.forEach(function(name, i){
+        var li = document.createElement('li');
+        li.setAttribute('role','option');
+        li.textContent = name;
+        li.addEventListener('mousedown', function(e){ e.preventDefault(); pick(name); });
+        list.appendChild(li);
+      });
+    }
+    cursor = -1;
+    open = true;
+    list.className = 'ac-list open';
+    input.setAttribute('aria-expanded','true');
+  }
+
+  function move(step){
+    if(!open || !shown.length) return;
+    cursor = (cursor + step + shown.length) % shown.length;
+    Array.prototype.forEach.call(list.children, function(li,i){
+      li.className = (i === cursor) ? 'on' : '';
+    });
+    var el = list.children[cursor];
+    if(el && el.scrollIntoView) el.scrollIntoView({block:'nearest'});
+  }
+
+  input.addEventListener('input',  function(){ render(this.value); });
+  input.addEventListener('focus',  function(){ render(this.value); });
+  input.addEventListener('click',  function(){ if(!open) render(this.value); });
+  input.addEventListener('blur',   function(){ setTimeout(close, 120); });
+
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowDown'){ e.preventDefault(); move(1); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); move(-1); }
+    else if(e.key === 'Escape'){ close(); }
+    else if(e.key === 'Enter' && open && cursor > -1){
+      /* only swallow the Enter when a suggestion is highlighted, so someone
+         who typed a town we do not list can still submit with the keyboard */
+      e.preventDefault();
+      pick(shown[cursor]);
+    }
   });
 })();
 </script>
