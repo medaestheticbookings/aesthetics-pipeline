@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marketing για Κλινικές Αισθητικής &amp; Οδοντιατρεία | Ελλάδα</title>
-<meta name="description" content="Διαφημίσεις Meta, script κλήσης και follow-up για κλινικές ιατρικής αισθητικής και οδοντιατρεία σε όλη την Ελλάδα. Μία επιχείρηση ανά περιοχή. Δωρεάν έλεγχος pipeline.">
+<meta name="description" content="Γεμίζουμε το ημερολόγιό σου με ασθενείς. Στοχευμένες διαφημίσεις και σύστημα ραντεβού για κλινικές αισθητικής και οδοντιατρεία στην Ελλάδα.">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Marketing Director για Κλινικές Αισθητικής &amp; Οδοντιατρεία">
@@ -851,7 +851,13 @@ var WA_NUMBER     = "35799251181";
 
     d.source=window.getSource();
     btn.disabled=true; btn.textContent='Στέλνω…';
-    if(window.fbq) fbq('track','Lead');
+    /* Two events, one submission. 'Lead' is the honest name for what just
+       happened and is what the rest of the account optimises on. The ad set
+       behind the website campaign was built to optimise for
+       CompleteRegistration, and Meta will not let that be changed on a
+       published ad set - so the page sends that one too, rather than leaving
+       the campaign waiting for a signal that never arrives. */
+    if(window.fbq){ fbq('track','Lead'); fbq('track','CompleteRegistration'); }
 
     /* The lead goes to the sheet. WhatsApp is the parachute, not the plan:
        it opens only if the POST could not be made. */
