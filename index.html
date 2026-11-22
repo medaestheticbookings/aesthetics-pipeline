@@ -139,10 +139,12 @@
   @keyframes slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
   /* ---------- sections ---------- */
-  section{padding:124px 0;}
-  @media (max-width:760px){section{padding:72px 0;}}
+  /* 124 top + 124 bottom meant 248px of empty cream between any two
+     sections. Generous is 68; 124 was a hole in the page. */
+  section{padding:68px 0;}
+  @media (max-width:760px){section{padding:48px 0;}}
   .band{background:var(--cream-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .sec-head{text-align:center;max-width:62ch;margin:0 auto 54px;}
+  .sec-head{text-align:center;max-width:62ch;margin:0 auto 42px;}
   .sec-head h2{font-size:clamp(29px,4.1vw,46px);line-height:1.16;margin-bottom:16px;}
   .sec-head p{color:var(--ink-soft);font-size:16.5px;}
 
