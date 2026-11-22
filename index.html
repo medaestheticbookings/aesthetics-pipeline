@@ -402,6 +402,30 @@
   .flow-foot{text-align:center;font-family:var(--display);font-weight:600;font-style:italic;
     font-size:clamp(18px,2.3vw,24px);color:var(--teal);max-width:50ch;margin:0 auto;line-height:1.45;}
 
+  /* ---------- the value ladder ----------
+     The whole page argued about leads. A lead is not the product: the
+     patient is, and nobody walks in for whitening and stops at whitening.
+     This is the only section that answers "is a lead worth paying for". */
+  .ladder-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto;}
+  @media (max-width:760px){.ladder-grid{grid-template-columns:1fr;}}
+  .ladder{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:34px 30px;}
+  .ladder h3{font-size:18px;margin-bottom:4px;}
+  .ladder .lead-in{font-size:13px;color:var(--ink-soft);margin-bottom:24px;}
+  .rung{display:grid;grid-template-columns:18px 1fr;gap:14px;padding:13px 0;
+    border-top:1px solid var(--line);align-items:baseline;}
+  .rung:first-of-type{border-top:0;padding-top:0;}
+  .rung .mark{font-family:var(--display);font-size:13px;color:var(--brass);line-height:1.5;}
+  .rung .what{font-size:14.5px;color:var(--ink);font-weight:600;line-height:1.4;}
+  .rung .when{display:block;font-weight:400;font-size:13px;color:var(--ink-soft);margin-top:3px;}
+  .rung.first .what{color:var(--teal);}
+  .rung.first .when{color:var(--teal-soft);}
+  .ladder-sum{margin-top:22px;padding-top:18px;border-top:1px solid var(--brass);
+    font-family:var(--display);font-weight:600;font-size:17px;color:var(--teal);line-height:1.4;}
+  .ladder-note{text-align:center;max-width:58ch;margin:34px auto 0;font-size:15px;
+    color:var(--ink-soft);line-height:1.6;}
+  .ladder-note b{color:var(--ink);font-weight:600;}
+
   .btn-ghost .ico{flex:0 0 auto;display:block;}
   .f-ico{display:inline-flex;align-items:center;gap:5px;vertical-align:middle;}
   .f-ico .ico{flex:0 0 auto;}
@@ -660,6 +684,40 @@ var TAKEN = {};
     <p class="cmp-note" data-en="“I do not sell you leads. I build and run the system that converts them.”">«Δεν σου πουλάω leads. Στήνω και κατευθύνω το σύστημα που τα μετατρέπει.»</p>
 
     <div class="mid-cta" data-en="<a href=&quot;#form&quot; class=&quot;btn&quot;>Let's look at your numbers</a>"><a href="#form" class="btn">Ας δούμε τα δικά σου νούμερα</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-en="Why a lead is worth paying for">Γιατί αξίζει να πληρώσεις για ένα lead</p>
+      <h2 data-en="Nobody walks in just for whitening">Κανείς δεν μπαίνει μόνο για λεύκανση</h2>
+      <p data-en="They come in for the thing they saw in the ad. They almost never stop there. That is what the lead is actually worth.">Μπαίνουν γι' αυτό που είδαν στη διαφήμιση. Σχεδόν ποτέ δεν μένουν εκεί. Αυτό αξίζει πραγματικά το lead.</p>
+    </div>
+
+    <div class="ladder-grid">
+      <div class="ladder">
+        <h3 data-en="Dental practice">Οδοντιατρείο</h3>
+        <p class="lead-in" data-en="What the ad promised, and what actually follows">Τι υποσχέθηκε η διαφήμιση — και τι ακολουθεί</p>
+        <div class="rung first"><span class="mark">01</span><span class="what" data-en="Whitening · €150–250">Λεύκανση · 150–250€<span class="when" data-en="the reason they called">ο λόγος που τηλεφώνησαν</span></span></div>
+        <div class="rung"><span class="mark">02</span><span class="what" data-en="Cleaning and a check-up">Καθαρισμός και έλεγχος<span class="when" data-en="almost always, at the same visit">σχεδόν πάντα, στην ίδια επίσκεψη</span></span></div>
+        <div class="rung"><span class="mark">03</span><span class="what" data-en="Fillings, veneers, alignment">Σφραγίσματα, όψεις, ευθυγράμμιση<span class="when" data-en="once they trust you, weeks or months later">μόλις σε εμπιστευτούν, σε εβδομάδες ή μήνες</span></span></div>
+        <div class="rung"><span class="mark">04</span><span class="what" data-en="The rest of the family">Η υπόλοιπη οικογένεια<span class="when" data-en="a dentist is recommended at the dinner table">ο οδοντίατρος συστήνεται στο τραπέζι</span></span></div>
+        <div class="ladder-sum" data-en="You paid for a whitening lead. You gained a patient.">Πλήρωσες για ένα lead λεύκανσης. Κέρδισες έναν ασθενή.</div>
+      </div>
+
+      <div class="ladder">
+        <h3 data-en="Aesthetic clinic">Κλινική αισθητικής</h3>
+        <p class="lead-in" data-en="What the ad promised, and what actually follows">Τι υποσχέθηκε η διαφήμιση — και τι ακολουθεί</p>
+        <div class="rung first"><span class="mark">01</span><span class="what" data-en="One session · facial from €95">Μία συνεδρία · facial από 95€<span class="when" data-en="the offer that got them through the door">η προσφορά που τους έφερε μέσα</span></span></div>
+        <div class="rung"><span class="mark">02</span><span class="what" data-en="The package of six">Το πακέτο των έξι<span class="when" data-en="laser and most treatments only work in a course">laser και οι περισσότερες θεραπείες δουλεύουν μόνο σε κύκλο</span></span></div>
+        <div class="rung"><span class="mark">03</span><span class="what" data-en="A second treatment they had not considered">Δεύτερη θεραπεία που δεν είχαν σκεφτεί<span class="when" data-en="they ask while they are already on the bed">ρωτάνε ενώ είναι ήδη στο κρεβάτι</span></span></div>
+        <div class="rung"><span class="mark">04</span><span class="what" data-en="Maintenance, every few months">Συντήρηση, κάθε λίγους μήνες<span class="when" data-en="for years, if the first visit went well">για χρόνια, αν πήγε καλά η πρώτη φορά</span></span></div>
+        <div class="ladder-sum" data-en="You paid once. They come back on their own.">Πλήρωσες μία φορά. Επιστρέφουν μόνοι τους.</div>
+      </div>
+    </div>
+
+    <p class="ladder-note" data-en="This is why a lead that costs a few euros is not expensive, and why one that is never answered is not free. <b>You do not lose €150. You lose everything that patient would have been worth.</b>">Γι' αυτό ένα lead που κοστίζει λίγα ευρώ δεν είναι ακριβό — και ένα που δεν απαντήθηκε ποτέ δεν είναι δωρεάν. <b>Δεν χάνεις 150€. Χάνεις όλα όσα θα άξιζε αυτός ο ασθενής.</b></p>
   </div>
 </section>
 
