@@ -146,7 +146,7 @@
   .band{background:var(--cream-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .sec-head{text-align:center;max-width:62ch;margin:0 auto 42px;}
   .sec-head h2{font-size:clamp(29px,4.1vw,46px);line-height:1.16;margin-bottom:16px;}
-  .sec-head p{color:var(--ink-soft);font-size:16.5px;}
+  .sec-head p{color:var(--ink-soft);font-size:16.5px;text-wrap:balance;}
 
   .num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch;}
   @media (max-width:980px){.num-grid{grid-template-columns:repeat(2,1fr);}}
@@ -599,8 +599,7 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
     <div class="sec-head">
       <p class="eyebrow" data-en="Territory exclusivity">Αποκλειστικότητα περιοχής</p>
       <h2 data-en="Is your area still free?">Είναι ελεύθερη η περιοχή σου;</h2>
-      <p data-en="In each area I work with <strong>one aesthetic clinic only and one dental practice only</strong>. I do not take your competitor, and I do not share your strategies. If you are with me, your competitor cannot be.">Σε κάθε περιοχή συνεργάζομαι με <strong>μία μόνο κλινική αισθητικής και ένα μόνο οδοντιατρείο</strong>. Δεν παίρνω τον ανταγωνιστή σου, δεν μοιράζομαι τις στρατηγικές σου. Αν είσαι μαζί μου, ο ανταγωνιστής σου δεν μπορεί να είναι.</p>
-      <p data-en="I work with <b>one dental practice per municipality</b>. Type yours and see it right away.">Συνεργάζομαι με <b>ένα οδοντιατρείο ανά δήμο</b>. Γράψε τον δικό σου και δες το αμέσως.</p>
+      <p data-en="In each municipality I work with <strong>one aesthetic clinic and one dental practice</strong>. I do not take your competitor. Type your area and see if it is still free.">Σε κάθε δήμο συνεργάζομαι με <strong>μία κλινική αισθητικής και ένα οδοντιατρείο</strong>. Δεν παίρνω τον ανταγωνιστή σου. Γράψε τον δήμο σου και δες αν είναι ακόμα ελεύθερος.</p>
     </div>
     <div class="terr-box">
       <input class="terr-in" id="terr-in" list="terr-dimoi" autocomplete="off"
