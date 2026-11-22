@@ -410,6 +410,62 @@
     color:var(--ink-soft);line-height:1.6;}
   .ladder-note b{color:var(--ink);font-weight:600;}
 
+  /* ---------- chat assistant ----------
+     Squared and in the page palette, not the rounded bubble every SaaS
+     site ships. It answers the four questions that otherwise become
+     "I'll think about it", and hands over to WhatsApp the moment someone
+     wants a person. */
+  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:95;width:56px;height:56px;border-radius:3px;
+    background:var(--teal);color:var(--cream);border:none;cursor:pointer;display:flex;
+    align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(11,58,74,.28);
+    transition:background .2s ease;}
+  .chat-fab:hover{background:var(--teal-deep);}
+  /* the consent bar is full width on a phone and would sit on top of the
+     button; while it is up, the chat waits above it */
+  .cc.show ~ .chat-fab{bottom:118px;}
+  .cc.show ~ .chat-panel{bottom:186px;}
+  @media (min-width:700px){.cc.show ~ .chat-fab{bottom:22px;} .cc.show ~ .chat-panel{bottom:90px;}}
+  .chat-fab .x{display:none;}
+  .chat-fab.open .x{display:block;} .chat-fab.open .b{display:none;}
+  .chat-panel{position:fixed;right:22px;bottom:90px;z-index:95;width:366px;max-width:calc(100vw - 32px);
+    height:510px;max-height:calc(100vh - 130px);background:var(--card);border:1px solid var(--line);
+    border-radius:3px;box-shadow:var(--shadow-lg);display:none;flex-direction:column;overflow:hidden;}
+  .chat-panel.open{display:flex;}
+  @media (max-width:430px){.chat-panel{right:16px;left:16px;bottom:86px;width:auto;}}
+  .chat-head{background:var(--teal);color:var(--cream);padding:16px 18px;display:flex;
+    align-items:center;gap:11px;flex-shrink:0;}
+  .chat-head .dot{width:7px;height:7px;border-radius:50%;background:#5FC78A;flex-shrink:0;}
+  .chat-head strong{font-family:var(--display);font-size:16px;font-weight:600;letter-spacing:-.01em;}
+  .chat-head span{font-size:11px;opacity:.72;display:block;font-weight:400;letter-spacing:.06em;
+    text-transform:uppercase;margin-top:2px;}
+  .chat-wa{display:flex;align-items:center;gap:11px;padding:13px 18px;text-decoration:none;
+    background:#1FA855;color:#fff;flex-shrink:0;transition:background .2s ease;}
+  .chat-wa:hover{background:#17924A;}
+  .chat-wa .t{font-size:13px;font-weight:700;line-height:1.3;}
+  .chat-wa .t small{display:block;font-weight:500;font-size:11px;opacity:.92;margin-top:1px;}
+  .chat-wa .go{margin-left:auto;font-size:17px;font-weight:700;}
+  .chat-log{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;
+    background:var(--cream);}
+  .msg{max-width:86%;padding:11px 14px;border-radius:3px;font-size:14px;line-height:1.55;}
+  .msg.bot{background:var(--card);border:1px solid var(--line);align-self:flex-start;color:var(--ink);}
+  .msg.me{background:var(--teal);color:var(--cream);align-self:flex-end;}
+  .msg a{color:var(--teal);text-decoration:underline;font-weight:600;}
+  .msg.me a{color:#fff;}
+  .chat-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 18px 12px;background:var(--cream);}
+  .chat-chips button{background:var(--card);border:1px solid var(--line);color:var(--teal);
+    font-size:12px;font-weight:600;padding:7px 12px;border-radius:2px;cursor:pointer;
+    transition:border-color .18s ease;}
+  .chat-chips button:hover{border-color:var(--brass);}
+  .chat-in{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:var(--card);
+    flex-shrink:0;}
+  .chat-in input{flex:1;border:1px solid var(--line);border-radius:2px;padding:11px 14px;
+    font-size:14px;background:var(--cream);color:var(--ink);min-width:0;}
+  .chat-in input:focus{outline:none;border-color:var(--teal);background:#fff;}
+  .chat-in button{background:var(--teal);color:var(--cream);border:none;border-radius:2px;
+    width:40px;height:40px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;
+    justify-content:center;transition:background .2s ease;}
+  .chat-in button:hover{background:var(--teal-deep);}
+
   .btn-ghost .ico{flex:0 0 auto;display:block;}
   .f-ico{display:inline-flex;align-items:center;gap:5px;vertical-align:middle;}
   .f-ico .ico{flex:0 0 auto;}
@@ -1091,5 +1147,158 @@ var WA_NUMBER     = "35799251181";
   setLang(saved === 'en' ? 'en' : 'el');
 })();
 </script>
+<button class="chat-fab" id="chat-fab" aria-label="Ρώτησέ με / Ask me" aria-expanded="false">
+  <svg class="b" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.98 3 3 6.58 3 11c0 2.4 1.18 4.54 3.05 6.05V21l3.2-1.75c.88.2 1.8.3 2.75.3 5.02 0 9-3.58 9-8s-3.98-8-9-8Z"/></svg>
+  <svg class="x" viewBox="0 0 24 24" width="21" height="21" aria-hidden="true"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+</button>
+
+<div class="chat-panel" id="chat-panel" role="dialog" aria-label="Med Aesthetic Bookings">
+  <div class="chat-head">
+    <span class="dot"></span>
+    <div><strong>Μάρκος Χριστοδούλου</strong><span id="chat-sub">Συνήθως απαντάω σε λίγα λεπτά</span></div>
+  </div>
+  <a class="chat-wa" id="chat-wa" href="https://wa.me/35799251181" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" width="21" height="21" aria-hidden="true"><path fill="currentColor" d="M12.05 0C5.5 0 .16 5.34.157 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.9C23.94 5.34 18.6 0 12.05 0Zm5.42 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.28.18-1.41-.08-.12-.28-.2-.58-.35Z"/></svg>
+    <span class="t" id="chat-wa-t">Γράψε μου στο WhatsApp<small>+357 99251181 · απαντάω ο ίδιος</small></span>
+    <span class="go" aria-hidden="true">→</span>
+  </a>
+  <div class="chat-log" id="chat-log"></div>
+  <div class="chat-chips" id="chat-chips"></div>
+  <form class="chat-in" id="chat-form">
+    <input type="text" id="chat-text" autocomplete="off" placeholder="Γράψε την ερώτησή σου…" aria-label="Μήνυμα">
+    <button type="submit" aria-label="Αποστολή">
+      <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </form>
+</div>
+
+<script>
+/* ---- chat assistant ----
+   Not an AI and not pretending to be one. It answers the handful of
+   questions a clinic owner asks before a call, and every path ends either
+   at the form or at WhatsApp. Price is deliberately absent: the page stopped
+   quoting numbers before a conversation, so the bot does not either. */
+(function(){
+  var WA_LINK = '<a href="https://wa.me/35799251181" target="_blank" rel="noopener">WhatsApp</a>';
+  var CHAT = {
+    el:{
+      sub:'Συνήθως απαντάω σε λίγα λεπτά',
+      ph:'Γράψε την ερώτησή σου…',
+      hello:'Γεια σου. Είμαι ο Μάρκος. Ρώτησέ με ό,τι θες πριν κλείσουμε κλήση — ή πάτα ' + WA_LINK + ' για να μου γράψεις απευθείας.',
+      chips:['Πώς δουλεύει;','Πόσο κοστίζει;','Είναι ελεύθερη η περιοχή μου;','Πόσο γρήγορα θα δω leads;','Δεσμεύομαι;','Έχω ήδη διαφημιστή'],
+      fallback:'Καλή ερώτηση — αυτή θέλει κουβέντα, όχι μήνυμα. Γράψε μου στο ' + WA_LINK + ' ή άφησε στοιχεία <a href="#form" data-close>στη φόρμα</a> και σε παίρνω.',
+      a:{
+        'δουλε':'Τρία βήματα είναι δικά μου, ένα δικό σου. <strong>Μαζεύω</strong> ενδιαφερόμενους με διαφημίσεις, <strong>τους φιλτράρω</strong> με φόρμα, <strong>σου τους παραδίδω στο κινητό</strong> σε δευτερόλεπτα. Εσύ τους παίρνεις τηλέφωνο με το script που σου γράφω.',
+        'πώς':'Τρία βήματα είναι δικά μου, ένα δικό σου: μαζεύω τους ενδιαφερόμενους, τους φιλτράρω, σου τους παραδίδω στο κινητό. Εσύ μόνο τηλεφωνείς.',
+        'πως':'Τρία βήματα είναι δικά μου, ένα δικό σου: μαζεύω τους ενδιαφερόμενους, τους φιλτράρω, σου τους παραδίδω στο κινητό. Εσύ μόνο τηλεφωνείς.',
+        'κοστ':'Δεν δίνω τιμή πριν δω την περιοχή και τον κλάδο σου — θα ήταν νούμερο στον αέρα. Αυτό που ισχύει πάντα: δουλεύω με ιατρεία έτοιμα να επενδύσουν <strong>από 1.500€ τον μήνα</strong>. Αν στέκει, <a href="#form" data-close>άφησε στοιχεία</a> και τα λέμε σε 20 λεπτά.',
+        'τιμ':'Δεν δίνω τιμή πριν δω την περιοχή και τον κλάδο σου. Δουλεύω με ιατρεία έτοιμα να επενδύσουν <strong>από 1.500€ τον μήνα</strong>.',
+        'budget':'Το budget διαφήμισης είναι ξεχωριστό από την αμοιβή μου και πάει κατευθείαν στη Meta — δεν περνάει από εμένα. Στην κλήση σου λέω τι χρειάζεται η περιοχή σου.',
+        'περιοχ':'Συνεργάζομαι με <strong>μία κλινική αισθητικής και ένα οδοντιατρείο ανά δήμο</strong>. Γράψε τον δήμο σου <a href="#perioxi" data-close>στον ελεγκτή περιοχής</a> και θα δεις αμέσως αν είναι ελεύθερη.',
+        'ελεύθ':'Γράψε τον δήμο σου <a href="#perioxi" data-close>εδώ</a> και θα σου πει αμέσως. Μία θέση ανά δήμο.',
+        'ελευθ':'Γράψε τον δήμο σου <a href="#perioxi" data-close>εδώ</a> και θα σου πει αμέσως. Μία θέση ανά δήμο.',
+        'αποκλειστ':'Σε κάθε περιοχή παίρνω <strong>μία μόνο κλινική και ένα μόνο οδοντιατρείο</strong>. Δεν μοιράζομαι στρατηγικές και δεν δουλεύω με τον ανταγωνιστή σου.',
+        'γρήγορ':'Οι διαφημίσεις βγαίνουν συνήθως σε <strong>3-5 μέρες</strong>. Τα πρώτα leads έρχονται τις πρώτες μέρες — όχι σε μήνες.',
+        'γρηγορ':'Στήσιμο σε <strong>3-5 μέρες</strong>, πρώτα leads μέσα στην πρώτη εβδομάδα.',
+        'δεσμ':'Η πρώτη κλήση είναι <strong>20 λεπτά και δεν δεσμεύει σε τίποτα</strong>. Αν δεν ταιριάζουμε, στο λέω εγώ πρώτος.',
+        'συμβόλ':'Δεν σε κλειδώνω σε πολύχρονο συμβόλαιο. Τα λέμε στην κλήση, καθαρά.',
+        'συμβολ':'Δεν σε κλειδώνω σε πολύχρονο συμβόλαιο. Τα λέμε στην κλήση, καθαρά.',
+        'διαφημιστ':'Αυτός πιθανότατα κάνει social media. Εγώ κάνω <strong>ραντεβού</strong>: διαφήμιση, φόρμα, script κλήσης και follow-up. Διαφορετική δουλειά, διαφορετικό αποτέλεσμα.',
+        'ραντεβ':'Δεν πουλάω ραντεβού, πουλάω ανθρώπους που σήκωσαν το χέρι. Τα ραντεβού τα κλείνει το τηλέφωνό σου — γι’ αυτό σου γράφω και το script.',
+        'lead':'Σου παραδίδω τα στοιχεία τους στο κινητό μέσα σε δευτερόλεπτα. Αν τους πάρεις σε 5 λεπτά, απαντάνε.',
+        'script':'Ναι, στο γράφω εγώ: τι λες στο πρώτο τηλέφωνο, τι απαντάς στις αντιρρήσεις, τι στέλνεις μετά.',
+        'οδοντ':'Ναι. Δουλεύω με οδοντιατρεία σε λεύκανση, όψεις και ορθοδοντική ενηλίκων.',
+        'αισθητ':'Ναι. Κλινικές και κέντρα αισθητικής: laser, botox, fillers, θεραπείες προσώπου, HIFU.',
+        'κύπρ':'Ναι, έχω δουλέψει και στην Κύπρο — μια κλινική πήγε από 1 σε 5 υποκαταστήματα σε λιγότερο από δύο χρόνια.',
+        'whatsapp':'Γράψε μου: <a href="https://wa.me/35799251181" target="_blank" rel="noopener">wa.me/35799251181</a>. Απαντάω ο ίδιος.'
+      }
+    },
+    en:{
+      sub:'I usually reply within minutes',
+      ph:'Type your question…',
+      hello:'Hello, I am Marco. Ask me anything before we book a call — or hit ' + WA_LINK + ' to message me directly.',
+      chips:['How does it work?','What does it cost?','Is my area free?','How fast will I see leads?','Any commitment?','I already have an agency'],
+      fallback:'Good question — that one needs a conversation, not a message. Write to me on ' + WA_LINK + ' or <a href="#form" data-close>leave your details</a> and I will call you.',
+      a:{
+        'work':'Three steps are mine, one is yours. I <strong>collect</strong> interested people with ads, I <strong>filter</strong> them with a form, I <strong>hand them to your phone</strong> in seconds. You call them, using the script I write for you.',
+        'cost':'I do not quote before I see your area and your field — it would be a number out of thin air. What always holds: I work with practices ready to invest <strong>from €1,500 a month</strong>. If that stands, <a href="#form" data-close>leave your details</a>.',
+        'price':'I do not quote before I see your area and your field. I work with practices ready to invest <strong>from €1,500 a month</strong>.',
+        'budget':'Ad budget is separate from my fee and goes straight to Meta — it does not pass through me.',
+        'area':'I work with <strong>one aesthetic clinic and one dental practice per municipality</strong>. Type yours <a href="#perioxi" data-close>in the availability checker</a>.',
+        'free':'Type your municipality <a href="#perioxi" data-close>here</a> and it will tell you straight away. One place per area.',
+        'exclusiv':'In each area I take <strong>one clinic and one dental practice only</strong>. I do not share strategies and I do not work with your competitor.',
+        'fast':'Ads are usually live <strong>3-5 days</strong> after we start. The first leads come within days, not months.',
+        'commit':'The first call is <strong>20 minutes and commits you to nothing</strong>. If we are not a fit, I will say so first.',
+        'contract':'I do not lock you into a long contract. We go through it on the call, plainly.',
+        'agency':'They are probably doing social media. I do <strong>appointments</strong>: ads, form, call script and follow-up. Different job, different result.',
+        'lead':'I hand you their details within seconds of them leaving them. Call within five minutes and they answer.',
+        'script':'Yes, I write it: what you say on the first call, how you answer objections, what you send afterwards.',
+        'dent':'Yes. Dental practices for whitening, veneers and adult orthodontics.',
+        'aesthet':'Yes. Clinics and aesthetic centres: laser, botox, fillers, facials, HIFU.',
+        'whatsapp':'Message me: <a href="https://wa.me/35799251181" target="_blank" rel="noopener">wa.me/35799251181</a>. I answer myself.'
+      }
+    }
+  };
+
+  var fab=document.getElementById('chat-fab'), panel=document.getElementById('chat-panel'),
+      log=document.getElementById('chat-log'), chips=document.getElementById('chat-chips'),
+      form=document.getElementById('chat-form'), input=document.getElementById('chat-text'),
+      sub=document.getElementById('chat-sub'), started=false;
+  if(!fab || !panel) return;
+
+  function L(){ return document.documentElement.lang === 'en' ? CHAT.en : CHAT.el; }
+  function add(who, html){
+    var d=document.createElement('div');
+    d.className='msg '+who; d.innerHTML=html;
+    log.appendChild(d); log.scrollTop=log.scrollHeight;
+  }
+  function renderChips(){
+    chips.innerHTML='';
+    L().chips.forEach(function(c){
+      var b=document.createElement('button'); b.type='button'; b.textContent=c;
+      b.onclick=function(){ ask(c); };
+      chips.appendChild(b);
+    });
+  }
+  function answer(q){
+    var t=q.toLowerCase(), a=L().a;
+    for(var k in a){ if(t.indexOf(k) > -1) return a[k]; }
+    return L().fallback;
+  }
+  function ask(q){
+    add('me', q.replace(/</g,'&lt;'));
+    input.value='';
+    setTimeout(function(){ add('bot', answer(q)); }, 300);
+  }
+  var WA = {
+    el:'Γράψε μου στο WhatsApp<small>+357 99251181 · απαντάω ο ίδιος</small>',
+    en:'Message me on WhatsApp<small>+357 99251181 · I answer myself</small>'
+  };
+  function start(){
+    if(started) return; started=true;
+    log.innerHTML=''; add('bot', L().hello); renderChips();
+    sub.textContent=L().sub; input.placeholder=L().ph;
+    document.getElementById('chat-wa-t').innerHTML =
+      document.documentElement.lang === 'en' ? WA.en : WA.el;
+  }
+  fab.addEventListener('click', function(){
+    var open=panel.classList.toggle('open');
+    fab.classList.toggle('open', open);
+    fab.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(open){ start(); input.focus(); }
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); var v=input.value.trim(); if(v) ask(v);
+  });
+  log.addEventListener('click', function(e){
+    var a=e.target.closest('a[data-close]');
+    if(a){ panel.classList.remove('open'); fab.classList.remove('open'); }
+  });
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ started=false; if(panel.classList.contains('open')) start(); });
+  });
+})();
+</script>
+
 </body>
 </html>
