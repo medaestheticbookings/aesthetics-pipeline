@@ -348,37 +348,22 @@
   .res .rctx{font-size:14.5px;color:var(--ink-soft);margin-top:auto;}
   .res .rwho{display:block;margin-top:12px;font-size:13px;font-weight:600;color:#8A5E2C;}
 
-  /* ---------- clinic imagery ----------
-     The page was faultless type on cream and could have been a law firm.
-     Two real treatment photographs say "aesthetics clinic" before a single
-     word is read. They are duotoned to the brand teal so they sit inside
-     the palette instead of fighting it. */
-  .clinic-strip{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:64px;}
+  /* ---------- the two trades, as plates ----------
+     Stock treatment photography was turned down twice and the library had
+     nothing dental at all, so this band carries no photographs: two matched
+     plates, one gold mark each, equal billing for both trades. */
+  .clinic-strip{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:56px;}
   @media (max-width:640px){.clinic-strip{grid-template-columns:1fr;}}
-  .clinic-strip figure{position:relative;margin:0;overflow:hidden;height:340px;background:var(--teal);}
-  @media (max-width:640px){.clinic-strip figure{height:210px;}}
-  /* the subject sits low-left in this frame; a centred crop showed the
-     machine and cut her out of her own treatment */
-  .clinic-strip img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;
-    filter:saturate(.72) contrast(1.02) brightness(1.03);opacity:1;
-    transition:transform 1.1s cubic-bezier(.2,.7,.2,1), filter .6s ease;}
-  /* only enough wash at the foot to carry the caption */
-  .clinic-strip figure::after{content:"";position:absolute;inset:auto 0 0 0;height:58%;
-    background:linear-gradient(180deg, rgba(8,42,54,0) 0%, rgba(8,42,54,.72) 100%);}
-  .clinic-strip figure:hover img{transform:scale(1.03);filter:saturate(.85) contrast(1.02) brightness(1.03);}
-  .clinic-strip figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;
-    padding:22px 24px;color:var(--cream);font-size:11px;letter-spacing:.26em;
-    text-transform:uppercase;font-weight:600;}
+  .clinic-strip figure{position:relative;margin:0;height:230px;background:var(--teal);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;}
+  @media (max-width:640px){.clinic-strip figure{height:180px;gap:14px;}}
+  .clinic-strip figure.plate + figure.plate, .clinic-strip figure:last-child{background:var(--teal-deep);}
+  .clinic-strip figcaption{text-align:center;color:rgba(250,247,242,.6);font-size:10.5px;
+    letter-spacing:.3em;text-transform:uppercase;font-weight:600;}
   .clinic-strip figcaption b{display:block;font-family:var(--display);font-weight:600;
-    font-size:21px;letter-spacing:-.01em;text-transform:none;color:#fff;margin-top:7px;}
-  /* There is no dental photograph in the library and a facial treatment
-     captioned "dentists" would be a lie the first dentist spots. A plate
-     carries the same weight honestly. */
-  .clinic-strip figure.plate{display:flex;align-items:center;justify-content:center;
-    background:var(--teal-deep);}
-  .clinic-strip figure.plate::after{display:none;}
-  .plate-ico{width:74px;height:74px;stroke:var(--brass-lift);fill:none;stroke-width:.9;
-    stroke-linecap:round;stroke-linejoin:round;opacity:.95;}
+    font-size:23px;letter-spacing:-.01em;text-transform:none;color:var(--cream);margin-top:9px;}
+  .plate-ico{width:54px;height:54px;stroke:var(--brass-lift);fill:none;stroke-width:1;
+    stroke-linecap:round;stroke-linejoin:round;}
 
   /* gold hairline glyphs - a tooth and a face, so each trade sees itself */
   .who-ico{width:34px;height:34px;display:block;margin-bottom:18px;stroke:var(--brass);
@@ -476,8 +461,8 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
   </div>
 
   <div class="clinic-strip">
-    <figure>
-      <img src="img/clinic-face.jpg" alt="Θεραπεία προσώπου σε κλινική αισθητικής" loading="lazy" width="1400" height="700">
+    <figure class="plate">
+      <svg class="plate-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M15.5 3.2c2.6 2.1 4 4 4 5.4a2.1 2.1 0 0 1-4.2 0c0-1.4 1.4-3.3 4-5.4Z"/><path d="M8.6 13.4a4.3 4.3 0 0 0 6.1 0"/><path d="M9 10h.01M15 10h.01"/></svg>
       <figcaption><span data-en="Aesthetic clinics">Κλινικές αισθητικής</span><b data-en="Laser, face, body">Laser, πρόσωπο, σώμα</b></figcaption>
     </figure>
     <figure class="plate">
