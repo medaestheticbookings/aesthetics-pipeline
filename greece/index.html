@@ -11,14 +11,14 @@
 <meta property="og:description" content="Μας λες τη θεραπεία και την πόλη σου. Σου βρίσκουμε τις καλύτερες κλινικές στην περιοχή σου. Δωρεάν.">
 <meta property="og:locale" content="el_GR">
 <meta property="og:locale:alternate" content="en_GB">
-<meta property="og:image" content="https://medaestheticbookings.github.io/find/img/hero.jpg">
+<meta property="og:image" content="https://medaestheticbookings.com/greece/img/hero.jpg">
 <meta property="og:image:width" content="1800">
 <meta property="og:image:height" content="1200">
-<meta property="og:url" content="https://medaestheticbookings.github.io/find/">
+<meta property="og:url" content="https://medaestheticbookings.com/greece/">
 <meta property="og:site_name" content="Med Aesthetic Bookings">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://medaestheticbookings.github.io/find/img/hero.jpg">
-<link rel="canonical" href="https://medaestheticbookings.github.io/find/">
+<meta name="twitter:image" content="https://medaestheticbookings.com/greece/img/hero.jpg">
+<link rel="canonical" href="https://medaestheticbookings.com/greece/">
 <meta name="geo.region" content="GR-A1">
 <meta name="geo.placename" content="Ελλάδα">
 <meta name="author" content="Med Aesthetic Bookings">
@@ -35,10 +35,10 @@
   "@graph":[
     {
       "@type":"Organization",
-      "@id":"https://medaestheticbookings.github.io/find/#org",
+      "@id":"https://medaestheticbookings.com/greece/#org",
       "name":"Med Aesthetic Bookings",
-      "url":"https://medaestheticbookings.github.io/find/",
-      "logo":"https://medaestheticbookings.github.io/find/img/logo.png",
+      "url":"https://medaestheticbookings.com/greece/",
+      "logo":"https://medaestheticbookings.com/greece/img/logo.png",
       "email":"medaestheticbooking@outlook.com",
       "sameAs":["https://www.instagram.com/medaestheticbookings/"],
       "areaServed":[
@@ -51,7 +51,7 @@
       "@type":"Service",
       "name":"Εύρεση κλινικής αισθητικής",
       "serviceType":"Παραπομπή σε κλινικές ιατρικής αισθητικής",
-      "provider":{"@id":"https://medaestheticbookings.github.io/find/#org"},
+      "provider":{"@id":"https://medaestheticbookings.com/greece/#org"},
       "areaServed":["Ελλάδα"],
       "isRelatedTo":"Ιατρική αισθητική",
       "offers":{"@type":"OfferCatalog","name":"Θεραπείες","itemListElement":[
@@ -74,7 +74,7 @@
     },
     {
       "@type":"WebSite",
-      "url":"https://medaestheticbookings.github.io/find/",
+      "url":"https://medaestheticbookings.com/greece/",
       "name":"Med Aesthetic Bookings",
       "inLanguage":"el"
     }
@@ -261,6 +261,25 @@
   .treat li{font-size:14.5px;color:var(--ink);display:flex;gap:9px;align-items:flex-start;}
   .treat li::before{content:'✓';color:var(--brass);font-weight:800;flex-shrink:0;}
   .treat.wide{grid-column:1/-1;}
+
+  /* clicking a treatment card jumps to the form with it already chosen */
+  .treat{cursor:pointer;}
+  .treat:focus-visible{outline:3px solid var(--brass);outline-offset:3px;}
+  .treat .pick{margin-top:18px;font-size:14px;font-weight:700;color:var(--brass-ink);
+    letter-spacing:.01em;display:flex;align-items:center;gap:6px;
+    opacity:.78;transition:opacity .25s ease,transform .25s ease;}
+  .treat:hover .pick,.treat:focus-visible .pick{opacity:1;transform:translateX(3px);}
+  @media (prefers-reduced-motion:reduce){
+    .treat,.treat .shot img,.treat .pick{transition:none!important;}
+    .treat:hover{transform:none;}
+  }
+  /* brief highlight so the visitor sees which treatment was filled in */
+  @keyframes pickedGlow{
+    0%{box-shadow:0 0 0 0 rgba(176,137,74,.55);}
+    100%{box-shadow:0 0 0 14px rgba(176,137,74,0);}
+  }
+  select#f-treat.picked{border-color:var(--brass);animation:pickedGlow 1.1s ease-out 2;}
+
   @media (min-width:761px){
     .treat.wide{flex-direction:row;}
     .treat.wide .shot{width:44%;aspect-ratio:auto;min-height:320px;}
@@ -342,7 +361,7 @@
 
 <nav>
   <div class="wrap">
-    <a href="#top"><img src="img/logo.png" alt="Med Aesthetic Bookings" class="logo"></a>
+    <a href="#top"><img src="img/logo.png" alt="Med Aesthetic Bookings" class="logo" width="213" height="64"></a>
     <div class="nav-right">
       <a href="#treatments" class="nav-blog" data-en="Treatments">Θεραπείες</a>
       <a href="blog/" class="nav-blog">Blog</a>
@@ -415,7 +434,7 @@
       <p data-en="Every clinic we recommend is licensed and uses certified equipment and certified staff.">Κάθε κλινική που προτείνουμε είναι αδειοδοτημένη και χρησιμοποιεί πιστοποιημένο εξοπλισμό και πιστοποιημένο προσωπικό.</p>
     </div>
     <div class="treat-grid">
-      <div class="treat">
+      <div class="treat" data-treat="Teeth Whitening" role="button" tabindex="0">
         <div class="shot"><img src="img/teeth.jpg" alt="Λαμπερό χαμόγελο με λευκά δόντια μετά από επαγγελματική λεύκανση" loading="lazy" width="1200" height="750"></div>
         <div class="body">
           <div class="alt">Teeth Whitening</div>
@@ -426,10 +445,11 @@
             <li data-en="One session, immediate result">Μία συνεδρία, άμεσο αποτέλεσμα</li>
             <li data-en="Home maintenance kit included">Με κιτ συντήρησης στο σπίτι</li>
           </ul>
+          <div class="pick" data-en="Choose this treatment →">Διάλεξε αυτή τη θεραπεία →</div>
         </div>
       </div>
 
-      <div class="treat">
+      <div class="treat" data-treat="Laser Hair Removal" role="button" tabindex="0">
         <div class="shot"><img src="img/laser.jpg" alt="Αποτρίχωση με laser στο πόδι σε κλινική αισθητικής" loading="lazy" width="1200" height="750"></div>
         <div class="body">
           <div class="alt">Laser Hair Removal</div>
@@ -440,10 +460,11 @@
             <li data-en="Suitable for most skin types">Κατάλληλο για τους περισσότερους τύπους δέρματος</li>
             <li data-en="Free consultation and test patch">Δωρεάν αξιολόγηση και δοκιμαστική βολή</li>
           </ul>
+          <div class="pick" data-en="Choose this treatment →">Διάλεξε αυτή τη θεραπεία →</div>
         </div>
       </div>
 
-      <div class="treat">
+      <div class="treat" data-treat="8-Step Facial" role="button" tabindex="0">
         <div class="shot"><img src="img/facial.jpg" alt="Βαθύς καθαρισμός προσώπου οκτώ βημάτων σε κλινική" loading="lazy" width="1200" height="750"></div>
         <div class="body">
           <div class="alt" data-en="Deep cleansing facial">Βαθύς καθαρισμός προσώπου</div>
@@ -454,10 +475,11 @@
             <li data-en="Deep pore and blackhead extraction">Βαθύς καθαρισμός πόρων και μαύρων στιγμάτων</li>
             <li data-en="No downtime, suits every skin type">Χωρίς downtime, για κάθε τύπο δέρματος</li>
           </ul>
+          <div class="pick" data-en="Choose this treatment →">Διάλεξε αυτή τη θεραπεία →</div>
         </div>
       </div>
 
-      <div class="treat">
+      <div class="treat" data-treat="PRX-T33" role="button" tabindex="0">
         <div class="shot"><img src="img/skin.jpg" alt="Θεραπεία βιοαναζωογόνησης προσώπου PRX-T33" loading="lazy" width="1200" height="750"></div>
         <div class="body">
           <div class="alt" data-en="Bio-revitalisation, no needles">Βιοαναζωογόνηση χωρίς βελόνες</div>
@@ -468,10 +490,11 @@
             <li data-en="Safe in summer and for all seasons">Ασφαλές και το καλοκαίρι, όλες τις εποχές</li>
             <li data-en="Face, neck, décolleté, hands">Πρόσωπο, λαιμός, ντεκολτέ, χέρια</li>
           </ul>
+          <div class="pick" data-en="Choose this treatment →">Διάλεξε αυτή τη θεραπεία →</div>
         </div>
       </div>
 
-      <div class="treat">
+      <div class="treat" data-treat="BioRePeel" role="button" tabindex="0">
         <div class="shot"><img src="img/lift.jpg" alt="Θεραπεία peeling προσώπου BioRePeel" loading="lazy" width="1200" height="750"></div>
         <div class="body">
           <div class="alt" data-en="Next-generation peel">Peeling νέας γενιάς</div>
@@ -482,9 +505,10 @@
             <li data-en="Visible result from the first session">Ορατό αποτέλεσμα από την πρώτη συνεδρία</li>
             <li data-en="No flaking, back to work the same day">Χωρίς ξεφλούδισμα, επιστροφή στη δουλειά αυθημερόν</li>
           </ul>
+          <div class="pick" data-en="Choose this treatment →">Διάλεξε αυτή τη θεραπεία →</div>
         </div>
       </div>
-      <div class="treat">
+      <div class="treat" data-treat="Hair Loss Treatment" role="button" tabindex="0">
         <div class="shot"><img src="img/hair.jpg" alt="Θεραπεία τριχόπτωσης με μεσοθεραπεία τριχωτού" loading="lazy" width="1200" height="750"></div>
         <div class="body">
           <div class="alt" data-en="Mesotherapy &amp; PRP">Μεσοθεραπεία &amp; PRP</div>
@@ -495,6 +519,7 @@
             <li data-en="For men and women">Για άνδρες και γυναίκες</li>
             <li data-en="Course of sessions, reviewed as you go">Κύκλος συνεδριών, με επανεκτίμηση στην πορεία</li>
           </ul>
+          <div class="pick" data-en="Choose this treatment →">Διάλεξε αυτή τη θεραπεία →</div>
         </div>
       </div>
     </div>
@@ -632,7 +657,7 @@
 
 <footer>
   <div class="wrap">
-    <img src="img/logo.png" alt="Med Aesthetic Bookings" class="flogo">
+    <img src="img/logo.png" alt="Med Aesthetic Bookings" class="flogo" width="213" height="64">
     <div class="row">
       <a href="mailto:medaestheticbooking@outlook.com">medaestheticbooking@outlook.com</a>
     </div>
@@ -1085,6 +1110,54 @@ document.getElementById('yr').textContent = new Date().getFullYear();
       e.preventDefault();
       pick(shown[cursor]);
     }
+  });
+})();
+
+/* ---------------- treatment card -> form ---------------- */
+(function(){
+  var sel  = document.getElementById('f-treat');
+  var form = document.getElementById('form');
+  if(!sel || !form) return;
+
+  function choose(card){
+    var want = card.getAttribute('data-treat');
+    var ok = false;
+    for(var i = 0; i < sel.options.length; i++){
+      if(sel.options[i].value === want){ sel.selectedIndex = i; ok = true; break; }
+    }
+    if(!ok) return;
+    sel.dispatchEvent(new Event('change', {bubbles:true}));
+
+    var reduce = window.matchMedia &&
+                 window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    form.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'start'});
+
+    sel.classList.remove('picked');
+    void sel.offsetWidth;            /* restart the animation */
+    sel.classList.add('picked');
+    setTimeout(function(){ sel.classList.remove('picked'); }, 2400);
+
+    /* focus the first empty field so they can just start typing */
+    setTimeout(function(){
+      var ids = ['f-name','f-phone','f-email','f-town'], i;
+      for(i = 0; i < ids.length; i++){
+        var el = document.getElementById(ids[i]);
+        if(el && !el.value){ try{ el.focus({preventScroll:true}); }catch(e){ el.focus(); } return; }
+      }
+    }, reduce ? 0 : 520);
+  }
+
+  document.querySelectorAll('.treat[data-treat]').forEach(function(card){
+    card.addEventListener('click', function(e){
+      if(e.target.closest('a')) return;   /* let real links behave normally */
+      choose(card);
+    });
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){
+        e.preventDefault();
+        choose(card);
+      }
+    });
   });
 })();
 </script>
