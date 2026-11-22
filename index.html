@@ -386,6 +386,33 @@
   .card .ic svg{width:21px;height:21px;stroke:var(--brass);fill:none;stroke-width:1.3;
     stroke-linecap:round;stroke-linejoin:round;}
 
+  /* ---------- how it works ----------
+     The page said what I take on, never what actually happens to a patient
+     between the ad and the chair. That gap is where "I'll think about it"
+     lives, so it gets its own picture. */
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:0 auto 46px;max-width:960px;}
+  .flow-step{position:relative;text-align:center;padding:0 10px;}
+  .flow-step::before{content:"";position:absolute;top:27px;left:-50%;width:100%;height:1px;
+    background:var(--line);z-index:0;}
+  .flow-step:first-child::before{display:none;}
+  .flow-ic{position:relative;z-index:1;width:54px;height:54px;margin:0 auto 16px;
+    border:1px solid var(--brass);border-radius:50%;background:var(--cream);
+    display:flex;align-items:center;justify-content:center;}
+  .flow-ic svg{width:23px;height:23px;stroke:var(--brass);fill:none;stroke-width:1.2;
+    stroke-linecap:round;stroke-linejoin:round;}
+  .flow-t{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.3;}
+  .flow-s{font-size:12.5px;color:var(--ink-soft);line-height:1.45;}
+  .flow-time{display:block;margin-top:7px;font-size:10.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--brass);font-weight:600;}
+  @media (max-width:820px){
+    .flow{grid-template-columns:1fr;gap:26px;max-width:420px;}
+    .flow-step{display:grid;grid-template-columns:54px 1fr;gap:18px;text-align:left;align-items:start;}
+    .flow-step::before{top:-26px;left:26px;width:1px;height:26px;}
+    .flow-ic{margin:0;}
+  }
+  .flow-foot{text-align:center;font-family:var(--display);font-weight:600;font-style:italic;
+    font-size:clamp(18px,2.3vw,24px);color:var(--teal);max-width:50ch;margin:0 auto;line-height:1.45;}
+
   .btn-ghost .ico{flex:0 0 auto;display:block;}
   .f-ico{display:inline-flex;align-items:center;gap:5px;vertical-align:middle;}
   .f-ico .ico{flex:0 0 auto;}
@@ -644,6 +671,58 @@ var TAKEN = {};
     <p class="cmp-note" data-en="“I do not sell you leads. I build and run the system that converts them.”">«Δεν σου πουλάω leads. Στήνω και κατευθύνω το σύστημα που τα μετατρέπει.»</p>
 
     <div class="mid-cta" data-en="<a href=&quot;#form&quot; class=&quot;btn&quot;>Let's look at your numbers</a>"><a href="#form" class="btn">Ας δούμε τα δικά σου νούμερα</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-en="How it works">Πώς δουλεύει</p>
+      <h2 data-en="From the ad to the chair, in five steps">Από τη διαφήμιση στην καρέκλα, σε πέντε βήματα</h2>
+      <p data-en="You do one of these five. I do the rest.">Από τα πέντε, εσύ κάνεις ένα. Τα υπόλοιπα τα κάνω εγώ.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M8 21h8M12 17v4M7 9h7M7 12h4"/></svg></div>
+        <div>
+          <div class="flow-t" data-en="The ad finds them">Η διαφήμιση τους βρίσκει</div>
+          <div class="flow-s" data-en="People in your area already looking for the treatment.">Κόσμος στην περιοχή σου που ήδη ψάχνει τη θεραπεία.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-ic"><svg viewBox="0 0 24 24"><path d="M5 3h14v18l-7-4-7 4V3Z"/><path d="M9 9h6M9 12.5h4"/></svg></div>
+        <div>
+          <div class="flow-t" data-en="They leave their details">Αφήνουν τα στοιχεία τους</div>
+          <div class="flow-s" data-en="A short form that filters out the merely curious.">Σύντομη φόρμα που κόβει τους απλώς περίεργους.</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18.5h2"/><path d="M9.2 8.6l1.8 1.8 3.8-3.8"/></svg></div>
+        <div>
+          <div class="flow-t" data-en="It reaches your phone">Φτάνει στο κινητό σου</div>
+          <div class="flow-s" data-en="Name, phone and what they want, the moment they send it.">Όνομα, τηλέφωνο και τι θέλουν, τη στιγμή που το στέλνουν.</div>
+          <span class="flow-time" data-en="in seconds">σε δευτερόλεπτα</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-ic"><svg viewBox="0 0 24 24"><path d="M15.5 20.5a14 14 0 0 1-12-12A2.5 2.5 0 0 1 6 6h2l1.3 3.3-1.8 1.4a11 11 0 0 0 5.8 5.8l1.4-1.8L18 16v2a2.5 2.5 0 0 1-2.5 2.5Z"/></svg></div>
+        <div>
+          <div class="flow-t" data-en="You call them">Τους παίρνεις τηλέφωνο</div>
+          <div class="flow-s" data-en="With the script I give you. This is your one job.">Με το script που σου δίνω. Αυτή είναι η μόνη σου δουλειά.</div>
+          <span class="flow-time" data-en="within 5 minutes">μέσα σε 5 λεπτά</span>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4M9.5 15.5l2 2 3.5-4"/></svg></div>
+        <div>
+          <div class="flow-t" data-en="The appointment is booked">Κλείνει το ραντεβού</div>
+          <div class="flow-s" data-en="Reminders go out so they actually turn up.">Φεύγουν υπενθυμίσεις ώστε να εμφανιστούν όντως.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="flow-foot" data-en="&laquo;Everything except the phone call is mine. And I write what you say on it.&raquo;">«Όλα εκτός από το τηλεφώνημα είναι δικά μου. Και το τι θα πεις σε αυτό, το γράφω εγώ.»</p>
   </div>
 </section>
 
