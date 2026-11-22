@@ -359,13 +359,13 @@
   @media (max-width:640px){.clinic-strip figure{height:210px;}}
   /* the subject sits low-left in this frame; a centred crop showed the
      machine and cut her out of her own treatment */
-  .clinic-strip img{width:100%;height:100%;object-fit:cover;object-position:50% 46%;display:block;
-    filter:grayscale(1) contrast(1.04) brightness(1.04);opacity:.82;
-    transition:transform 1.1s cubic-bezier(.2,.7,.2,1), opacity .6s ease;}
-  .clinic-strip figure::after{content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(11,58,74,.14) 0%, rgba(11,58,74,.62) 100%);
-    mix-blend-mode:multiply;}
-  .clinic-strip figure:hover img{transform:scale(1.035);opacity:.9;}
+  .clinic-strip img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;
+    filter:saturate(.72) contrast(1.02) brightness(1.03);opacity:1;
+    transition:transform 1.1s cubic-bezier(.2,.7,.2,1), filter .6s ease;}
+  /* only enough wash at the foot to carry the caption */
+  .clinic-strip figure::after{content:"";position:absolute;inset:auto 0 0 0;height:58%;
+    background:linear-gradient(180deg, rgba(8,42,54,0) 0%, rgba(8,42,54,.72) 100%);}
+  .clinic-strip figure:hover img{transform:scale(1.03);filter:saturate(.85) contrast(1.02) brightness(1.03);}
   .clinic-strip figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;
     padding:22px 24px;color:var(--cream);font-size:11px;letter-spacing:.26em;
     text-transform:uppercase;font-weight:600;}
@@ -477,7 +477,7 @@ try{ if(localStorage.getItem('map_consent') === 'yes') window.loadPixel(); }catc
 
   <div class="clinic-strip">
     <figure>
-      <img src="img/clinic-laser.jpg" alt="Θεραπεία laser σε κλινική αισθητικής" loading="lazy" width="1400" height="700">
+      <img src="img/clinic-face.jpg" alt="Θεραπεία προσώπου σε κλινική αισθητικής" loading="lazy" width="1400" height="700">
       <figcaption><span data-en="Aesthetic clinics">Κλινικές αισθητικής</span><b data-en="Laser, face, body">Laser, πρόσωπο, σώμα</b></figcaption>
     </figure>
     <figure class="plate">
